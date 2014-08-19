@@ -48,22 +48,23 @@
 	};
 	$('#masonry-container').pageless({
 		totalPages: <%= @cce_classes.total_pages %>,
+		<%unless params[:action]=='search'%>
 		url: '<%= cce_classes_path %>',
+		<%else%>
+		url: '/cce_classes/search',
+		params: { search:{ term: '<%=@term%>'}}, 		
+		<%end%>
 		loaderImage: '<%=  image_path("loading.gif") %>', 
 		end: endPage,
 		scrape: handleMasonry		
      });
-     
-     
-     
-     
 <% end %>
 <script>
 	$('#kind').change(function() {
 			var request = $.ajax({
 				url: '<%= cce_classes_path %>',
 				type: "GET",
-				data: { kind: $(this).val() }
+				data: { kind: $(this).val(), status: $(this).val() }
 				});
 				request.done(function( msg ) {								
 					var $container = $('#masonry-container');

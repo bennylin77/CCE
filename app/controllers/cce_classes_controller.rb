@@ -78,21 +78,20 @@ class CceClassesController < ApplicationController
   end
   
   def search 
-    term=params[:search][:term]     
-    @cce_classes = CceClass.where("title LIKE ?", "%#{params[:term]}%")                                                          
-    @cce_classes = @cce_classes.paginate(per_page: 30, page: params[:page])
     @term=params[:search][:term]     
+    @cce_classes = CceClass.where("title LIKE ?", "%#{@term}%")                                                          
+    @cce_classes = @cce_classes.paginate(per_page: 30, page: params[:page]).order('id DESC')    
     render :index       
   end
 
   def autoComplete 
     @cce_classes_json=Array.new
-    @cce_classes=CceClass.where("title LIKE ?", "%#{params[:term]}%")
+    @cce_classes=CceClass.where("title LIKE ?", "%#{params[:term]}%").order('id DESC')
     @cce_classes.each do |c|
       @cce_classes_json << 
       {
         :label =>c.title,
-        :value =>c.id
+        :value =>c.title
       }
     end  
     render :json=>@cce_classes_json.to_json     

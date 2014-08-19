@@ -61,12 +61,8 @@
 		</div>
 		<div class="title_container_right">
 			<%= form_tag '/cce_classes/search', method: 'get', class: 'search_box' do %>
-			<div style="display: inline-block">
-			<%= text_field :search, :term, value: @term , size: 40 %>
-			</div>
-			<div style="display: inline-block">
-			<%= button_tag "搜尋客戶", class: 'CRUD_import_export_search-icon icon-search' %>
-			</div>
+			<%= text_field :search, :term, value: @term , size: 25, placeholder: '搜尋推教課程' %>
+			<%= button_tag " ", class: 'search-icon icon-search' %>
 			<% end %>
 		</div>					
 	</div>	

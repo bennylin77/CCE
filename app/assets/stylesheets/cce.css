@@ -5,6 +5,12 @@ body {
 a{
 	text-decoration: none;
 }
+button{
+	border:0;
+	outline: 0;   
+	outline-style:none;     
+	outline-width:0;	
+}
 /*============================================= left menu =========================================*/
 .cce_left_menu_container
 {
@@ -148,7 +154,7 @@ a{
 
 .cce_top_menu_container .title_container
 {
-	height: 2.5em;
+	height: 2.7em;
 	border-bottom: 2px solid #FF3385		
 }
 .title_container_left{
@@ -165,7 +171,30 @@ a{
 }
 .title_container_right{
 	float: right;
+	width: 17em;
 }
+
+.search_box input[type="text"] {
+	float:left;
+	font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;	
+	background: #f9f9f9;
+	border: 3px solid #FF3385;	
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    margin-top:0.25em;
+    padding: 2px;
+}
+.search_box button {
+	position: absolute;
+	right: 0.5em;
+    margin-top:0.25em;
+	background: none;
+    cursor: pointer;
+    color: #FF3385;
+    font-size: 1.4em;
+    padding: 2px;
+} 
 
 
 .cce_top_menu_container .filter_container

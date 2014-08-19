@@ -48,6 +48,17 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'search';
+	src:url('icons/search.eot');
+	src:url('icons/search.eot?#iefix') format('embedded-opentype'),
+		url('icons/search.woff') format('woff'),
+		url('icons/search.ttf') format('truetype'),
+		url('icons/search.svg#search') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 .icon-stack:before {
 	content: "\e600";
 }
@@ -80,6 +91,9 @@
 }
 .icon-filter:before {
 	content: "\e611";
+}
+.icon-search:before {
+	content: "\e612";
 }
 .course_news-icon:before {
     font-family: "course_news";
@@ -128,6 +142,15 @@
 }
 .filter-arrow-icon:before {
     font-family: "filter-arrow";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+ 	font-size: 100%;    
+}
+.search-icon:before {
+    font-family: "search";
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
