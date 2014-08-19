@@ -1,0 +1,104 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @cce_class.title %>
+</p>
+
+<p>
+  <strong>Sub title:</strong>
+  <%= @cce_class.sub_title %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @cce_class.kind %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @cce_class.status %>
+</p>
+
+<p>
+  <strong>Introduction:</strong>
+  <%= simple_format @cce_class.introduction, {}, wrapper_tag: "div"%>
+</p>
+
+<p>
+  <strong>Syllabus:</strong>
+  <%= simple_format @cce_class.syllabus, {}, wrapper_tag: "div"%>
+</p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @cce_class.schedule %>
+</p>
+
+<p>
+  <strong>Enrollment user:</strong>
+  <%= @cce_class.enrollment_user %>
+</p>
+
+<p>
+  <strong>Future:</strong>
+  <%= @cce_class.future %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @cce_class.location %>
+</p>
+
+<p>
+  <strong>Tuition:</strong>
+  <%= @cce_class.tuition %>
+</p>
+
+<p>
+  <strong>Lecturers:</strong>
+  <%= @cce_class.lecturers %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @cce_class.start_at %>
+</p>
+
+<p>
+  <strong>End at:</strong>
+  <%= @cce_class.end_at %>
+</p>
+
+<p>
+  <strong>Class time:</strong>
+  <%= @cce_class.class_time %>
+</p>
+
+<p>
+  <strong>User size limits:</strong>
+  <%= @cce_class.user_size_limits %>
+</p>
+
+<p>
+  <strong>Member:</strong>
+  <%= @cce_class.member_id %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @cce_class.note %>
+</p>
+
+<p>
+  <strong>Verified:</strong>
+  <%= @cce_class.verified %>
+</p>
+
+<p>
+  <strong>Available:</strong>
+  <%= @cce_class.available %>
+</p>
+
+<%= link_to 'Edit', edit_cce_class_path(@cce_class) %> |
+<%= link_to 'Back', cce_classes_path %>

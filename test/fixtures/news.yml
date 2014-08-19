@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cce_class_id: 
+  title: MyString
+  content: MyText
+  view: 1
+  cover: 
+
+two:
+  cce_class_id: 
+  title: MyString
+  content: MyText
+  view: 1
+  cover: 

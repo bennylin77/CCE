@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  sub_title: MyString
+  kind: 1
+  status: 1
+  dimension: 1
+  introduction: MyText
+  syllabus: MyText
+  schedule: MyText
+  enrollment_user: MyText
+  future: MyText
+  location: MyString
+  tuition: 1
+  lecturers: MyText
+  start_at: 2014-08-08
+  end_at: 2014-08-08
+  class_time: MyText
+  user_size_limits: 1
+  member_id: 1
+  note: MyText
+  verified: false
+  available: false
+
+two:
+  title: MyString
+  sub_title: MyString
+  kind: 1
+  status: 1
+  dimension: 1
+  introduction: MyText
+  syllabus: MyText
+  schedule: MyText
+  enrollment_user: MyText
+  future: MyText
+  location: MyString
+  tuition: 1
+  lecturers: MyText
+  start_at: 2014-08-08
+  end_at: 2014-08-08
+  class_time: MyText
+  user_size_limits: 1
+  member_id: 1
+  note: MyText
+  verified: false
+  available: false

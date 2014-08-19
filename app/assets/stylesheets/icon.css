@@ -1,0 +1,137 @@
+@font-face {
+	font-family: 'left_bot';
+	src:url('icons/left_bot.eot');
+	src:url('icons/left_bot.eot?#iefix') format('embedded-opentype'),
+		url('icons/left_bot.woff') format('woff'),
+		url('icons/left_bot.ttf') format('truetype'),
+		url('icons/left_bot.svg#left_bot') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'course_news';
+	src:url('icons/course_news.eot');
+	src:url('icons/course_news.eot?#iefix') format('embedded-opentype'),
+		url('icons/course_news.woff') format('woff'),
+		url('icons/course_news.ttf') format('truetype'),
+		url('icons/course_news.svg#course_news') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'remain';
+	src:url('icons/remain.eot');
+	src:url('icons/remain.eot?#iefix') format('embedded-opentype'),
+		url('icons/remain.woff') format('woff'),
+		url('icons/remain.ttf') format('truetype'),
+		url('icons/remain.svg#remain') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'filter';
+	src:url('icons/filter.eot');
+	src:url('icons/filter.eot?#iefix') format('embedded-opentype'),
+		url('icons/filter.woff') format('woff'),
+		url('icons/filter.ttf') format('truetype'),
+		url('icons/filter.svg#filter') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'filter-arrow';
+	src:url('icons/filter-arrow.eot');
+	src:url('icons/filter-arrow.eot?#iefix') format('embedded-opentype'),
+		url('icons/filter-arrow.woff') format('woff'),
+		url('icons/filter-arrow.ttf') format('truetype'),
+		url('icons/filter-arrow.svg#filter-arrow') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.icon-stack:before {
+	content: "\e600";
+}
+.icon-sound:before {
+	content: "\e601";
+}
+.icon-justice:before {
+	content: "\e603";
+}
+.icon-location:before {
+	content: "\e604";
+}
+.icon-users:before {
+	content: "\e605";
+}
+.icon-institution:before {
+	content: "\e606";
+}
+.icon-clipboard:before {
+	content: "\e607";
+}
+.icon-clipboard2:before {
+	content: "\e608";
+}
+/*.icon-filter:before {
+	content: "\e609";
+}*/
+.icon-arrow-down:before {
+	content: "\e610";
+}
+.icon-filter:before {
+	content: "\e611";
+}
+.course_news-icon:before {
+    font-family: "course_news";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 1.6em
+}
+.course_news-big-icon:before {
+    font-family: "course_news";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 1.4em
+}
+.left_bot-icon:before {
+    font-family: "left_bot";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+ 	font-size: 100%;    
+}
+.remain-icon:before {
+    font-family: "remain";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+ 	font-size: 100%;    
+}
+.filter-icon:before {
+    font-family: "filter";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+ 	font-size: 100%;    
+}
+.filter-arrow-icon:before {
+    font-family: "filter-arrow";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+ 	font-size: 100%;    
+}

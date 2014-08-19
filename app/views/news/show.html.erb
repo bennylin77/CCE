@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cce class:</strong>
+  <%= @news.cce_class %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @news.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @news.content %>
+</p>
+
+<p>
+  <strong>View:</strong>
+  <%= @news.view %>
+</p>
+
+<p>
+  <strong>Cover:</strong>
+  <%= @news.cover %>
+</p>
+
+<%= link_to 'Edit', edit_news_path(@news) %> |
+<%= link_to 'Back', news_index_path %>

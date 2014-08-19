@@ -1,0 +1,140 @@
+<div id="masonry-container" class="transitions-enabled clearfix">	
+<%= render(:partial => "cce_class_block", :collection => @cce_classes)|| "none" %>
+</div>	
+
+<%= javascript_tag do %>
+	$(function() 
+	{
+		//initial masonry
+		var $container = $('#masonry-container');
+		$container.imagesLoaded(function(){
+			$container.masonry({
+			      itemSelector: '.box',
+			      columnWidth: 28,
+			      gutter: 15,
+			      isFitWidth: true
+			});
+			$container.children().each( function( i, val ) {
+				//$('#rollover_'+$(val).attr('id')).css("height",$('#inner_'+$(val).attr('id')).height());
+			});			
+		});		
+		//initial fancybox
+		$(".openAjax").fancybox({
+			type: 'ajax',								
+	        afterShow: function() {
+	           //FB.XFBML.parse();
+	           window.history.pushState("", "",$(this).attr( "href" ));
+	        },
+	        afterClose: function(){
+	           window.history.back();
+	        }
+		});		
+	});	
+	// define pageless callback function
+	endPage = function(){ 
+		//$('#at_bottom').css('display','block');			
+	};	
+	// define pageless callback function			
+	handleMasonry = function(data){ 
+		var $container = $('#masonry-container');
+		data=$.parseHTML( data );
+		$(data).imagesLoaded(function(){
+			$container.append(data);
+			$container.masonry('appended', data);
+			$container.children().each( function( i, val ) {
+				//$('#rollover_'+$(val).attr('id')).css("height",$('#inner_'+$(val).attr('id')).height());
+			});			
+		});	    	  	
+	};
+	$('#masonry-container').pageless({
+		totalPages: <%= @cce_classes.total_pages %>,
+		url: '<%= cce_classes_path %>',
+		loaderImage: '<%=  image_path("loading.gif") %>', 
+		end: endPage,
+		scrape: handleMasonry		
+     });
+     
+     
+     
+     
+<% end %>
+<script>
+	$('#kind').change(function() {
+			var request = $.ajax({
+				url: '<%= cce_classes_path %>',
+				type: "GET",
+				data: { kind: $(this).val() }
+				});
+				request.done(function( msg ) {								
+					var $container = $('#masonry-container');
+					data=$.parseHTML( msg );
+					$(data).imagesLoaded(function(){
+						var elems = $container.masonry('getItemElements');
+						$container.masonry('remove', elems);
+						$container.masonry();
+						$container.append(data);
+						$container.masonry('appended', data);
+											
+						$container.pageless({
+							currentPage: 1,
+							params: { kind: $('#kind').val(), status: $('#status').val()},
+							url: '/cce_classes',
+							end: endPage,
+							scrape: handleMasonry	
+						});		
+							    
+						$container.children().each( function( i, val ) {
+							//$('#rollover_'+$(val).attr('id')).css("height",$('#inner_'+$(val).attr('id')).height());
+						});			
+					});					
+				});
+				request.fail(function( jqXHR, textStatus ) {
+				alert( "Request failed: " + textStatus );
+			});		
+	});
+	$('#status').change(function() {
+			var request = $.ajax({
+				url: '<%= cce_classes_path %>',
+				type: "GET",
+				data: { kind: $('#kind').val(), status: $(this).val() }
+				});
+				request.done(function( msg ) {								
+					var $container = $('#masonry-container');
+					data=$.parseHTML( msg );
+					$(data).imagesLoaded(function(){
+						var elems = $container.masonry('getItemElements');
+						$container.masonry('remove', elems);
+						$container.masonry();
+						$container.append(data);
+						$container.masonry('appended', data);
+											
+						$container.pageless({
+							currentPage: 1,
+							params: { kind: $('#kind').val(), status: $('#status').val()},
+							url: '/cce_classes',
+							end: endPage,
+							scrape: handleMasonry	
+						});		
+							    
+						$container.children().each( function( i, val ) {
+							//$('#rollover_'+$(val).attr('id')).css("height",$('#inner_'+$(val).attr('id')).height());
+						});			
+					});					
+				});
+				request.fail(function( jqXHR, textStatus ) {
+				alert( "Request failed: " + textStatus );
+			});		
+	});	
+/*
+$('#status').hover(function(){
+    var count = $(this).children().length;
+	$(this).attr('size', count);
+},function(){
+    $(this).removeAttr('size');
+});*/	
+</script>
+
+
+
+
+

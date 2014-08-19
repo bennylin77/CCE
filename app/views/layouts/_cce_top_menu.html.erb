@@ -1,0 +1,94 @@
+<script>
+	$(function() {
+		$("#search_term").autocomplete({
+			source : function(request, response) {
+				$.ajax({
+					<%if params[:controller]=='news'%>
+					url : "/news/autoComplete",					
+					<%elsif params[:controller]=='cce_classes'%>
+					url : "/cce_classes/autoComplete",					
+					<%end%>
+					data : {
+						term : request.term
+					},
+					dataType : "json",
+					success : function(data) {
+						response($.map(data, function(item) {
+							return {
+								label : item.label,
+								value : item.value
+							}
+						}));
+					}
+				});
+			},
+			select : function(event, ui) {
+				$("#search_term").val(ui.item.value)
+			},
+			minLength : 2
+		});
+	}); 
+</script>
+
+<div class="cce_top_menu_container">
+	<div class="logo_container">
+		<div class="logo_container_title">
+			<div class="logo_container_title_inner">
+			<div style="
+						padding-left: 0.5em;
+						font-size: 3em;
+			            letter-spacing: 0.8em;
+							">CCE</div>
+			<div style="padding-left: 1.1em;
+						font-size: 0.8em;
+						border-top: 3px solid #FF3385;
+						border-bottom: 3px solid #FF3385">Center for Continuing Education</div>
+			<div style="letter-spacing: 0.9em; padding-left: 2.5em; font-size: 0.9em;">國立交通大學</div>	
+			<div style="line-height: 1.5em; letter-spacing: 0.9em; padding-left: 2.5em; font-size: 0.9em;">推廣教育中心</div>	
+			</div>	
+		</div>	
+		<div class="logo_container_pic">
+			<%=image_tag "NCTU_parts.svg"%>
+		</div>			
+	</div>
+	<div class="title_container">
+		<div class="title_container_left">
+			<%if params[:controller]=='news'%>
+			<div style="float: left" class="course_news-big-icon icon-sound"></div><div class="title_container_left_content">消息公告NEWS</div>
+			<%elsif params[:controller]=='cce_classes'%>
+			<div style="float: left" class="course_news-big-icon icon-stack"></div><div class="title_container_left_content">推廣教育課程COURSE</div>			
+			<%end%>
+		</div>
+		<div class="title_container_right">
+			<%= form_tag '/cce_classes/search', method: 'get', class: 'search_box' do %>
+			<div style="display: inline-block">
+			<%= text_field :search, :term, value: @term , size: 40 %>
+			</div>
+			<div style="display: inline-block">
+			<%= button_tag "搜尋客戶", class: 'CRUD_import_export_search-icon icon-search' %>
+			</div>
+			<% end %>
+		</div>					
+	</div>	
+	<%if params[:controller]=='cce_classes'%>
+	<div class="filter_container">
+		<div class="filter_container_left">
+			<div class="filter_container_left_content">Filter</div>
+		</div>	
+		<div class="filter_container_right">
+			<div class="select_container">	
+				<div class="select_filter">
+				<%= select_tag  "kind", options_for_select(kindOptions), prompt: "全部種類", class: 'kind_select_filter'%>		
+				<span class="filter-arrow-icon icon-filter"></span>
+				</div>
+			</div>	
+			<div class="select_container">	
+				<div class="select_filter">
+				<%= select_tag  "status", options_for_select(statusOptions), prompt: "全部狀態", class: 'status_select_filter'%>
+				<span class="filter-arrow-icon icon-filter"></span>
+				</div>
+			</div>	
+		</div>	
+	</div>	
+	<%end%>		
+</div>

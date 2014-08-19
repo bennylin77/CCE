@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CCE 交大推廣教育中心</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%=render "layouts/cce_top_menu" %>
+<%=render "layouts/cce_left_menu" %>
+<div class="cce_main_container">
+	<div class="main clearfix">
+	<%= yield %>
+	</div>
+</div>
+
+</body>
+</html>

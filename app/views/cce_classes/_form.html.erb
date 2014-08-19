@@ -1,0 +1,85 @@
+<%= form_for(@cce_class) do |f| %>
+  <% if @cce_class.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cce_class.errors.count, "error") %> prohibited this cce_class from being saved:</h2>
+
+      <ul>
+      <% @cce_class.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+   	課程名稱<br>
+    <%= f.text_field :title, size: 40 %>
+  </div>
+  <div class="field">
+          課程副標題<br>
+    <%= f.text_field :sub_title, size: 40  %>
+  </div>
+  <div class="field">
+          課程類別<br>
+    <%= f.select :kind, kindOptions ,{prompt: '選擇課程類別'} %>
+  </div>
+  <div class="field">
+        報名狀態<br>
+    <%= f.select :status, statusOptions ,{prompt: '選擇報名狀態'}  %>
+  </div>
+  <div class="field">
+          課程介紹<br> 
+    <%= f.text_area :introduction, size: '40x10' %>
+  </div>
+  <div class="field">
+         課程大綱<br>
+    <%= f.text_area :syllabus, size: '40x10' %>
+  </div>
+  <div class="field">
+         課程時程表<br>
+    <%= f.text_area :schedule, size: '40x10' %>
+  </div>
+  <div class="field">
+         招生對象<br>
+    <%= f.text_area :enrollment_user, size: '40x3'  %>
+  </div>
+  <div class="field">
+        結訓證書及未來發展<br>
+   <%= f.text_area :future, size: '40x3' %>
+  </div>
+  <div class="field">
+         上課地點<br>
+    <%= f.text_field :location, size: 40 %>
+  </div>
+  <div class="field">
+          費用<br>
+    <%= f.text_field :tuition, size: 40 %>
+  </div>
+  <div class="field">
+          師資<br>
+    <%= f.text_area :lecturers, size: '40x3'%>
+  </div>
+  <div class="field">
+          課程開始日<br>
+    <%= f.date_select :start_at %>
+  </div>
+  <div class="field">
+          課程結束日<br>
+    <%= f.date_select :end_at %>
+  </div>
+  <div class="field">
+          上課時間<br>
+    <%= f.text_area :class_time %>
+  </div>
+  <div class="field">
+          招生人數<br>
+    <%= f.number_field :user_size_limits, size: 40 %>
+  </div>
+  <div class="field">
+          其它備註<br>
+    <%= f.text_area :note, size: '40x3' %>
+  </div>
+  <div class="actions">
+    <%= f.submit '確認送出' %>
+  </div>
+<% end %>

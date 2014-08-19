@@ -1,0 +1,64 @@
+<div class="box ccol"  id="cce_class_<%=cce_class_block.id%>" >
+	<%=link_to cce_class_block, class: 'fancybox openAjax' do%>
+	<div class="content_cce_class_block" id="content_cce_class_<%=cce_class_block.id%>">				
+			<div style="width: 80%;
+						color: #f9f9f9;	
+						min-height: 4.5em;
+						font-size: 1.1em;
+						letter-spacing: 0.1em;
+						text-align:center;
+						margin: 2em auto;">
+						<%= cce_class_block.id %> <%= cce_class_block.title %>
+			</div>
+			<div style="background: #f9f9f9; ">
+				<div style="width: 80%;
+							color: #878787;	
+							line-height: 1.9em;
+							border-bottom: 2px solid #DADADA;
+							font-size: 0.9em;
+							font-weight: bold;
+							letter-spacing: 0.1em;
+							text-align:center;
+							margin: 0em auto;">資訊工程、生命科學</div>				
+				<div style="width: 80%;
+							color: #878787;	
+							line-height: 1.9em;
+							border-bottom: 2px solid #DADADA;
+							font-size: 0.9em;
+							font-weight: bold;
+							letter-spacing: 0.1em;
+							text-align:center;
+							margin: 0em auto;"><%= Hash[statusOptions].rassoc(cce_class_block.status ).first %></div>
+				<div style="width: 80%;
+							color: #878787;	
+							line-height: 1.9em;
+							/*border-bottom: 2px solid #DADADA;*/
+							font-size: 0.9em;
+							font-weight: bold;
+							letter-spacing: 0.1em;
+							text-align:center;
+							margin: 0em auto;"><%= Hash[kindOptions].rassoc(cce_class_block.kind).first %></div>
+				<div style="width: 100%; color: #878787; margin: 0em auto; background: #747474;">			
+					<div style="float:left;			
+								width: 50%;
+								text-align:center;
+								background: #DBDBDB;
+								font-size: 110%; 
+								">
+								<span class="remain-icon icon-clipboard"></span>
+								<span style="font-size: 70%">已報名 142</span>
+					</div>
+					<div style="float:left;
+								width: 50%;
+								text-align:center;
+								background: #DBDBDB;
+								font-size: 110%;
+								" >
+								<span class="remain-icon icon-clipboard2"></span>
+								<span style="font-size: 70%">剩餘 5</span>
+					</div>
+				</div>
+			</div>
+	</div> 	
+	<%end%>				
+</div>
