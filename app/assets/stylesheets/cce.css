@@ -18,23 +18,111 @@ button{
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 13em;
+	width: 14.5em;
 	height: 100%;
 	overflow: visible;
 	z-index: 1;
 	background: #FF3385;
 }
-.cce_left_menu_container .login_container
+.cce_left_menu_container .signIn_container
 {
-	margin: 1em auto;
-	width: 10em;
-	height: 7em;
+	margin: 2em auto;
+	width: 12em;
+	height: 8em;
 	border: 5px solid #f9f9f9
 }
+.login{
+  height: 150px;
+  width: 10em;
+  padding: 8px;
+}
+
+.login input[type=text]{
+  width: 10.5em;
+  height: 20px;
+  letter-spacing: 0.1em;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;
+  font-size: 15.5px;
+  font-weight: bold;
+  padding: 4px;
+}
+
+.login input[type=password]{
+  width: 10.5em;
+  height: 20px;
+  letter-spacing: 0.1em;  
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  color:  #fff;
+  font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;
+  font-size: 15.5px;
+  font-weight: bold;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+.login input[type=submit]{
+  line-height: 12px;
+  width: 7em;
+  height: 25px;
+  background: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  border-radius: 2px;
+  color: #FF3385;
+  font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px;
+  margin-top: 13px;
+}
+.login .forget_pw{
+	padding-left: 1em;
+	margin-left: 1.8em;
+	font-size: 10px;
+	border-left: 1px solid rgba(255,255,255,0.6);
+}
+
+.login input[type=submit]:hover{
+  opacity: 0.8;
+}
+
+.login input[type=submit]:active{
+  opacity: 0.6;
+}
+
+.login input[type=text]:focus{
+  outline: none;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=password]:focus{
+  outline: none;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=submit]:focus{
+  outline: none;
+}
+
+::-webkit-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+
 .cce_left_menu_container .mid_container
 {
 	margin: 1em auto;
-    width: 10em;
+    width: 12em;
 	height: 60%;
     border-top: 3px solid #f9f9f9
 }
@@ -73,7 +161,7 @@ button{
 .cce_left_menu_container .bot_container
 {
 	margin: 0em auto;
-	width: 10em;
+	width: 12em;
 	height: 7em;
 	border: 5px solid #f9f9f9	
 }
@@ -102,7 +190,7 @@ button{
 }
 .bot_line{
 	margin: 0em auto;
-	width: 10.5em;
+	width: 12.5em;
 }
 .bot_line_left{
 	border-bottom: 5px solid #f9f9f9;
