@@ -5,13 +5,13 @@ class CceClassesController < ApplicationController
   def index    
     
     if !params[:status].blank? and  params[:kind].blank?
-      @cce_classes = CceClass.where("status = ?", params[:status]).paginate(per_page: 20, page: params[:page]).order('id DESC')
+      @cce_classes = CceClass.where("status = ?", params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')
     elsif params[:status].blank? and !params[:kind].blank?
-      @cce_classes = CceClass.where("kind = ?", params[:kind]).paginate(per_page: 20, page: params[:page]).order('id DESC')    
+      @cce_classes = CceClass.where("kind = ?", params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')    
     elsif !params[:status].blank? and !params[:kind].blank?
-      @cce_classes = CceClass.where("status = ? and kind = ?", params[:status], params[:kind]).paginate(per_page: 20, page: params[:page]).order('id DESC')        
+      @cce_classes = CceClass.where("status = ? and kind = ?", params[:status], params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')        
     else
-       @cce_classes = CceClass.all.paginate(per_page: 20, page: params[:page]).order('id DESC')       
+       @cce_classes = CceClass.all.paginate(per_page: 30, page: params[:page]).order('id DESC')       
     end
     
     if request.xhr?
