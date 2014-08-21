@@ -111,14 +111,14 @@ button{
 }
 
 ::-webkit-input-placeholder{
-   color: rgba(255,255,255,0.6);
+   opacity: 1;
 }
-
-::-moz-input-placeholder{
-   color: rgba(255,255,255,0.6);
+::-moz-placeholder {  /* Firefox 19+ */
+   opacity: 0.5;
 }
-
-
+:-ms-input-placeholder {  
+   opacity: 0.5;  
+}
 .cce_left_menu_container .mid_container
 {
 	margin: 1em auto;
@@ -259,11 +259,12 @@ button{
 }
 .title_container_right{
 	float: right;
-	width: 17em;
+	width: 18em;
 }
 
 .search_box input[type="text"] {
-	float:left;
+	width: 15em;
+	float:right;
 	font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;	
 	background: #f9f9f9;
 	border: 3px solid #FF3385;	
@@ -273,11 +274,17 @@ button{
     line-height: 1.5em;
     margin-top:0.25em;
     padding: 2px;
+    -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+    transition: width 1s;
+}
+.search_box input[type=text]:focus{
+  outline: none;
+  width: 17em;
 }
 .search_box button {
 	position: absolute;
 	right: 0.5em;
-    margin-top:0.25em;
+    margin-top:0.26em;
 	background: none;
     cursor: pointer;
     color: #FF3385;
