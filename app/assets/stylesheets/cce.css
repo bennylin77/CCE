@@ -142,7 +142,7 @@ button{
 } 
 .mid_container li:hover{
 	
-	background: #E62E78;
+	opacity: 0.8;
 } 
 .mid_container li .mid_container_img{
 	float: left;
@@ -211,7 +211,7 @@ button{
 	position: fixed;
 	top: 0;
 	left: 16em;
-	width: 85%;
+	width: 81%;
 	height: 17em;
 	overflow: visible;
 	background: #f9f9f9;

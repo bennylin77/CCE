@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<p>您好!</p>
+<p>這裡是國立交通大學推廣教育中心，會員邀請通知，請點選以下連結進行，會員認證和基本資料填寫。</p>
+   <%=link_to domain+"/users/verifyCode?verify_code="+@user.verify_code+"&id="+@user.id.to_s, domain+"/users/verifyCode?verify_code="+@user.verify_code+"&id="+@user.id.to_s%>
+</body>
+</html>

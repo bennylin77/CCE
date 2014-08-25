@@ -1,12 +1,16 @@
 <div class="cce_left_menu_container">
 	<div class="signIn_container">
+		<%if session[:user_id].blank?%>
 		<div class="login">
-			<%=form_tag do%>			
-				<%=text_field_tag :id_no, params[:id_no], placeholder: '身分證字號'%>
+			<%=form_tag '/users/signIn' do%>			
+				<%=text_field_tag :email, params[:email], placeholder: 'Email'%>
 				<%=password_field_tag :password, params[:password], placeholder: '密碼'%>		
 				<%=submit_tag "登入"%><a href="#" style="color: #f9f9f9;"><span class="forget_pw" >忘記密碼?</span></a> 
 			<%end%>		
-		</div>		
+		</div>
+		<%else%>
+			<%=link_to '登出', '/users/logOut'%>	
+		<%end%>	
 	</div>	
 	<div class="mid_container">
 		<ul>

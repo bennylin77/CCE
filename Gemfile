@@ -15,3 +15,5 @@ gem 'will_paginate'
 gem 'rails-i18n'
 gem 'paperclip'
 gem 'jquery-ui-rails'
+gem 'country_select'
+gem "gritter"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140818080733) do
+ActiveRecord::Schema.define(version: 20140822060948) do
 
   create_table "cce_class_dimensions", force: true do |t|
     t.integer  "cce_class_id"
@@ -68,5 +68,28 @@ ActiveRecord::Schema.define(version: 20140818080733) do
   end
 
   add_index "news", ["cce_class_id"], name: "index_news_on_cce_class_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "extend"
+    t.integer  "age"
+    t.boolean  "gender"
+    t.string   "education"
+    t.string   "id_no"
+    t.string   "passport_no"
+    t.string   "nationality"
+    t.date     "birthday"
+    t.string   "address"
+    t.string   "phone_no"
+    t.string   "mobile_no"
+    t.string   "hashed_pw"
+    t.string   "salt"
+    t.integer  "identity"
+    t.string   "verify_code"
+    t.boolean  "verified",    default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
