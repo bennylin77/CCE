@@ -9,7 +9,10 @@
 			<%end%>		
 		</div>
 		<%else%>
-			<%=link_to '登出', '/users/logOut'%>	
+		<div class="logout">
+			<div class="hello">Hello, <%=User.find(session[:user_id]).name%></div>
+			<%=link_to '登出', '/users/logOut', class: "logout_a", style: 'padding: 0.4em 2.4em;'%><a href="#" style="color: #f9f9f9;"><span class="settings" >會員設定</span></a> 	
+		</div>
 		<%end%>	
 	</div>	
 	<div class="mid_container">

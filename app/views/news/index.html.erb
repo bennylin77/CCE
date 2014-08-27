@@ -1,1 +1,61 @@
+<div id="masonry-container" class="transitions-enabled clearfix">	
 <%= render(:partial => "news_block", :collection => @news)|| "none" %>
+</div>	
+
+<%= javascript_tag do %>
+	$(function() 
+	{
+		//initial masonry
+		var $container = $('#masonry-container');
+		$container.imagesLoaded(function(){
+			$container.masonry({
+			      itemSelector: '.news_box',
+			      columnWidth: 40,
+			      gutter: 15,
+			      isFitWidth: true
+			});
+			$container.children().each( function( i, val ) {
+				//$('#rollover_'+$(val).attr('id')).css("height",$('#inner_'+$(val).attr('id')).height());
+			});			
+		});		
+		//initial fancybox
+		$(".openAjax").fancybox({
+			type: 'ajax',								
+	        afterShow: function() {
+	           //FB.XFBML.parse();
+	           window.history.pushState("", "",$(this).attr( "href" ));
+	        },
+	        afterClose: function(){
+	           window.history.back();
+	        }
+		});		
+	});	
+	// define pageless callback function
+	endPage = function(){ 
+		//$('#at_bottom').css('display','block');			
+	};	
+	// define pageless callback function			
+	handleMasonry = function(data){ 
+		var $container = $('#masonry-container');
+		data=$.parseHTML( data );
+		$(data).imagesLoaded(function(){
+			$container.append(data);
+			$container.masonry('appended', data);
+			$container.children().each( function( i, val ) {
+				//$('#rollover_'+$(val).attr('id')).css("height",$('#inner_'+$(val).attr('id')).height());
+			});			
+		});	    	  	
+	};
+	$('#masonry-container').pageless({
+		totalPages: <%= @news.total_pages %>,
+		<%unless params[:action]=='search'%>
+		url: '<%= news_index_path %>',
+		<%else%>
+		url: '/news/search',
+		params: { search:{ term: '<%=@term%>'}}, 		
+		<%end%>
+		loaderImage: '<%=  image_path("loading.gif") %>', 
+		end: endPage,
+		scrape: handleMasonry		
+     });
+<% end %>

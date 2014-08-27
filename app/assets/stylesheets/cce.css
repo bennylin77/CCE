@@ -31,42 +31,40 @@ button{
 	height: 8em;
 	border: 5px solid #f9f9f9
 }
-.login{
+.login, .logout{
   height: 150px;
-  width: 10em;
-  padding: 8px;
+  width: 90%;
+  margin: 1em auto;
 }
 
 .login input[type=text]{
-  width: 10.5em;
-  height: 20px;
+  width: 100%;
+  height: 1.5em;
   letter-spacing: 0.1em;
   background: transparent;
   border: 1px solid rgba(255,255,255,0.6);
   border-radius: 2px;
   color: #fff;
   font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;
-  font-size: 15.5px;
+  font-size: 1em;
   font-weight: bold;
-  padding: 4px;
 }
 
 .login input[type=password]{
-  width: 10.5em;
-  height: 20px;
+  width: 100%;
+  height: 1.5em;
   letter-spacing: 0.1em;  
   background: transparent;
   border: 1px solid rgba(255,255,255,0.6);
   border-radius: 2px;
   color:  #fff;
   font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;
-  font-size: 15.5px;
+  font-size: 1em;
   font-weight: bold;
-  padding: 4px;
   margin-top: 10px;
 }
 
-.login input[type=submit]{
+.login input[type=submit], .logout_a{
   line-height: 12px;
   width: 7em;
   height: 25px;
@@ -87,12 +85,18 @@ button{
 	font-size: 10px;
 	border-left: 1px solid rgba(255,255,255,0.6);
 }
+.logout .settings{
+	padding-left: 1em;
+	margin-left: 1.8em;
+	font-size: 10px;
+	border-left: 1px solid rgba(255,255,255,0.6);
+}
 
-.login input[type=submit]:hover{
+.login input[type=submit]:hover, .logout_a:hover{
   opacity: 0.8;
 }
 
-.login input[type=submit]:active{
+.login input[type=submit]:active, .logout_a:active{
   opacity: 0.6;
 }
 
@@ -109,7 +113,6 @@ button{
 .login input[type=submit]:focus{
   outline: none;
 }
-
 ::-webkit-input-placeholder{
    opacity: 1;
 }
@@ -118,6 +121,15 @@ button{
 }
 :-ms-input-placeholder {  
    opacity: 0.5;  
+}
+.hello{
+	width:100%;
+	height:4em;
+	line-height:3.8em;
+	letter-spacing: 0.2em;	
+	text-align:center;
+	margin: .5em auto;
+	border: 1px solid rgba(255,255,255,0.6);	
 }
 .cce_left_menu_container .mid_container
 {
@@ -381,26 +393,11 @@ button{
 	border-radius: 3px;
 	border: 1px solid #DADADA
 }
+.news_box{
+	background: #FF3385;
+	width: 16em;
+	
+	
+}
 /*=============================================       news     =========================================*/
-.news_block{
-	height: 10em;
-	color: 	#707070;
-}
-.news_block_title{
-	text-align: center;
-	font-size: 3em;
-	float: left;
-	display: inline-block;
-	width: 33%;
-	height: 10em;
-}
-.news_block_image{
-	float: left;
-	display: inline-block;
-	text-align: center;
-	width: 66%;
-}
-.news_block_image img{
-	height: 10em;
 
-}

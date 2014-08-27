@@ -1,6 +1,37 @@
-<div class="news_block" 
-	 style="background: none;">
- 
-        <div class="news_block_title"><%= news_block.title %></div>
-        <div class="news_block_image"><%=image_tag news_block.cover%></div>	
+<div class="news_box"  id="news_<%=news_block.id%>" >
+	<%=link_to news_block, class: 'fancybox openAjax' do%>
+	<div class="content_news_block" id="content_news_<%=news_block.id%>">				
+			<div style="width: 85%;
+						color: #f9f9f9;	
+						font-size: 1.4em;
+						font-style: italic;
+						letter-spacing: 0.1em;
+						border-bottom: 4px solid #f9f9f9;
+						margin: 1em auto 0.5em;">
+						<%= news_block.title %>
+			</div>				
+			<div style="width: 85%; margin: 0em auto;">			
+				<%=image_tag news_block.cover, style: "width: 100%"%>
+			</div>
+			<div style="width: 85%;
+						color: #f9f9f9;	
+						line-height: 1.4em;
+						border-top: 4px solid #f9f9f9;
+						font-size: 0.8em;
+						letter-spacing: 0.1em;
+						margin: 0.5em auto; 1em;">
+						<%=truncate( news_block.content, length: 40, omission: '... (詳細)')%>
+			</div>	
+			<div style="width: 85%;
+						color: #f9f9f9;	
+						line-height: 1.4em;
+						border-top: 2px solid #f9f9f9;
+						font-size: 0.8em;
+						letter-spacing: 0.1em;
+						margin: 0.5em auto; 1em;">
+						<span class="fb_view_clock-icon icon-facebook"></span><%=news_block.view%>
+			</div>				
+	</div> 	
+	<%end%>				
 </div>
+

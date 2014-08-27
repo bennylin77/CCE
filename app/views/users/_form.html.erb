@@ -36,7 +36,7 @@
   </div>
   <div class="field">
     身份<br>
-    <%= @user.identity%> 
+    <%= Hash[identityOptions].rassoc(@user.identity).first%> 
   </div>  
   <div class="field">
 	密碼*<br>
