@@ -29,6 +29,25 @@
 				</span>	
 				<%end%>
 			</li>
+			<%unless session[:user_id].blank?%>
+				<%unless User.find(session[:user_id]).identity == GLOBAL_VAR['identity_student']%>
+				<li>
+					<%=link_to controller: 'news', action: 'index' do%>
+					<span class="mid_container_img">
+						<span class="course_news-icon icon-sound"></span>
+					</span>
+					<span class="mid_container_word">
+						<div class="mid_container_CH">
+						消息公告管理
+						</div>
+						<div class="mid_container_EN">
+						NEWS MANAGEMENT
+						</div>					
+					</span>	
+					<%end%>
+				</li>
+				<%end%>
+			<%end%>
 			<li>
 				<%=link_to controller: 'cce_classes', action: 'index' do%>
 				<span class="mid_container_img">
@@ -39,11 +58,28 @@
 					推廣教育課程
 					</div>
 					<div class="mid_container_EN">
-					COURSE
+					COURSES
 					</div>
 				</span>
 				<%end%>
-			</li>					
+			</li>	
+			<%unless session[:user_id].blank?%>
+				<li>
+					<%=link_to controller: 'cce_classes', action: 'indexManagement' do%>
+					<span class="mid_container_img">
+						<span class="course_news-icon icon-stack" style="font-size: 0.9em"></span>					
+					</span>
+					<span class="mid_container_word">
+						<div class="mid_container_CH" style="font-size: 0.78em">
+						推廣教育課程管理
+						</div>
+						<div class="mid_container_EN" style="font-size: 0.7em">
+						COURSES MANAGEMENT
+						</div>					
+					</span>	
+					<%end%>
+				</li>
+			<%end%>							
 		</ul>		
 	</div>
 	<div class="bot_container">

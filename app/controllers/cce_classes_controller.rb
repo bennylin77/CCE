@@ -25,6 +25,10 @@ class CceClassesController < ApplicationController
       render layout: false   
     end   
   end
+  
+  def indexManagement
+    
+  end
 
   def new
     @cce_class = CceClass.new
@@ -35,6 +39,12 @@ class CceClassesController < ApplicationController
 
   def create
     @cce_class = CceClass.new(cce_class_params)
+    params[:cce_class][:dimension_ids].each do |d|
+      unless d.blank?
+        @cce_class.dimensions<<Dimension.find(d)
+      end
+    end
+
 
     respond_to do |format|
       if @cce_class.save
@@ -48,6 +58,12 @@ class CceClassesController < ApplicationController
   end
 
   def update
+    @cce_class.cce_class_dimensions.clear
+    params[:cce_class][:dimension_ids].each do |d|
+      unless d.blank?
+        @cce_class.dimensions<<Dimension.find(d)
+      end
+    end    
     respond_to do |format|
       if @cce_class.update(cce_class_params)
         format.html { redirect_to @cce_class, notice: 'Cce class was successfully updated.' }
