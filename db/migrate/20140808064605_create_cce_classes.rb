@@ -20,6 +20,7 @@ class CreateCceClasses < ActiveRecord::Migration
       t.integer :member_id
       t.text :note
       t.boolean :verified, default: false
+      t.integer :verified_user_id    
       t.boolean :available, default: true
 
       t.timestamps

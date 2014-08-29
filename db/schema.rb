@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140822060948) do
+ActiveRecord::Schema.define(version: 20140829080121) do
 
   create_table "cce_class_dimensions", force: true do |t|
     t.integer  "cce_class_id"
@@ -43,10 +43,20 @@ ActiveRecord::Schema.define(version: 20140822060948) do
     t.integer  "member_id"
     t.text     "note"
     t.boolean  "verified",         default: false
+    t.integer  "verified_user_id"
     t.boolean  "available",        default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "courses", force: true do |t|
+    t.integer  "cce_class_id"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "courses", ["cce_class_id"], name: "index_courses_on_cce_class_id", using: :btree
 
   create_table "dimensions", force: true do |t|
     t.string   "name"
@@ -63,6 +73,9 @@ ActiveRecord::Schema.define(version: 20140822060948) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.boolean  "verified",           default: false
+    t.integer  "verified_user_id"
+    t.boolean  "available",          default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

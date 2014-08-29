@@ -7,6 +7,10 @@ class NewsController < ApplicationController
     @news = News.all.paginate(per_page: 20, page: params[:page]).order('id DESC') 
   end
 
+
+  def indexManagement
+    @news = News.all.paginate(per_page: 30, page: params[:page]).order('id DESC')    
+  end
   # GET /news/1
   # GET /news/1.json
   def show

@@ -1,6 +1,6 @@
 #encoding: UTF-8
 class CceClassesController < ApplicationController
-  before_action :set_cce_class, only: [:show, :edit, :update, :destroy]
+  before_action :set_cce_class, only: [:show, :edit, :update, :destroy, :verified, :available]
 
   def index    
     
@@ -27,7 +27,7 @@ class CceClassesController < ApplicationController
   end
   
   def indexManagement
-    
+    @cce_classes = CceClass.all.paginate(per_page: 30, page: params[:page]).order('id DESC')    
   end
 
   def new
@@ -81,6 +81,19 @@ class CceClassesController < ApplicationController
       format.html { redirect_to cce_classes_url, notice: 'Cce class was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def verified
+    @cce_class.verified=!@cce_class.verified
+    @cce_class.verified_user_id=session[:user_id]    
+    @cce_class.save!
+    redirect_to controller: :cce_classes, action: :indexManagement
+  end
+  
+  def available
+    @cce_class.available=!@cce_class.available
+    @cce_class.save! 
+    redirect_to controller: :cce_classes, action: :indexManagement    
   end
   
   def addItem

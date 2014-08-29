@@ -1,6 +1,6 @@
 class CreateDimensions < ActiveRecord::Migration
   def change
-    create_table :dimensions do |t|
+    create_table :dimensions, :options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8' do |t|
       t.string :name
 
       t.timestamps

@@ -35,7 +35,7 @@
 			<%unless session[:user_id].blank?%>
 				<%unless User.find(session[:user_id]).identity == GLOBAL_VAR['identity_student']%>
 				<li>
-					<%=link_to controller: 'news', action: 'index' do%>
+					<%=link_to controller: 'news', action: 'indexManagement' do%>
 					<span class="mid_container_img">
 						<span class="course_news-icon icon-sound"></span>
 					</span>
@@ -82,7 +82,26 @@
 					</span>	
 					<%end%>
 				</li>
-			<%end%>							
+			<%end%>		
+			<%unless session[:user_id].blank?%>
+				<%unless User.find(session[:user_id]).identity!=GLOBAL_VAR['identity_CCE'] %>
+				<li>
+					<%=link_to controller: 'users', action: 'index' do%>
+					<span class="mid_container_img">
+						<span class="course_news-icon icon-stack"></span>					
+					</span>
+					<span class="mid_container_word">
+						<div class="mid_container_CH">
+						會員管理
+						</div>
+						<div class="mid_container_EN">
+						USERS MANAGEMENT
+						</div>					
+					</span>	
+					<%end%>
+				</li>
+				<%end%>
+			<%end%>									
 		</ul>		
 	</div>
 	<div class="bot_container">
