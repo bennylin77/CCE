@@ -61,17 +61,30 @@
 			<%if params[:controller]=='news'%>
 			<div style="float: left" class="course_news-big-icon icon-sound"></div><div class="title_container_left_content">消息公告NEWS</div>
 			<%elsif params[:controller]=='cce_classes'%>
-			<div style="float: left" class="course_news-big-icon icon-stack"></div><div class="title_container_left_content">推廣教育課程COURSE</div>			
+				<%if params[:action]=='index' or params[:action]=='search'%>
+				<div style="float: left" class="course_news-big-icon icon-stack"></div><div class="title_container_left_content">推廣教育課程COURSES</div>								
+				<%else%>
+				<div style="float: left" class="course_news-big-icon icon-stack"></div><div class="title_container_left_content">推廣教育課程管理COURSES MANAGEMENT</div>												
+				<%end%>
+			<%elsif params[:controller]=='users'%>
+			<div style="float: left" class="course_news-big-icon icon-stack"></div><div class="title_container_left_content">會員管理USERS MANAGEMENT</div>	
 			<%end%>
 		</div>
 		<div class="title_container_right">
-			<%= form_tag '/cce_classes/search', method: 'get', class: 'search_box' do %>
-			<%= text_field :search, :term, value: @term , size: 25, placeholder: '搜尋推教課程' %>
-			<%= button_tag " ", class: 'search-icon icon-search' %>
-			<% end %>
+			<%if params[:controller]=='cce_classes' and (params[:action]=='index' or params[:action]=='search')%>
+				<%= form_tag '/cce_classes/search', method: 'get', class: 'search_box' do %>
+				<%= text_field :search, :term, value: @term , size: 25, placeholder: '搜尋推教課程' %>
+				<%= button_tag " ", class: 'search-icon icon-search' %>
+				<% end %>
+			<%elsif params[:controller]=='news' and (params[:action]=='index' or params[:action]=='search')%>
+				<%= form_tag '/news/search', method: 'get', class: 'search_box' do %>
+				<%= text_field :search, :term, value: @term , size: 25, placeholder: '搜尋消息公告' %>
+				<%= button_tag " ", class: 'search-icon icon-search' %>
+				<% end %>			
+			<%end%>	
 		</div>					
 	</div>	
-	<%if params[:controller]=='cce_classes'%>
+	<%if params[:controller]=='cce_classes' and (params[:action]=='index' or params[:action]=='search')%>
 	<div class="filter_container">
 		<div class="filter_container_left">
 			<div class="filter_container_left_content">Filter</div>

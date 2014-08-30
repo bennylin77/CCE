@@ -25,6 +25,9 @@
         <td><%= link_to '編輯', edit_cce_class_path(cce_class) %></td>
         <td><%= link_to '刪除', cce_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+       <% cce_class.courses.each do |course| %>
+       <tr><td><%=course.title%></td></tr>
+       <%end%>
     <% end %>
   </tbody>
 </table>
