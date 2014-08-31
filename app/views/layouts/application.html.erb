@@ -10,9 +10,7 @@
 <%=render "layouts/cce_top_menu" %>
 <%=render "layouts/cce_left_menu" %>
 <div class="cce_main_container">
-	<div class="main clearfix">
 	<%= yield %>
-	</div>
 </div>
 <script>
 <%= add_gritter(flash[:notice], title: flash[:title]) %>

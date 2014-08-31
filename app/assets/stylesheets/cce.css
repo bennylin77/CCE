@@ -1,6 +1,7 @@
 body {
 	font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;
 	background: #f9f9f9;
+	overflow: scroll;
 }
 a{
 	text-decoration: none;
@@ -18,23 +19,22 @@ button{
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 14.5em;
+	width: 230px;
 	height: 100%;
-	overflow: visible;
 	z-index: 1;
 	background: #FF3385;
+	overflow: auto;
 }
 .cce_left_menu_container .signIn_container
 {
-	margin: 2em auto;
-	width: 12em;
-	height: 8em;
-	border: 5px solid #f9f9f9
+	margin: 4% auto;
+	width:  85%;
+	height: 115px;
+	border: 4px solid #f9f9f9
 }
 .login, .logout{
-  height: 150px;
-  width: 90%;
-  margin: 1em auto;
+  	width: 88%;
+  	margin: 1em auto;
 }
 
 .login input[type=text]{
@@ -43,11 +43,12 @@ button{
   letter-spacing: 0.1em;
   background: transparent;
   border: 1px solid rgba(255,255,255,0.6);
-  border-radius: 2px;
+  border-radius: 4px;
   color: #fff;
   font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;
-  font-size: 1em;
+  font-size: 12px;
   font-weight: bold;
+ 
 }
 
 .login input[type=password]{
@@ -56,18 +57,18 @@ button{
   letter-spacing: 0.1em;  
   background: transparent;
   border: 1px solid rgba(255,255,255,0.6);
-  border-radius: 2px;
+  border-radius: 4px;
   color:  #fff;
   font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;
-  font-size: 1em;
+  font-size: 12px;
   font-weight: bold;
   margin-top: 10px;
 }
 
 .login input[type=submit], .logout_a{
-  line-height: 12px;
+  line-height: 8px;
   width: 7em;
-  height: 25px;
+  height: 23px;
   background: #fff;
   border: 1px solid #fff;
   cursor: pointer;
@@ -76,12 +77,11 @@ button{
   font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;
   font-size: 12px;
   font-weight: bold;
-  padding: 6px;
   margin-top: 13px;
 }
 .login .forget_pw{
 	padding-left: 1em;
-	margin-left: 1.8em;
+	margin-left: 10px;
 	font-size: 10px;
 	border-left: 1px solid rgba(255,255,255,0.6);
 }
@@ -124,7 +124,7 @@ button{
 }
 .hello{
 	width:100%;
-	height:4em;
+	height:60px;
 	line-height:3.8em;
 	letter-spacing: 0.2em;	
 	text-align:center;
@@ -134,59 +134,57 @@ button{
 .cce_left_menu_container .mid_container
 {
 	margin: 1em auto;
-    width: 12em;
-	height: 60%;
+    width: 85%;
+    height: 60%;
     border-top: 3px solid #f9f9f9
 }
+
 .mid_container ul{
 	list-style-type: none;
 	padding: 0;
 } 
 .mid_container li{
-	width: 10em;
-	margin-bottom: 1.5em;
-	height: 2.7em;
-	font-weight: bold;
-	
+	width: 180px;
+	margin-bottom: 20px;
+	height: 30px;
 } 
 .mid_container li a{
 	color: #f9f9f9;
 } 
 .mid_container li:hover{
-	
 	opacity: 0.8;
 } 
 .mid_container li .mid_container_img{
 	float: left;
-	margin-top: 0.6em;
+	margin-top: 8px;
 }
 .mid_container li .mid_container_word{
 	float: left;
-	margin-left: 1em;
+	margin-left: 15px;
 }
 .mid_container li .mid_container_CH{
-	letter-spacing: 0.2em;
-	font-size: 1em;	
+	letter-spacing: 5px;
+	font-size: 13.5px;	
 }
 .mid_container li .mid_container_EN{
-	font-size: 80%;
+	font-size: 70%;
 }
 .cce_left_menu_container .bot_container
 {
 	margin: 0em auto;
-	width: 12em;
-	height: 7em;
-	border: 5px solid #f9f9f9	
+	width: 85%;
+	height: 110px;
+	border: 4px solid #f9f9f9	
 }
 .bot_container ul{
 	list-style-type: none;
 	padding:0;
-	margin-top: 0.6em;
-	margin-left: 1em;		
+	margin-top: 10px;
+	margin-left: 18px;		
 } 
 .bot_container li{
-	width: 10em;
-	height: 1.6em;
+	width: 180px;
+	height: 25px;
 	font-weight: bold;
 } 
 .bot_container li .bot_container_img{
@@ -195,25 +193,25 @@ button{
 }
 .bot_container li .bot_container_word{
 	float: left;
-	margin-left: 0.3em;
+	margin-left: 7px;
 }
 .bot_container li .bot_container_CH{
-	letter-spacing: 0.5em;
-	font-size: 75%;
+	letter-spacing: 5px;
+	font-size: 12px;
 }
 .bot_line{
 	margin: 0em auto;
-	width: 12.5em;
+	width: 90%;
 }
 .bot_line_left{
 	border-bottom: 5px solid #f9f9f9;
-	height: 0.5em;
+	height: 10px;
 	width: 48%;
 	display: inline-block;
 }
 .bot_line_right{
 	border-bottom: 5px dotted #f9f9f9;
-	height: 0.5em;
+	height: 10px;
 	width: 48%;	
 	display: inline-block;
 }
@@ -223,135 +221,150 @@ button{
 	color: #FF3385;	
 	position: fixed;
 	top: 0;
-	left: 16em;
-	width: 81%;
-	height: 17em;
+	left: 250px;
+	width: 78%;
+	height: 210px;
 	overflow: visible;
 	background: #f9f9f9;
 	z-index: 1;
 }
 .cce_top_menu_container .logo_container
 {
-	height: 9.3em;
-	border-bottom: 2px solid #FF3385;	
-	padding-bottom: 0.5em;
+	height: 120px;
+	border-bottom: 1px solid #FF3385;	
+	padding-bottom: 10px;
 }
 .logo_container_title{
 	float:left;
 	font-weight: bold;
-	margin-top: 1em;	
+	margin-top: 13px;	
+	width:  200px;
+	border: 3px solid #FF3385;	
 }
-.logo_container_title_inner{
-	width:  14em;
-	border: 4px solid #FF3385;	
+.logo_container_title_inner_cce{
+	width: 60%;
+	text-align: center;
+	font-size: 40px;
+	line-height: 43px;
+	margin-left: 45px;
+	letter-spacing: 18px;	
+}
+.logo_container_title_inner_en{
+	width: 100%;
+	text-align: center;						
+	font-size: 12px;
+	border-top: 3px solid #FF3385;
+	border-bottom: 3px solid #FF3385	
+}
+.logo_container_title_inner_ch{
+	margin-left: 14%; 
+	width: 80%; 
+	line-height: 18px; 
+	letter-spacing: 12px; 
+	font-size: 13px; 
+	text-align: center;	
 }
 .logo_container_pic{
 	float: right;
-	margin-top: 3em;
 }
 .logo_container_pic img{
-
+	margin-top: 40px;
+	height: 80px;
 }
 
 .cce_top_menu_container .title_container
 {
-	height: 2.7em;
-	border-bottom: 2px solid #FF3385		
+	height: 40px;
+	border-bottom: 1px solid #FF3385		
 }
 .title_container_left{
 	float: left;
-	font-size: 1.2em;
+	font-size: 17px;
 	font-weight: bold;
-	margin-top:0.5em;
+	margin-top: 10px;
 }
 .title_container_left_content{
 	float: left;
-	width: 25em;
-	letter-spacing: 0.2em;
-	margin-left: 0.5em;
+	letter-spacing: 5px;
+	margin-left: 5px;
 }
 .title_container_right{
 	float: right;
-	width: 18em;
 }
 
 .search_box input[type="text"] {
-	width: 15em;
+	width: 200px;
 	float:right;
 	font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;	
 	background: #f9f9f9;
 	border: 3px solid #FF3385;	
     font-weight: bold;
-    font-size: 1em;
-    letter-spacing: 0.1em;
-    line-height: 1.5em;
-    margin-top:0.25em;
+    font-size: 14px;
+    letter-spacing: 3px;
+    line-height: 16px;
+    margin-top: 7px;
     padding: 2px;
     -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
     transition: width 1s;
 }
 .search_box input[type=text]:focus{
   outline: none;
-  width: 17em;
+  width: 230px;
 }
 .search_box button {
 	position: absolute;
-	right: 0.5em;
-    margin-top:0.26em;
+	right: 5px;
+    margin-top:9px;
 	background: none;
     cursor: pointer;
     color: #FF3385;
-    font-size: 1.4em;
+    font-size: 20px;
     padding: 2px;
 } 
-
-
 .cce_top_menu_container .filter_container
 {
-	height: 2.1em;
-	border-bottom: 2px solid #FF3385;	
-	padding-bottom: 0.5em;	
+	height: 30px;
+	border-bottom: 1px solid #FF3385;		
 }
 
 .filter_container_left{
 	float: left;
-	font-size: 1.2em;
-	font-weight: bold;
-	margin-top:0.5em;
+	margin-top: 5px;	
 }
 .filter_container_left_content{
-	width: 70%;
-	letter-spacing: 0.2em;
-	margin-left: 0.5em;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 5px;
+	margin-left: 0.4em;
 }
 .filter_container_right{
 	float: right;
-	font-size: 1.2em;
-	margin-top:0.5em;
+	font-size: 16px;
+	margin-top: 5px;
 }
 .select_container{
-	border-left: 2px solid #FF3385;	
+	border-left: 1px solid #FF3385;	
 	float: left;
-	margin-left: 1em;
+	margin-left: 10px;
+	padding-left: 10px;
 }
 
 .select_filter{
-	width: 6em;
+	width: 90px;
 	position: relative;
-	overflow:hidden;
+	overflow: hidden;
 }
 .select_filter select {
    font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;	
-   font-weight: bold;
    cursor:pointer;
    color: #FF3385;	
    background: transparent;
-   width: 9em;
+   width: 110px;
    text-align:-moz-center;
    text-align:-webkit-center;   
-   font-size: 0.8em;
-   letter-spacing: 0.2em;
-   padding-right: 1em;
+   font-size: 13px;
+   letter-spacing: 3px;
+   padding-right: 20px;
    border: none;
    border-radius: none;
    -moz-appearance: none; 
@@ -364,40 +377,97 @@ button{
 {
     background: #f9f9f9;
 }
- 
 .select_filter span {
-    font-size: 0.8em;
+    font-size: 15px;
 	position: absolute;
 	right: 0.5em;
-	top: 0.3em;
+	top: 3px;
 }    
 
 
 /*============================================= cce main container =========================================*/
 .cce_main_container{
 	clear: both;
-	margin-top: 17em;
-	margin-left: 16em;	
-    padding-bottom: 3em;
-    width: 85%;	
+	margin-top: 215px;
+	margin-left: 250px;	
+    width: 78%;	
 }
 /*=============================================       masonry      =========================================*/
-.masonry-container{
-  	width: 100%;
+#masonry-container{
+ 
 }
-.box{
-  	width: 14em;
+.cce_box{
+  	width: 170px;
   	background: #FF3385;
 	margin: 5px auto 5px;	
 	border-color: #3F3F3F;
 	border-radius: 3px;
-	border: 1px solid #DADADA
+	border: 1px solid #DADADA;
 }
+.cce_box_title{
+	width: 80%;
+	color: #f9f9f9;	
+	min-height: 60px;
+	font-size: 16px;
+	letter-spacing: 5px;
+	text-align:center;
+	margin: 23px auto;	
+}
+.cce_box_tag{
+	background: #f9f9f9;
+}
+.cce_box_tag_dim{
+	width: 80%;
+	color: #878787;	
+	line-height: 25px;
+	border-bottom: 1px solid #DADADA;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	text-align:center;
+	margin: 0em auto;	
+}
+.cce_box_tag_status{
+	width: 80%;
+	color: #878787;	
+	line-height: 25px;
+	border-bottom: 1px solid #DADADA;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	text-align:center;
+	margin: 0em auto;	
+}
+.cce_box_tag_kind{
+	width: 80%;
+	color: #878787;	
+	line-height: 25px;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	text-align:center;
+	margin: 0em auto;	
+}
+.cce_box_enroll_status{
+	width: 100%; color: #878787; margin: 0em auto; background: #747474;
+}
+.cce_box_enroll_status_inner{
+	float:left;			
+	width: 50%;
+	text-align:center;
+	background: #DBDBDB;
+	font-size: 14px; 
+	line-height: 18px;
+	padding-top: 3px;
+}
+
+
+
 .news_box{
 	background: #FF3385;
 	width: 16em;
-	
-	
 }
+/*=============================================       cce class    =========================================*/
+
 /*=============================================       news     =========================================*/
 

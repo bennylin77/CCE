@@ -33,24 +33,10 @@
 <div class="cce_top_menu_container">
 	<div class="logo_container">
 		<div class="logo_container_title">
-			<div class="logo_container_title_inner">
-			<div style="width: 60%;
-						margin-left: 23%;
-						font-style: italic;
-						text-align: center;
-						font-size: 3.6em;
-						line-height: 1em;
-			            letter-spacing: 0.3em;
-							">CCE</div>
-			<div style="width: 100%;
-						text-align: center;						
-						font-size: 0.8em;
-						letter-spacing: 0.1em;
-						border-top: 3px solid #FF3385;
-						border-bottom: 3px solid #FF3385">Center for Continuing Education</div>
-			<div style="margin-left: 14%; width: 80%; line-height: 1.4em; letter-spacing: 1em; font-size: 0.9em; text-align: center;">國立交通大學</div>	
-			<div style="margin-left: 14%; width: 80%; line-height: 1.4em; letter-spacing: 1em; font-size: 0.9em; text-align: center;">推廣教育中心</div>	
-			</div>	
+			<div class="logo_container_title_inner_cce">CCE</div>
+			<div class="logo_container_title_inner_en">Center for Continuing Education</div>
+			<div class="logo_container_title_inner_ch">國立交通大學</div>	
+			<div class="logo_container_title_inner_ch">推廣教育中心</div>	
 		</div>	
 		<div class="logo_container_pic">
 			<%=image_tag "NCTU_parts.svg"%>
@@ -64,10 +50,10 @@
 				<%if params[:action]=='index' or params[:action]=='search'%>
 				<div style="float: left" class="course_news-big-icon icon-stack"></div><div class="title_container_left_content">推廣教育課程COURSES</div>								
 				<%else%>
-				<div style="float: left" class="course_news-big-icon icon-stack"></div><div class="title_container_left_content">推廣教育課程管理COURSES MANAGEMENT</div>												
+				<div style="float: left" class="course_news-big-icon icon-stack"></div><div class="title_container_left_content">推廣教育課程管理COURSES MNGEMT</div>												
 				<%end%>
 			<%elsif params[:controller]=='users'%>
-			<div style="float: left" class="course_news-big-icon icon-stack"></div><div class="title_container_left_content">會員管理USERS MANAGEMENT</div>	
+			<div style="float: left" class="course_news-big-icon icon-stack"></div><div class="title_container_left_content">會員管理USERS MNGEMT</div>	
 			<%end%>
 		</div>
 		<div class="title_container_right">

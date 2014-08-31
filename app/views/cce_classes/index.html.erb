@@ -1,4 +1,4 @@
-<div id="masonry-container" class="transitions-enabled clearfix">	
+<div id="masonry-container" class="masonry-container transitions-enabled clearfix">	
 <%= render(:partial => "cce_class_block", :collection => @cce_classes)|| "none" %>
 </div>	
 
@@ -9,8 +9,8 @@
 		var $container = $('#masonry-container');
 		$container.imagesLoaded(function(){
 			$container.masonry({
-			      itemSelector: '.box',
-			      columnWidth: 28,
+			      itemSelector: '.cce_box',
+			      columnWidth: 32,
 			      gutter: 15,
 			      isFitWidth: true
 			});
