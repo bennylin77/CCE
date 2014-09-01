@@ -95,15 +95,6 @@
 /*.icon-filter:before {
 	content: "\e609";
 }*/
-.icon-facebook:before {
-	content: "\e60a";
-}
-.icon-eye:before {
-	content: "\e60b";
-}
-.icon-clock:before {
-	content: "\e60c";
-}
 .icon-arrow-down:before {
 	content: "\e610";
 }
@@ -112,6 +103,15 @@
 }
 .icon-search:before {
 	content: "\e612";
+}
+.icon-clock:before {
+	content: "\e613";
+}
+.icon-facebook:before {
+	content: "\e614";
+}
+.icon-eye:before {
+	content: "\e615";
 }
 .course_news-icon:before {
     font-family: "course_news";
@@ -177,7 +177,7 @@
  	font-size: 100%;    
 }
 .fb_view_clock-icon:before{
-	font-family: "fb_view_clock"
+	font-family: "fb_view_clock";
     font-style: normal;
     font-weight: normal;
     font-variant: normal;

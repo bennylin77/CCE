@@ -1,35 +1,24 @@
 <div class="news_box"  id="news_<%=news_block.id%>" >
 	<%=link_to news_block, class: 'fancybox openAjax' do%>
 	<div class="content_news_block" id="content_news_<%=news_block.id%>">				
-			<div style="width: 85%;
-						color: #f9f9f9;	
-						font-size: 1.4em;
-						font-style: italic;
-						letter-spacing: 0.1em;
-						border-bottom: 4px solid #f9f9f9;
-						margin: 1em auto 0.5em;">
-						<%= news_block.title %>
-			</div>				
-			<div style="width: 85%; margin: 0em auto;">			
+			<div class="news_box_title">
+				<%= news_block.title %>
+			</div>	
+			<%unless news_block.cover.blank?%>			
+			<div class="news_box_img">			
 				<%=image_tag news_block.cover, style: "width: 100%"%>
 			</div>
-			<div style="width: 85%;
-						color: #f9f9f9;	
-						line-height: 1.4em;
-						border-top: 4px solid #f9f9f9;
-						font-size: 0.8em;
-						letter-spacing: 0.1em;
-						margin: 0.5em auto; 1em;">
-						<%=truncate( news_block.content, length: 40, omission: '... (詳細)')%>
-			</div>	
-			<div style="width: 85%;
-						color: #f9f9f9;	
-						line-height: 1.4em;
-						border-top: 2px solid #f9f9f9;
-						font-size: 0.8em;
-						letter-spacing: 0.1em;
-						margin: 0.5em auto; 1em;">
-						<span class="fb_view_clock-icon icon-facebook"></span><%=news_block.view%>
+			<div class="news_box_content">
+				<%=truncate( news_block.content, length: 55, omission: '... (詳細)')%>
+			</div>
+			<%else%>
+			<div class="news_box_content">
+				<%= news_block.content%>	
+			</div>		
+			<%end%>	
+			<div class="news_box_date_view">
+				<span class="fb_view_clock-icon icon-clock"></span> 發佈時間 <%=news_block.created_at.strftime "%Y-%m-%d"%>
+				<span class="fb_view_clock-icon icon-eye"></span> 點閱 <%=news_block.view%>
 			</div>				
 	</div> 	
 	<%end%>				
