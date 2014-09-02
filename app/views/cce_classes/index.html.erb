@@ -23,10 +23,10 @@
 			type: 'ajax',								
 	        afterShow: function() {
 	           //FB.XFBML.parse();
-	           window.history.pushState("", "",$(this).attr( "href" ));
+	           //window.history.pushState("", "",$(this).attr( "href" ));
 	        },
 	        afterClose: function(){
-	           window.history.back();
+	           //window.history.back();
 	        }
 		});		
 	});	
@@ -60,11 +60,12 @@
      });
 <% end %>
 <script>
-	$('#kind').change(function() {
+
+	$('#dimension').change(function() {
 			var request = $.ajax({
 				url: '<%= cce_classes_path %>',
 				type: "GET",
-				data: { kind: $(this).val(), status: $(this).val() }
+				data: {dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val() }
 				});
 				request.done(function( msg ) {								
 					var $container = $('#masonry-container');
@@ -78,7 +79,40 @@
 											
 						$container.pageless({
 							currentPage: 1,
-							params: { kind: $('#kind').val(), status: $('#status').val()},
+							params: { dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val()},
+							url: '/cce_classes',
+							end: endPage,
+							scrape: handleMasonry	
+						});		
+							    
+						$container.children().each( function( i, val ) {
+							//$('#rollover_'+$(val).attr('id')).css("height",$('#inner_'+$(val).attr('id')).height());
+						});			
+					});					
+				});
+				request.fail(function( jqXHR, textStatus ) {
+				alert( "Request failed: " + textStatus );
+			});		
+	});
+	$('#kind').change(function() {
+			var request = $.ajax({
+				url: '<%= cce_classes_path %>',
+				type: "GET",
+				data: { dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val() }
+				});
+				request.done(function( msg ) {								
+					var $container = $('#masonry-container');
+					data=$.parseHTML( msg );
+					$(data).imagesLoaded(function(){
+						var elems = $container.masonry('getItemElements');
+						$container.masonry('remove', elems);
+						$container.masonry();
+						$container.append(data);
+						$container.masonry('appended', data);
+											
+						$container.pageless({
+							currentPage: 1,
+							params: { dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val()},
 							url: '/cce_classes',
 							end: endPage,
 							scrape: handleMasonry	
@@ -97,7 +131,7 @@
 			var request = $.ajax({
 				url: '<%= cce_classes_path %>',
 				type: "GET",
-				data: { kind: $('#kind').val(), status: $(this).val() }
+				data: { dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val() }
 				});
 				request.done(function( msg ) {								
 					var $container = $('#masonry-container');
@@ -111,7 +145,7 @@
 											
 						$container.pageless({
 							currentPage: 1,
-							params: { kind: $('#kind').val(), status: $('#status').val()},
+							params: { dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val()},
 							url: '/cce_classes',
 							end: endPage,
 							scrape: handleMasonry	

@@ -29,12 +29,26 @@ button{
 {
 	margin: 4% auto;
 	width:  85%;
-	height: 115px;
+	height: 128px;
 	border: 4px solid #f9f9f9
+}
+.signIn_container_title{
+  	width: 85%;
+  	margin: 5px auto;	
+}
+.signIn_container_title_ch{
+
+	letter-spacing: 4px;
+	font-size: 12px; 
+}
+.signIn_container_title_en{
+	font-family: Palatino Linotype;		
+    font-style: italic;
+    letter-spacing: 4px;
 }
 .login, .logout{
   	width: 88%;
-  	margin: 1em auto;
+  	margin: 3px auto;
 }
 
 .login input[type=text]{
@@ -124,11 +138,12 @@ button{
 }
 .hello{
 	width:100%;
-	height:60px;
-	line-height:3.8em;
-	letter-spacing: 0.2em;	
+	height:50px;
+	line-height: 48px;
+	letter-spacing: 5px;	
 	text-align:center;
-	margin: .5em auto;
+	margin: 8px auto;
+	border-radius: 5px;
 	border: 1px solid rgba(255,255,255,0.6);	
 }
 .cce_left_menu_container .mid_container
@@ -188,13 +203,18 @@ button{
 	height: 25px;
 	font-weight: bold;
 } 
+.bot_container li:hover{
+	opacity: 0.8;
+} 
 .bot_container li .bot_container_img{
 	float: left;
 	margin-top: 0em;
+	color: #f9f9f9;	
 }
 .bot_container li .bot_container_word{
 	float: left;
 	margin-left: 7px;
+	color: #f9f9f9;	
 }
 .bot_container li .bot_container_CH{
 	letter-spacing: 5px;
@@ -245,10 +265,13 @@ button{
 .logo_container_title_inner_cce{
 	width: 60%;
 	text-align: center;
-	font-size: 40px;
+	font-size: 42px;
 	line-height: 43px;
-	margin-left: 45px;
-	letter-spacing: 18px;	
+	margin-left: 20px;
+	letter-spacing: 35px;
+    font-family: Palatino Linotype;		
+    font-style: italic;
+	
 }
 .logo_container_title_inner_en{
 	width: 100%;
@@ -260,7 +283,7 @@ button{
 .logo_container_title_inner_ch{
 	margin-left: 14%; 
 	width: 80%; 
-	line-height: 18px; 
+	line-height: 19px; 
 	letter-spacing: 12px; 
 	font-size: 13px; 
 	text-align: center;	
@@ -360,7 +383,7 @@ button{
 	overflow: hidden;
 }
 .select_filter select {
-   font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;	
+   font-family: Microsoft YaHei, 'Lato', Calibri, Arial, sans-serif;	
    cursor:pointer;
    color: #FF3385;	
    background: transparent;
@@ -368,7 +391,7 @@ button{
    text-align:-moz-center;
    text-align:-webkit-center;   
    font-size: 13px;
-   letter-spacing: 3px;
+   letter-spacing: 5px;
    padding-right: 20px;
    border: none;
    border-radius: none;
@@ -385,7 +408,7 @@ button{
 .select_filter span {
     font-size: 15px;
 	position: absolute;
-	right: 0.5em;
+	right: 0.5px;
 	top: 3px;
 }    
 
@@ -507,4 +530,7 @@ button{
 /*=============================================       cce class    =========================================*/
 
 /*=============================================       news     =========================================*/
+
+
+
 

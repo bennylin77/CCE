@@ -3,17 +3,18 @@ class CceClassesController < ApplicationController
   before_action :set_cce_class, only: [:show, :edit, :update, :destroy, :verified, :available]
 
   def index    
-    
-    if !params[:status].blank? and  params[:kind].blank?
-      @cce_classes = CceClass.where("status = ?", params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')
-    elsif params[:status].blank? and !params[:kind].blank?
-      @cce_classes = CceClass.where("kind = ?", params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')    
-    elsif !params[:status].blank? and !params[:kind].blank?
-      @cce_classes = CceClass.where("status = ? and kind = ?", params[:status], params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')        
-    else
-       @cce_classes = CceClass.all.paginate(per_page: 30, page: params[:page]).order('id DESC')       
+    if params[:dimension].blank?
+      params[:dimension]=true
+    end    
+    if params[:kind].blank?
+      params[:kind]=true
+    end    
+    if params[:status].blank?
+      params[:status]=true
     end
     
+    @cce_classes = CceClass.where("status = ? and kind = ?", params[:status], params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')        
+    #@cce_classes = CceClass.all.paginate(per_page: 30, page: params[:page]).order('id DESC')       
     if request.xhr?
       sleep(0.3) 
       render partial: "cce_classes/cce_class_block", collection: @cce_classes
@@ -119,11 +120,11 @@ class CceClassesController < ApplicationController
     @cce_classes.each do |c|
       @cce_classes_json << 
       {
-        :label =>c.title,
-        :value =>c.title
+        label: c.title,
+        value: c.title
       }
     end  
-    render :json=>@cce_classes_json.to_json     
+    render json: @cce_classes_json.to_json     
   end
   private
 

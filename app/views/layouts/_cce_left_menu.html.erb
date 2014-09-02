@@ -1,5 +1,9 @@
 <div class="cce_left_menu_container">
 	<div class="signIn_container">
+		<div class="signIn_container_title">
+			<span class="signIn_container_title_en">CCE</span>
+			<span class="signIn_container_title_ch">會員中心</span>
+		</div>
 		<%if session[:user_id].blank?%>
 		<div class="login">
 			<%=form_tag '/users/signIn' do%>			
@@ -37,7 +41,7 @@
 				<li>
 					<%=link_to controller: 'news', action: 'indexManagement' do%>
 					<span class="mid_container_img">
-						<span class="course_news-icon icon-sound"></span>
+						<span class="management-icon icon-management"></span>	
 					</span>
 					<span class="mid_container_word">
 						<div class="mid_container_CH">
@@ -70,7 +74,7 @@
 				<li>
 					<%=link_to controller: 'cce_classes', action: 'indexManagement' do%>
 					<span class="mid_container_img">
-						<span class="course_news-icon icon-stack" style="font-size: 0.9em"></span>					
+						<span class="management-icon icon-management" style="font-size: 0.9em"></span>					
 					</span>
 					<span class="mid_container_word">
 						<div class="mid_container_CH" style="font-size: 0.78em">
@@ -88,7 +92,7 @@
 				<li>
 					<%=link_to controller: 'users', action: 'index' do%>
 					<span class="mid_container_img">
-						<span class="course_news-icon icon-stack"></span>					
+						<span class="management-icon icon-management"></span>				
 					</span>
 					<span class="mid_container_word">
 						<div class="mid_container_CH">
@@ -107,6 +111,7 @@
 	<div class="bot_container">
 		<ul>
 			<li>
+				<%=link_to controller: 'main', action: 'CCENow' do%>
 				<span class="bot_container_img">
 					<span class="left_bot-icon icon-institution"></span>
 				</span>
@@ -115,8 +120,10 @@
 					中心現況
 					</div>					
 				</span>	
+				<%end%>
 			</li>
 			<li>
+				<%=link_to controller: 'main', action: 'CCELocation' do%>				
 				<span class="bot_container_img">
 					<span class="left_bot-icon icon-location"></span>
 				</span>
@@ -125,8 +132,10 @@
 					中心位置
 					</div>
 				</span>
+				<%end%>				
 			</li>	
 			<li>
+				<%=link_to controller: 'main', action: 'CCEMembers' do%>				
 				<span class="bot_container_img">
 					<span class="left_bot-icon icon-users"></span>
 				</span>
@@ -135,8 +144,10 @@
 					成員執掌
 					</div>
 				</span>
+				<%end%>				
 			</li>	
 			<li>
+				<%=link_to controller: 'main', action: 'CCEEnactment' do%>				
 				<span class="bot_container_img">
 					<span class="left_bot-icon icon-justice"></span>					
 				</span>
@@ -145,6 +156,7 @@
 					法規及表格
 					</div>
 				</span>
+				<%end%>				
 			</li>											
 		</ul>		
 	</div>	

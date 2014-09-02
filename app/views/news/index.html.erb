@@ -19,14 +19,14 @@
 			});			
 		});		
 		//initial fancybox
-		$(".openAjax").fancybox({
+		$(".openNewsAjax").fancybox({
 			type: 'ajax',								
 	        afterShow: function() {
 	           //FB.XFBML.parse();
-	           window.history.pushState("", "",$(this).attr( "href" ));
+	           //window.history.pushState("", "",$(this).attr( "href" ));
 	        },
 	        afterClose: function(){
-	           window.history.back();
+	           //window.history.back();
 	        }
 		});		
 	});	

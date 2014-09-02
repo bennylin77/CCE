@@ -1,32 +1,28 @@
 class NewsController < ApplicationController
   before_action :set_news, only: [:show, :edit, :update, :destroy]
 
-  # GET /news
-  # GET /news.json
+
   def index
     @news = News.all.paginate(per_page: 20, page: params[:page]).order('id DESC') 
   end
 
-
   def indexManagement
     @news = News.all.paginate(per_page: 30, page: params[:page]).order('id DESC')    
   end
-  # GET /news/1
-  # GET /news/1.json
+
   def show
+    if request.xhr?
+      render layout: 'fancybox'  
+    end     
   end
 
-  # GET /news/new
   def new
     @news = News.new
   end
 
-  # GET /news/1/edit
   def edit
   end
 
-  # POST /news
-  # POST /news.json
   def create
     @news = News.new(news_params)
 
@@ -41,8 +37,6 @@ class NewsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /news/1
-  # PATCH/PUT /news/1.json
   def update
     respond_to do |format|
       if @news.update(news_params)
@@ -55,8 +49,6 @@ class NewsController < ApplicationController
     end
   end
 
-  # DELETE /news/1
-  # DELETE /news/1.json
   def destroy
     @news.destroy
     respond_to do |format|
@@ -64,7 +56,25 @@ class NewsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def search 
+    @term=params[:search][:term]     
+    @news = News.where("title LIKE ?", "%#{@term}%").paginate(per_page: 15, page: params[:page]).order('id DESC')                                                              
+    render :index       
+  end
 
+  def autoComplete 
+    @news_json=Array.new
+    @news=News.where("title LIKE ?", "%#{params[:term]}%").order('id DESC')
+    @news.each do |c|
+      @news_json << 
+      {
+        label: c.title,
+        value: c.title
+      }
+    end  
+    render json: @news_json.to_json     
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_news
