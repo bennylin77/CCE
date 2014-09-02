@@ -1,4 +1,5 @@
 /*=============================================       main    =========================================*/
+/**************     CCENow    **************/
 .clearfix:after {
 	content: "";
 	display: table;
@@ -28,11 +29,11 @@
 	margin: 0 auto;
 }
 .CCENow_content_no{
+	font-family: Lucida Console;	
 	font-style: italic;
 	font-size: 40px;
 	line-height: 70px;
 	color: #FF3385;	
-	font-family: Lucida Console;		
 
 }
 .CCENow_content_caption{
@@ -53,4 +54,139 @@
 	font-size: 13px;
 	letter-spacing: 3px;
 	min-height: 300px;
+}
+/**************     CCEMembers   **************/
+.CCEMembers_title{
+	width: 79.5%; 
+	margin: 0 auto; 
+	text-align: center;
+	font-size:16px;
+	color: #FF3385;
+	font-weight: bold;
+	letter-spacing: 2px;
+	line-height: 30px;
+	border: 4px solid #FF3385;	
+}
+.CCEMembers_content{
+	width: 80%; 	
+	margin: 15px auto; 	
+    overflow: hidden;
+    position: relative;
+	display: flex;
+	color: #FF3385;
+	font-size:16px;	
+	font-weight: bold;	
+}
+.CCEMembers_left{
+	align-items: stretch;	
+	width: 32%; 
+	border: 4px solid #FF3385;	
+	padding-top: 200px;
+
+}
+.CCEMembers_right{
+	align-items: stretch; 
+	width: 65%; 
+	margin-left: 15px;		
+	border: 4px solid #FF3385;	
+	padding-top: 40px;	
+}
+.CCEMembers_part_left{
+	width: 90%;
+	margin: 0 auto;
+	font-size: 16px;	
+	
+}
+.CCEMembers_right_in_top{
+	width: 95%;
+	margin: 20px auto;	
+	display: block;
+	text-align: justify; 
+}
+
+.CCEMembers_right_in_top:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    font-size:0;
+    line-height:0;
+}
+.CCEMembers_right_in_bottom{
+	width: 95%;
+	display: block;
+	margin: 0px auto;	
+	margin-top: 100px;	
+	margin-bottom: 20px;
+	text-align: justify; 		
+}
+.CCEMembers_right_in_bottom:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    font-size:0;
+    line-height:0;
+}
+.CCEMembers_part_right{
+	display: inline-block;	
+	width: 47%;
+	margin-top: 0px;
+	vertical-align: top;
+}
+.CCEMembers_pos{
+	display: inline-block;
+	letter-spacing: 2px;
+	bottom: 0px;
+	position: absolute;
+}
+.CCEMembers_name{
+	display: inline-block;
+	font-size:22px;
+	letter-spacing: 4px;
+	right: 0px;
+	bottom: 0px;
+	position: absolute;	
+	font-weight: bold;	
+}
+.CCEMembers_pos_name{
+	position: relative;
+	border-bottom: 1px solid #FF3385;	
+	padding-bottom: 5px;
+}
+.CCEMembers{
+	letter-spacing: 2px;	
+	margin-top: 10px; 
+	padding-bottom: 5px;	
+	line-height: 16px;
+	border-bottom: 1px solid #FF3385;	
+}
+.CCEMembers_email{
+	font-size:22px;	
+    letter-spacing: 2px;
+	margin-top: 10px; 		
+	font-family: Lucida Console;	
+	font-style: italic;	
+	padding-bottom: 5px;	
+}
+.CCEMembers_email_in{
+	border-bottom: 1px solid #FF3385;
+	font-family: Lucida Console;	
+	font-style: italic;		
+	letter-spacing: 2px;
+	padding-bottom: 5px;
+	word-break: break-all;		
+}
+.CCEMembers_tel{
+	font-size:22px;	
+	letter-spacing: 2px;
+	margin-top: 10px; 		
+	padding-bottom: 5px;	
+	font-family: Lucida Console;	
+	font-style: italic;	
+}
+.CCEMembers_tel_in{
+	letter-spacing: 2px;
+	border-bottom: 1px solid #FF3385;		
+	padding-bottom: 5px;	
 }

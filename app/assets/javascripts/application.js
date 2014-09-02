@@ -15,4 +15,5 @@
 //= require gritter
 //= require turbolinks
 //= require jquery-ui/autocomplete
+//= require jquery-ui/tabs
 //= require_tree .
