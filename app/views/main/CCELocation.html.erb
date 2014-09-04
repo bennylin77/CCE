@@ -1,0 +1,79 @@
+<script>
+	$(document).ready(function() {
+		$('.CCELocation_nav').onePageNav(
+			{
+			}
+		);
+	});
+</script>
+
+	<ul class="CCELocation_nav">
+		<li class="current"><a href="#CCELocation_1">中心辦公室/專屬教室</a></li>
+		<li><a href="#CCELocation_2">校區全圖</a></li>
+		<li><a href="#CCELocation_3">自行開車</a></li>
+		<li><a href="#CCELocation_4">客運</a></li>
+		<li><a href="#CCELocation_5">公車</a></li>
+		<li style="border-bottom: none;"><a href="#CCELocation_6">火車/計程車</a></li>					
+	</ul>
+
+	<div class="CCELocation_container">
+		<div class="CCELocation_section" id="CCELocation_1">
+			<div class="CCELocation_section_inner">
+				<div class="CCELocation_section_inner_title">中心辦公室/專屬教室</div>
+				<div class="CCELocation_section_inner_sub_title">中心辦公室</div>
+				<div class="CCELocation_section_content">光復校區工程五館514室</div>
+				<div class="CCELocation_section_inner_sub_title">專屬教室</div>
+				<div class="CCELocation_section_content">光復校區工程五館129室</div>
+			</div>
+		</div>
+		<div class="CCELocation_section" id="CCELocation_2">
+			<div class="CCELocation_section_inner">
+				<div class="CCELocation_section_inner_title">校區全圖</div>	
+				<%=image_tag "NCTU_map.svg", style: 'width: 100%;'%>		
+			</div>					
+		</div>
+		<div class="CCELocation_section" id="CCELocation_3">
+			<div class="CCELocation_section_inner">
+				<div class="CCELocation_section_inner_title">自行開車</div>			
+				<div class="CCELocation_section_inner_sub_title">國道一號高速公路</div>
+				<div class="CCELocation_section_content">
+				北部南下：新竹交流道 →(左轉入) 大學路 (加油站旁)→交通大學光復校區北大門<br>
+				南部北上：新竹交流道 (左彎往新竹市區方向)→經光復路 (高速公路下)→(左轉入) 大學路 (加油站旁)→交通大學光復校區北大門<br>
+				備註： 新竹交流道為一複合式之交流道，南下車輛駛入新竹交流道閘道後，依續有"公道五"、"光復路"、"新竹科學園區"三出口，請由"光復路"出口進入市區。</div>
+				<div class="CCELocation_section_inner_sub_title">國道三號</div>
+				<div class="CCELocation_section_content">
+				新竹系統交流道→國道一號高速公路北上 (往台北方向)→新竹交流道 (左彎往新竹市區方向)→經光復路 (高速公路下) →(左轉入) 大學路 (加油站旁)→交通大學光復校區北大門
+				</div>
+			</div>	
+		</div>
+		<div class="CCELocation_section" id="CCELocation_4">
+			<div class="CCELocation_section_inner">
+				<div class="CCELocation_section_inner_title">客運</div>	
+				<div class="CCELocation_section_content">
+				台灣汽車客運公司、建明 ( 飛狗 ) 汽車客運公司、亞聯汽車客運公司、阿羅哈汽車客運公司、豪泰汽車客運公司、新竹/三重汽車客運公司
+				<br>下車地點： 一下新竹交流道時就按鈴下車，徒步從大學路走約 15 分鐘
+				</div>		
+			</div>
+		</div>
+		<div class="CCELocation_section" id="CCELocation_5">
+			<div class="CCELocation_section_inner">
+				<div class="CCELocation_section_inner_title">公車</div>	
+				<div class="CCELocation_section_inner_sub_title">新竹客運 2 號公車（新竹火車站 → 交通大學）</div>
+				<div class="CCELocation_section_content">
+				下車站：交通大學光復校區</br>
+				發車頻率：約每小時一班</br>
+				</div>		
+				<div class="CCELocation_section_inner_sub_title">新竹客運 1 號公車（新竹火車站 → 過溝）</div>
+				<div class="CCELocation_section_content">				
+				下車站：過溝（徒步從大學路走約 15 分鐘到交通大學光復校區）</br>
+				發車頻率：約每 10 ~ 15 分鐘一班
+				</div>									
+			</div>
+		</div>
+		<div class="CCELocation_section" id="CCELocation_6">
+			<div class="CCELocation_section_inner">
+				<div class="CCELocation_section_inner_title">火車/計程車</div>			
+				<div class="CCELocation_section_content">新竹火車站→交通大學光復校區，車資約 200 元</div>
+			</div>
+		</div>					
+	</div>

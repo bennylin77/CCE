@@ -74,8 +74,8 @@
     position: relative;
 	display: flex;
 	color: #FF3385;
-	font-size:16px;	
-	font-weight: bold;	
+	font-size:15px;	
+
 }
 .CCEMembers_left{
 	align-items: stretch;	
@@ -94,7 +94,7 @@
 .CCEMembers_part_left{
 	width: 90%;
 	margin: 0 auto;
-	font-size: 16px;	
+
 	
 }
 .CCEMembers_right_in_top{
@@ -265,4 +265,90 @@
 	font-weight: bold;
 	padding: 5px 10px;
 	font-size: 16px;	
+}
+/**************     CCEEnactment  **************/
+.CCELocation_nav {
+	border: 4px solid #FF3385;	
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 300px;
+	position: fixed;
+	top: 250px;
+	left: 300px;
+}
+
+.CCELocation_nav li {
+	width: 90%;
+	line-height: 100px;
+	margin: 0 auto;
+	border-bottom: 1px solid #FF3385;	
+}
+
+.CCELocation_nav a {
+	text-align: center;
+	color: #FF3385;
+	line-height: 40px;
+	display: block;
+	font-weight: bold;
+	padding: 5px 10px;
+	font-size: 16px;	
+}
+
+.CCELocation_nav a:hover {
+	opacity: 0.8;
+}
+
+.CCELocation_nav .current a {
+	color: #CC296A;
+}
+.CCELocation_container {
+	position: absolute;
+	top: 0;
+	width: 0px;
+}
+.CCELocation_section {
+	min-height: 60vh;
+	width: 500px;
+	margin-top: 250px;
+	margin-left: 400px;	
+}
+.CCELocation_section_inner {	
+	border: 4px solid #FF3385;	
+}
+.CCELocation_section_inner_title{
+	color: #FF3385;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 50px;	
+	text-align: left;
+	border-bottom: 1px solid #FF3385;	
+	font-size: 27px;	
+	font-weight: bold;
+	line-height: 50px;
+}
+.CCELocation_section_inner_sub_title{
+	width: 75%;
+	font-size: 19px;	
+	font-weight: bold;	 
+    margin: 10px auto; 
+	color: #FF3385;      	 
+	 
+}
+.CCELocation_section_inner ul {
+    list-style-type: none;
+    margin: 10px auto;
+    padding: 0;	
+    width: 80%;    
+}
+.CCELocation_section_content {
+	color:  #898989;	
+	line-height: 30px;
+	display: block;
+	font-weight: bold;
+	padding: 5px 10px;
+	font-size: 15px;
+    width: 75%;
+    margin: 10px auto;    
+    letter-spacing: 2.5px; 		
 }

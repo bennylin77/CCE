@@ -305,12 +305,12 @@ button{
 	float: left;
 	font-size: 17px;
 	font-weight: bold;
-	margin-top: 10px;
 }
 .title_container_left_content{
 	float: left;
 	letter-spacing: 5px;
-	margin-left: 5px;
+	margin-left: 10px;
+	margin-top: 8px;
 }
 .title_container_right{
 	float: right;

@@ -133,17 +133,9 @@
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-    font-size: 20px;
+ 	font-size: 100%;  
 }
-.course_news-big-icon:before {
-    font-family: "course_news";
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    font-size: 27px;
-}
+
 .left_bot-icon:before {
     font-family: "left_bot";
     font-style: normal;
@@ -205,5 +197,5 @@
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-    font-size: 20px;   	
+ 	font-size: 100%;  
 }
