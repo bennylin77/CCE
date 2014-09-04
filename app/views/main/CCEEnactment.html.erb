@@ -1,118 +1,134 @@
 <script>
-$(function() {
-$( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
-$( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
-});
+	$(document).ready(function() {
+		$('.CCEEnactment_nav').onePageNav(
+			{
+			}
+		);
+	});
 </script>
+
 <style>
-#tabs{
-	border: none;
-	background: none;
+
+.section {
+	border-bottom: 5px solid #ccc;
+	min-height: 60vh;
+	padding: 50px 20px;
 }
-.ui-tabs-vertical { width: 60em; margin: 0 auto;}
-.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 16em; background: none; 	border: 4px solid #FF3385;	 }
-.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 90%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; 
-									background: none; 
-									border:none; 
-									border-radius: 0; 
-									border-bottom: 1px solid #FF3385;
-									}
-.ui-tabs-vertical .ui-tabs-nav li a { display:block; 
-									  letter-spacing: 2px;
-									  font-size: 13px;
-									  color: #FF3385}
-.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; border-right-width: 1px; }
-.ui-tabs-vertical .ui-tabs-panel { padding: 1em; 
-								   float: right; 
-								   width: 40em;
-								   }
+
+.section p:last-child {
+	margin-bottom: 0;
+}
 </style>
 
+	<ul class="CCEEnactment_nav">
+		<li class="current"><a href="#CCEEnactment_1">教育部推廣教育相關法規</a></li>
+		<li><a href="#CCEEnactment_2">本校推廣教育相關規定</a></li>
+		<li><a href="#CCEEnactment_3">學分班相關規定</a></li>
+		<li><a href="#CCEEnactment_4">培訓班 / 非學分班相關規定</a></li>
+		<li><a href="#CCEEnactment_5">推廣教育境外教學相關規定</a></li>
+		<li><a href="#CCEEnactment_6">業務流程</a></li>
+		<li style="border-bottom: none;"><a href="#CCEEnactment_7">本校受理全時選讀生相關規定</a></li>						
+	</ul>
 
-<div id="tabs">
-<ul>
-<li><a href="#tabs-1">教育部推廣教育相關法規</a></li>
-<li><a href="#tabs-2">本校推廣教育相關規定</a></li>
-<li><a href="#tabs-3">學分班相關規定</a></li>
-<li><a href="#tabs-4">培訓班 / 非學分班相關規定</a></li>
-<li><a href="#tabs-5">推廣教育境外教學相關規定</a></li>
-<li><a href="#tabs-6">業務流程</a></li>
-<li><a href="#tabs-7">本校受理全時選讀生相關規定</a></li>
-</ul>
-
-
-
-<div id="tabs-1">
-<ul>
-	<li><%=link_to '專科以上學校推廣教育實施辦法'%></li>
-	<li><%=link_to '大學辦理推廣教育計畫審查要點(廢止)'%></li>
-	<li><%=link_to '教育部規定之建教合作、推廣教育相關辦法'%></li>
-	<li><%=link_to '選讀生修讀學分一案'%></li>
-	<li><%=link_to '大學遠距教學實施辦法'%></li>
-	<li><%=link_to '推廣教育境外教學開班計畫書'%></li>	
-	<li><%=link_to '開授遠距教學課程計畫備查申請書'%></li>		
-</ul>
-</div>
-<div id="tabs-2">
-<ul>
-	<li><%=link_to '國立交通大學推廣教育委員會組織規則'%></li>
-	<li><%=link_to '國立交通大學推廣教育計畫審查辦法'%></li>
-	<li><%=link_to '國立交通大學推廣教育學分班學員成績資料處理要點'%></li>
-	<li><%=link_to '國立交通大學推廣教育收支管理辦法'%></li>
-</ul>
-</div>
-<div id="tabs-3">
-<ul>
-	<li><%=link_to '推廣教育學分班送審資料清單'%></li>
-	<li><%=link_to '推廣教育學分班招生計畫表'%></li>
-	<li><%=link_to '推廣教育經費預算表(範例)'%></li>
-	<li><%=link_to '推廣教育學分班課程開授狀況及合班授課情形調查'%></li>
-	<li><%=link_to '國立交通大學推廣教育學分證書格式(正面)'%></li>
-	<li><%=link_to '國立交通大學推廣教育學分證書格式(反面)'%></li>	
-	<li><%=link_to '國立交通大學推廣教育年度檢討報告書'%></li>	
-	<li><%=link_to '國立交通大學推廣教育課程更動通知'%></li>
-	<li><%=link_to '國立交通大學推廣教育學分班更改學期成績申請表'%></li>
-	<li><%=link_to '2014年度暑期國際學程推廣教育學分班招生計畫'%></li>		
-</ul>
-</div>
-<div id="tabs-4">
-<ul>
-	<li><%=link_to '推廣教育培訓班/非學分班送審資料清單'%></li>
-	<li><%=link_to '推廣教育培訓班/非學分班招生計畫表'%></li>
-	<li><%=link_to '推廣教育經費預算表(範例)'%></li>
-	<li><%=link_to '國立交通大學推廣教育結業證書格式(正面)'%></li>
-	<li><%=link_to '國立交通大學推廣教育結業證書格式(反面)'%></li>
-	<li><%=link_to '國立交通大學推廣教育年度檢討報告書'%></li>		
-</ul>
-</div>
-<div id="tabs-5">
-<ul>
-	<li><%=link_to '推廣教育境外教學開班送審資料清單'%></li>
-	<li><%=link_to '推廣教育境外教學開班計畫書'%></li>
-	<li><%=link_to '推廣教育境外教學開班計畫表'%></li>
-	<li><%=link_to '推廣教育經費預算表(範例)'%></li>		
-</ul>
-</div>
-<div id="tabs-6">
-<ul>
-	<li><%=link_to '國立交通大學推廣教育開班審查作業流程'%></li>
-	<li><%=link_to '國立交通大學推廣教育課務管理作業流程'%></li>
-	<li><%=link_to '國立交通大學推廣教育帳務管理作業流程'%></li>	
-</ul>
-</div>
-<div id="tabs-7">
-<ul>
-	<li><%=link_to '台灣聯合大學系統受理全時選讀生作業要點'%></li>
-	<li><%=link_to '國立交通大學受理全時選讀生作業要點'%></li>
-	<li><%=link_to '台灣聯合大學系統全時選讀生作業流程與時程'%></li>
-	<li><%=link_to '受理全時選讀生入學作業流程'%></li>
-	<li><%=link_to '受理全時選讀生繳費作業流程'%></li>
-	<li><%=link_to '申請全時選讀生學生基本資料表'%></li>	
-	<li><%=link_to '受理全時選讀生申請書'%></li>		
-	<li><%=link_to '國立交通大學受理全時選讀生離校作業流程'%></li>
-	<li><%=link_to '國立交通大學全時選讀生離校作業流程單'%></li>
-	<li><%=link_to '國立交通大學辦理選讀學分作業規定'%></li>	
-	<li><%=link_to '交通大學參與台灣聯合大學系統全時選讀學生實施細則'%></li>			
-</ul>
-</div>
-</div>
+	<div class="CCEEnactment_container">
+		<div class="CCEEnactment_section" id="CCEEnactment_1">
+			<div class="CCEEnactment_section_inner">
+				<div class="CCEEnactment_section_inner_title">教育部推廣教育相關法規</div>
+				<ul>
+					<li><%=link_to '專科以上學校推廣教育實施辦法'%></li>
+					<li><%=link_to '大學辦理推廣教育計畫審查要點(廢止)'%></li>
+					<li><%=link_to '教育部規定之建教合作、推廣教育相關辦法'%></li>
+					<li><%=link_to '選讀生修讀學分一案'%></li>
+					<li><%=link_to '大學遠距教學實施辦法'%></li>
+					<li><%=link_to '推廣教育境外教學開班計畫書'%></li>	
+					<li><%=link_to '開授遠距教學課程計畫備查申請書'%></li>		
+				</ul>
+			</div>
+		</div>
+		<div class="CCEEnactment_section" id="CCEEnactment_2">
+			<div class="CCEEnactment_section_inner">
+				<div class="CCEEnactment_section_inner_title">本校推廣教育相關規定</div>			
+					<ul>
+						<li><%=link_to '國立交通大學推廣教育委員會組織規則'%></li>
+						<li><%=link_to '國立交通大學推廣教育計畫審查辦法'%></li>
+						<li><%=link_to '國立交通大學推廣教育學分班學員成績資料處理要點'%></li>
+						<li><%=link_to '國立交通大學推廣教育收支管理辦法'%></li>
+					</ul>
+				</ul>
+			</div>					
+		</div>
+		<div class="CCEEnactment_section" id="CCEEnactment_3">
+			<div class="CCEEnactment_section_inner">
+				<div class="CCEEnactment_section_inner_title">學分班相關規定</div>			
+					<ul>
+						<li><%=link_to '推廣教育學分班送審資料清單'%></li>
+						<li><%=link_to '推廣教育學分班招生計畫表'%></li>
+						<li><%=link_to '推廣教育經費預算表(範例)'%></li>
+						<li><%=link_to '推廣教育學分班課程開授狀況及合班授課情形調查'%></li>
+						<li><%=link_to '國立交通大學推廣教育學分證書格式(正面)'%></li>
+						<li><%=link_to '國立交通大學推廣教育學分證書格式(反面)'%></li>	
+						<li><%=link_to '國立交通大學推廣教育年度檢討報告書'%></li>	
+						<li><%=link_to '國立交通大學推廣教育課程更動通知'%></li>
+						<li><%=link_to '國立交通大學推廣教育學分班更改學期成績申請表'%></li>
+						<li><%=link_to '2014年度暑期國際學程推廣教育學分班招生計畫'%></li>		
+					</ul>
+				</ul>
+			</div>	
+		</div>
+		<div class="CCEEnactment_section" id="CCEEnactment_4">
+			<div class="CCEEnactment_section_inner">
+				<div class="CCEEnactment_section_inner_title">培訓班 / 非學分班相關規定</div>			
+					<ul>
+						<li><%=link_to '推廣教育培訓班/非學分班送審資料清單'%></li>
+						<li><%=link_to '推廣教育培訓班/非學分班招生計畫表'%></li>
+						<li><%=link_to '推廣教育經費預算表(範例)'%></li>
+						<li><%=link_to '國立交通大學推廣教育結業證書格式(正面)'%></li>
+						<li><%=link_to '國立交通大學推廣教育結業證書格式(反面)'%></li>
+						<li><%=link_to '國立交通大學推廣教育年度檢討報告書'%></li>		
+					</ul>
+				</ul>
+			</div>
+		</div>
+		<div class="CCEEnactment_section" id="CCEEnactment_5">
+			<div class="CCEEnactment_section_inner">
+				<div class="CCEEnactment_section_inner_title">推廣教育境外教學相關規定</div>			
+					<ul>
+						<li><%=link_to '推廣教育境外教學開班送審資料清單'%></li>
+						<li><%=link_to '推廣教育境外教學開班計畫書'%></li>
+						<li><%=link_to '推廣教育境外教學開班計畫表'%></li>
+						<li><%=link_to '推廣教育經費預算表(範例)'%></li>		
+					</ul>
+				</ul>
+			</div>
+		</div>
+		<div class="CCEEnactment_section" id="CCEEnactment_6">
+			<div class="CCEEnactment_section_inner">
+				<div class="CCEEnactment_section_inner_title">業務流程</div>			
+					<ul>
+						<li><%=link_to '國立交通大學推廣教育開班審查作業流程'%></li>
+						<li><%=link_to '國立交通大學推廣教育課務管理作業流程'%></li>
+						<li><%=link_to '國立交通大學推廣教育帳務管理作業流程'%></li>	
+					</ul>
+				</ul>
+			</div>
+		</div>
+		<div class="CCEEnactment_section" id="CCEEnactment_7">
+			<div class="CCEEnactment_section_inner">
+				<div class="CCEEnactment_section_inner_title">本校受理全時選讀生相關規定</div>			
+					<ul>
+						<li><%=link_to '台灣聯合大學系統受理全時選讀生作業要點'%></li>
+						<li><%=link_to '國立交通大學受理全時選讀生作業要點'%></li>
+						<li><%=link_to '台灣聯合大學系統全時選讀生作業流程與時程'%></li>
+						<li><%=link_to '受理全時選讀生入學作業流程'%></li>
+						<li><%=link_to '受理全時選讀生繳費作業流程'%></li>
+						<li><%=link_to '申請全時選讀生學生基本資料表'%></li>	
+						<li><%=link_to '受理全時選讀生申請書'%></li>		
+						<li><%=link_to '國立交通大學受理全時選讀生離校作業流程'%></li>
+						<li><%=link_to '國立交通大學全時選讀生離校作業流程單'%></li>
+						<li><%=link_to '國立交通大學辦理選讀學分作業規定'%></li>	
+						<li><%=link_to '交通大學參與台灣聯合大學系統全時選讀學生實施細則'%></li>			
+					</ul>
+				</ul>
+			</div>
+		</div>						
+	</div>

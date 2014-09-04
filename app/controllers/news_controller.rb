@@ -3,7 +3,7 @@ class NewsController < ApplicationController
 
 
   def index
-    @news = News.all.paginate(per_page: 20, page: params[:page]).order('id DESC') 
+    @news = News.all.paginate(per_page: 8, page: params[:page]).order('id DESC') 
   end
 
   def indexManagement

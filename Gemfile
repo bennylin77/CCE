@@ -17,3 +17,6 @@ gem 'paperclip'
 gem 'jquery-ui-rails'
 gem 'country_select'
 gem "gritter"
+
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'

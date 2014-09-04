@@ -13,8 +13,8 @@ class CceClassesController < ApplicationController
       params[:status]=true
     end
     
-    @cce_classes = CceClass.where("status = ? and kind = ?", params[:status], params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')        
-    #@cce_classes = CceClass.all.paginate(per_page: 30, page: params[:page]).order('id DESC')       
+    #@cce_classes = CceClass.where("status = ? and kind = ?", params[:status], params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')        
+    @cce_classes = CceClass.all.paginate(per_page: 30, page: params[:page]).order('id DESC')       
     if request.xhr?
       sleep(0.3) 
       render partial: "cce_classes/cce_class_block", collection: @cce_classes
