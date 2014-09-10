@@ -13,22 +13,18 @@
 
   <div class="field">
     <%= f.label :cce_class_id %><br>
-    <%= f.text_field :cce_class_id %>
+	<%= f.select :cce_class_id , options_from_collection_for_select( CceClass.where('status <> ?', GLOBAL_VAR['status_finished']).order("id DESC"), 'id', 'title'), {prompt: '選擇相關推廣教育課程'} %> 
   </div>
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :標題 %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
+    <%= f.label :內容 %><br>
     <%= f.text_area :content %>
   </div>
   <div class="field">
-    <%= f.label :view %><br>
-    <%= f.number_field :view %>
-  </div>
-  <div class="field">
-    <%= f.label :cover %><br>
+    <%= f.label :封面上傳 %><br>
 	<%= f.file_field :cover, accept: "image/*"%>    
   </div>
   <div class="actions">

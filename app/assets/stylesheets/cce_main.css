@@ -1,5 +1,15 @@
 /*=============================================       main    =========================================*/
 /**************     CCENow    **************/
+.CCENow_title{
+	width: 30%; margin: 0 auto; 
+	text-align: center;
+	font-size:16px;
+	color: #198EB9;
+	font-weight: bold;
+	letter-spacing: 2px;
+	line-height: 30px;
+	border: 4px solid #198EB9;	
+}
 .clearfix:after {
 	content: "";
 	display: table;
@@ -9,7 +19,7 @@
 	width: 70%; 
 	margin: 10px auto;
     text-align: center;	
-	border: 4px solid #FF3385; 
+	border: 4px solid #198EB9; 
 }
 .CCENow_content ul{
     list-style-type: none;
@@ -20,7 +30,7 @@
 	float: left;
 	width: 19.8%; 
 	margin-top: 20px;
-	border-right: 1px solid #FF3385; 	
+	border-right: 1px solid #198EB9; 	
 	margin-bottom: 20px;	
 
 }
@@ -33,12 +43,12 @@
 	font-style: italic;
 	font-size: 40px;
 	line-height: 70px;
-	color: #FF3385;	
+	color: #198EB9;	
 
 }
 .CCENow_content_caption{
 	line-height: 25px;
-	color: #FF3385;	
+	color: #198EB9;	
 	width: 75%;
 	font-weight: bold;
 	margin: 10px auto;	
@@ -46,7 +56,7 @@
 	font-size: 18px;
 }
 .CCENow_content_part{
-	border-top: 1px solid #FF3385; 	
+	border-top: 1px solid #198EB9; 	
 	margin-top: 10px;
 	padding-top: 10px;	
     font-family: Microsoft YaHei, 'Lato', Calibri, Arial, sans-serif;		
@@ -61,11 +71,11 @@
 	margin: 0 auto; 
 	text-align: center;
 	font-size:16px;
-	color: #FF3385;
+	color: #198EB9;
 	font-weight: bold;
 	letter-spacing: 2px;
 	line-height: 30px;
-	border: 4px solid #FF3385;	
+	border: 4px solid #198EB9;	
 }
 .CCEMembers_content{
 	width: 80%; 	
@@ -73,14 +83,14 @@
     overflow: hidden;
     position: relative;
 	display: flex;
-	color: #FF3385;
+	color: #198EB9;
 	font-size:15px;	
 
 }
 .CCEMembers_left{
 	align-items: stretch;	
 	width: 32%; 
-	border: 4px solid #FF3385;	
+	border: 4px solid #198EB9;	
 	padding-top: 200px;
 
 }
@@ -88,7 +98,7 @@
 	align-items: stretch; 
 	width: 65%; 
 	margin-left: 15px;		
-	border: 4px solid #FF3385;	
+	border: 4px solid #198EB9;	
 	padding-top: 40px;	
 }
 .CCEMembers_part_left{
@@ -151,7 +161,7 @@
 }
 .CCEMembers_pos_name{
 	position: relative;
-	border-bottom: 1px solid #FF3385;	
+	border-bottom: 1px solid #198EB9;	
 	padding-bottom: 5px;
 }
 .CCEMembers{
@@ -159,7 +169,7 @@
 	margin-top: 10px; 
 	padding-bottom: 5px;	
 	line-height: 16px;
-	border-bottom: 1px solid #FF3385;	
+	border-bottom: 1px solid #198EB9;	
 }
 .CCEMembers_email{
 	font-size:22px;	
@@ -170,7 +180,7 @@
 	padding-bottom: 5px;	
 }
 .CCEMembers_email_in{
-	border-bottom: 1px solid #FF3385;
+	border-bottom: 1px solid #198EB9;
 	font-family: Lucida Console;	
 	font-style: italic;		
 	letter-spacing: 2px;
@@ -187,12 +197,12 @@
 }
 .CCEMembers_tel_in{
 	letter-spacing: 2px;
-	border-bottom: 1px solid #FF3385;		
+	border-bottom: 1px solid #198EB9;		
 	padding-bottom: 5px;	
 }
 /**************     CCEEnactment  **************/
 .CCEEnactment_nav {
-	border: 4px solid #FF3385;	
+	border: 4px solid #198EB9;	
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -206,12 +216,12 @@
 	width: 90%;
 	line-height: 100px;
 	margin: 0 auto;
-	border-bottom: 1px solid #FF3385;	
+	border-bottom: 1px solid #198EB9;	
 }
 
 .CCEEnactment_nav a {
 	text-align: center;
-	color: #FF3385;
+	color: #198EB9;
 	line-height: 40px;
 	display: block;
 	font-weight: bold;
@@ -224,7 +234,7 @@
 }
 
 .CCEEnactment_nav .current a {
-	color: #CC296A;
+	color: #00597D;
 }
 .CCEEnactment_container {
 	position: absolute;
@@ -238,15 +248,15 @@
 	margin-left: 400px;	
 }
 .CCEEnactment_section_inner {	
-	border: 4px solid #FF3385;	
+	border: 4px solid #198EB9;	
 }
 .CCEEnactment_section_inner_title{
-	color: #FF3385;
+	color: #198EB9;
 	width: 80%;
 	margin: 0 auto;
 	margin-top: 50px;	
 	text-align: left;
-	border-bottom: 1px solid #FF3385;	
+	border-bottom: 1px solid #198EB9;	
 	font-size: 27px;	
 	font-weight: bold;
 	line-height: 50px;
@@ -268,7 +278,7 @@
 }
 /**************     CCEEnactment  **************/
 .CCELocation_nav {
-	border: 4px solid #FF3385;	
+	border: 4px solid #198EB9;	
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -282,12 +292,12 @@
 	width: 90%;
 	line-height: 100px;
 	margin: 0 auto;
-	border-bottom: 1px solid #FF3385;	
+	border-bottom: 1px solid #198EB9;	
 }
 
 .CCELocation_nav a {
 	text-align: center;
-	color: #FF3385;
+	color: #198EB9;
 	line-height: 40px;
 	display: block;
 	font-weight: bold;
@@ -300,7 +310,7 @@
 }
 
 .CCELocation_nav .current a {
-	color: #CC296A;
+	color: #00597D;
 }
 .CCELocation_container {
 	position: absolute;
@@ -314,15 +324,15 @@
 	margin-left: 400px;	
 }
 .CCELocation_section_inner {	
-	border: 4px solid #FF3385;	
+	border: 4px solid #198EB9;	
 }
 .CCELocation_section_inner_title{
-	color: #FF3385;
+	color: #198EB9;
 	width: 80%;
 	margin: 0 auto;
 	margin-top: 50px;	
 	text-align: left;
-	border-bottom: 1px solid #FF3385;	
+	border-bottom: 1px solid #198EB9;	
 	font-size: 27px;	
 	font-weight: bold;
 	line-height: 50px;
@@ -332,7 +342,7 @@
 	font-size: 19px;	
 	font-weight: bold;	 
     margin: 10px auto; 
-	color: #FF3385;      	 
+	color: #198EB9;      	 
 	 
 }
 .CCELocation_section_inner ul {

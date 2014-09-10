@@ -7,7 +7,20 @@ module CceClassesHelper
   def kindOptions
     [['學分班', GLOBAL_VAR['kind_credit']], 
      ['培訓班', GLOBAL_VAR['kind_training']], 
-     ['營隊', GLOBAL_VAR['kind_camp']],      
-     ['單獨課程', GLOBAL_VAR['kind_course']]]
-  end    
+     ['營隊', GLOBAL_VAR['kind_camp']]]
+  end  
+  def showDimensions(hash={})
+    dimensions=Array.new
+    hash[:cce_class].cce_class_dimensions.each do |d|    
+      dimensions<<d.dimension.name
+    end
+    if dimensions.empty?
+      '無向度'
+    else
+      dimensions.join(', ')   
+    end
+  end
+  
+  
+    
 end

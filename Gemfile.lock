@@ -141,6 +141,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass
   coffee-rails (~> 4.0.0)
+  countries
   country_select
   gritter
   jbuilder (~> 2.0)

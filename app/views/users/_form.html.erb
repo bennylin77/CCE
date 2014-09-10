@@ -35,7 +35,7 @@
     <%= @user.email %>
   </div>
   <div class="field">
-    身份<br>
+          會員身份<br>
     <%= Hash[identityOptions].rassoc(@user.identity).first%> 
   </div>  
   <div class="field">
@@ -62,20 +62,8 @@
 	<%=f.radio_button :gender, "false"%>女
   </div>
   <div class="field">
-    最高學歷<br>
+         最高學歷<br>
     <%= f.text_field :education %>
-  </div>
-  <div class="field">
-    身分証字號<br>
-    <%= f.text_field :id_no %>
-  </div>
-  <div class="field">
-    護照號碼<br>
-    <%= f.text_field :passport_no %>
-  </div>
-  <div class="field">
-    國籍<br>
-    <%= country_select("user", "nationality", {}, { selected: "Taiwan, Republic Of China "})%>
   </div>
   <div class="field">
     生日<br>
@@ -90,8 +78,20 @@
     <%= f.text_field :phone_no %>
   </div>
   <div class="field">
-    手機號碼<br>
+          手機號碼<br>
     <%= f.text_field :mobile_no %>
+  </div>
+  <div class="field">
+  	  國籍<br>
+    <%= country_select("user", "nationality", {}, { selected: "Taiwan, Republic Of China "})%>
+  </div>  
+  <div class="field">
+          身分証字號<br>
+    <%= f.text_field :id_no %>
+  </div>
+  <div class="field">
+         護照號碼<br>
+    <%= f.text_field :passport_no %>
   </div>
 
   <%end%>

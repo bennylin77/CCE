@@ -13,14 +13,11 @@
 			      columnWidth: 27,
 			      gutter: 15,
 			      isFitWidth: true
-			});
-			$container.children().each( function( i, val ) {
-				//$('#rollover_'+$(val).attr('id')).css("height",$('#inner_'+$(val).attr('id')).height());
 			});			
 		});		
 		//initial fancybox
 		$(".openNewsAjax").fancybox({
-			type: 'ajax',								
+			type: 'ajax',		 						
 	        afterShow: function() {
 	           //FB.XFBML.parse();
 	           //window.history.pushState("", "",$(this).attr( "href" ));

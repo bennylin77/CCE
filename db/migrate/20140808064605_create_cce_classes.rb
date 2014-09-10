@@ -4,21 +4,52 @@ class CreateCceClasses < ActiveRecord::Migration
       t.string :title
       t.string :sub_title
       t.integer :kind
-      t.integer :status
+      t.integer :status      
       t.text :introduction
       t.text :syllabus
       t.text :schedule
       t.text :enrollment_user
       t.text :future
-      t.string :location
-      t.string :tuition
-      t.text :lecturers
+      t.integer :tuition      
+      t.text :lecturers      
+      t.text :class_time
+      t.text :note 
+ 
+      t.integer :school_year      
       t.date :start_at
       t.date :end_at
-      t.text :class_time
+      t.string :requester
+      t.string :organizer
+      t.string :other_organizer       
+      t.string :host
+      t.integer :host_extend
+      t.belongs_to :user, index: true               
+      t.string :location
+   
+      t.integer :grants
+      t.integer :total_tuition
+      t.integer :other_funds
       t.integer :user_size_limits
-      t.integer :member_id
-      t.text :note
+      t.integer :male_size
+      t.integer :female_size
+                  
+      t.integer :total_credits
+      t.integer :total_hours
+      t.integer :in_school_lecturers_no    
+      t.integer :out_school_lecturers_no         
+      
+      t.integer :school_expenses
+      t.integer :school_other_expenses      
+      t.integer :cce_expenses  
+      t.integer :college_expenses  
+      t.integer :department_expenses  
+      
+      t.integer :school_venue_fee
+      t.integer :school_other_venue_fee 
+      t.integer :cce_venue_fee  
+      t.integer :college_venue_fee
+      t.integer :department_venue_fee     
+            
       t.boolean :verified, default: false
       t.integer :verified_user_id    
       t.boolean :available, default: true

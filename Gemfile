@@ -20,3 +20,4 @@ gem "gritter"
 
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'countries'

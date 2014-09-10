@@ -3,18 +3,25 @@ class CceClassesController < ApplicationController
   before_action :set_cce_class, only: [:show, :edit, :update, :destroy, :verified, :available]
 
   def index    
-    if params[:dimension].blank?
-      params[:dimension]=true
+    if params[:dimension].blank? and params[:kind].blank? and params[:status].blank?
+      @cce_classes = CceClass.all.paginate(per_page: 30, page: params[:page]).order('id DESC')       
+    elsif !params[:dimension].blank? and params[:kind].blank? and params[:status].blank?
+      @cce_classes = CceClass.joins(:cce_class_dimensions).where("cce_class_dimensions.dimension_id = ?", params[:dimension]).paginate(per_page: 30, page: params[:page]).order('id DESC')                
+    elsif params[:dimension].blank? and !params[:kind].blank? and params[:status].blank?   
+      @cce_classes = CceClass.where("kind = ?", params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')                
+    elsif params[:dimension].blank? and params[:kind].blank? and !params[:status].blank?
+      @cce_classes = CceClass.where("status = ?", params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')        
+    elsif !params[:dimension].blank? and !params[:kind].blank? and params[:status].blank?
+       @cce_classes = CceClass.joins(:cce_class_dimensions).where("cce_class_dimensions.dimension_id = ? and kind = ?", params[:dimension], params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')                      
+    elsif params[:dimension].blank? and !params[:kind].blank? and !params[:status].blank?
+      @cce_classes = CceClass.where("kind = ? and status = ?", params[:kind], params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')              
+    elsif !params[:dimension].blank? and params[:kind].blank? and !params[:status].blank?    
+       @cce_classes = CceClass.joins(:cce_class_dimensions).where("cce_class_dimensions.dimension_id = ? and status = ?", params[:dimension], params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')                                          
+    elsif !params[:dimension].blank? and !params[:kind].blank? and !params[:status].blank?   
+       @cce_classes = CceClass.joins(:cce_class_dimensions).where("cce_class_dimensions.dimension_id = ? and kind = ? and status = ?", params[:dimension], params[:kind], params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')                                          
+                   
     end    
-    if params[:kind].blank?
-      params[:kind]=true
-    end    
-    if params[:status].blank?
-      params[:status]=true
-    end
-    
-    #@cce_classes = CceClass.where("status = ? and kind = ?", params[:status], params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')        
-    @cce_classes = CceClass.all.paginate(per_page: 30, page: params[:page]).order('id DESC')       
+ 
     if request.xhr?
       sleep(0.3) 
       render partial: "cce_classes/cce_class_block", collection: @cce_classes
@@ -135,6 +142,6 @@ class CceClassesController < ApplicationController
     def cce_class_params
       params.require(:cce_class).permit(:title, :sub_title, :kind, :status, :introduction, :syllabus, :schedule, 
                                         :enrollment_user, :future, :location, :tuition, :lecturers, :start_at, 
-                                        :end_at, :class_time, :user_size_limits, :note)
+                                        :end_at, :class_time, :user_size_limits, :note, :school_year)
     end
 end

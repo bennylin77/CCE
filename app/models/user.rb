@@ -1,7 +1,8 @@
 # encoding: UTF-8
 require 'digest/sha1'
 class User < ActiveRecord::Base
-
+  has_many :news, dependent: :destroy
+  
   validates :name, presence: {message: "姓名 不能是空白"}
   validates :email, presence: {message: "Email 不能是空白"}, uniqueness: {message: "Email 已註冊過"}
   validates :identity, presence: {message: "身份 不能是空白"}

@@ -1,7 +1,7 @@
 # encoding: utf-8
 class News < ActiveRecord::Base
   belongs_to :cce_class
-  
+  belongs_to :user
   has_attached_file :cover,
                     :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
                     :url => "/system/:attachment/:id/:style/:filename",

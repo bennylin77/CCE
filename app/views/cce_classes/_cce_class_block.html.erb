@@ -5,9 +5,11 @@
 			<%= cce_class_block.id %> <%= cce_class_block.title %>
 			</div>
 			<div class="cce_box_tag">
-				<div class="cce_box_tag_dim" style="">資訊工程、生命科學</div>				
-				<div class="cce_box_tag_status" style=""><%= Hash[statusOptions].rassoc(cce_class_block.status ).first %></div>
-				<div class="cce_box_tag_kind" style=""><%= Hash[kindOptions].rassoc(cce_class_block.kind).first %></div>
+				<div class="cce_box_tag_dim">
+					<%= showDimensions( cce_class: cce_class_block)%>			
+				</div>				
+				<div class="cce_box_tag_status"><%= Hash[statusOptions].rassoc(cce_class_block.status ).first %></div>
+				<div class="cce_box_tag_kind"><%= Hash[kindOptions].rassoc(cce_class_block.kind).first %></div>
 				<div class="cce_box_enroll_status">			
 					<div class="cce_box_enroll_status_inner">
 								<span class="remain-icon icon-clipboard"></span>

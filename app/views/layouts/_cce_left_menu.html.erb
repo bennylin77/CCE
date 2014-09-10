@@ -15,7 +15,10 @@
 		<%else%>
 		<div class="logout">
 			<div class="hello">Hello, <%=User.find(session[:user_id]).name%></div>
-			<%=link_to '登出', '/users/logOut', class: "logout_a", style: 'padding: 2.5px 25px;'%><a href="#" style="color: #f9f9f9;"><span class="settings" >會員設定</span></a> 	
+			<%=link_to '登出', '/users/logOut', class: "logout_a", style: 'padding: 2.5px 25px;'%>
+			<%=link_to edit_user_path( User.find(session[:user_id]) ) do%>
+			<span class="settings">會員設定</span>
+			<%end%>
 		</div>
 		<%end%>	
 	</div>	

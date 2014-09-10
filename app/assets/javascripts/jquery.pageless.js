@@ -81,7 +81,7 @@
       pagination: '.pagination',
       params: {},
       url: location.href,
-      loaderImage: "/images/load.gif",
+      loaderImage: "/images/loading.gif",
       method: 'get'
     };
 

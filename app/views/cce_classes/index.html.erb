@@ -60,105 +60,65 @@
      });
 <% end %>
 <script>
+	function filterAjax() {
+		var request = $.ajax({
+			url: '<%= cce_classes_path %>',
+			type: "GET",
+			data: {dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val() }
+		});
+		request.done(function( msg ) {								
+			var $container = $('#masonry-container');
+			data=$.parseHTML( msg );
+			$(data).imagesLoaded(function(){
+				var elems = $container.masonry('getItemElements');
+				$container.masonry('remove', elems);
+				$container.masonry();
+				$container.append(data);
+				$container.masonry('appended', data);
+	
+				if(data.length==1)	
+				{
+					$container.pageless({
+						currentPage: 1,
+						totalPages: 1,
+						loaderImage: '<%=  image_path("loading.gif") %>', 							
+						params: { dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val()},
+						url: '/cce_classes',
+						end: endPage,
+						scrape: handleMasonry	
+					});	
+				}					
+				else
+				{		
+					$container.pageless({
+						currentPage: 1,
+						loaderImage: '<%=  image_path("loading.gif") %>', 							
+						params: { dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val()},
+						url: '/cce_classes',
+						end: endPage,
+						scrape: handleMasonry	
+					});		
+				}
+							    
+				$container.children().each( function( i, val ) {
+							//$('#rollover_'+$(val).attr('id')).css("height",$('#inner_'+$(val).attr('id')).height());
+						});			
+			});					
+		});
+		request.fail(function( jqXHR, textStatus ) {
+				alert( "Request failed: " + textStatus );
+		});			
+	}
+	
 
 	$('#dimension').change(function() {
-			var request = $.ajax({
-				url: '<%= cce_classes_path %>',
-				type: "GET",
-				data: {dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val() }
-				});
-				request.done(function( msg ) {								
-					var $container = $('#masonry-container');
-					data=$.parseHTML( msg );
-					$(data).imagesLoaded(function(){
-						var elems = $container.masonry('getItemElements');
-						$container.masonry('remove', elems);
-						$container.masonry();
-						$container.append(data);
-						$container.masonry('appended', data);
-											
-						$container.pageless({
-							currentPage: 1,
-							params: { dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val()},
-							url: '/cce_classes',
-							end: endPage,
-							scrape: handleMasonry	
-						});		
-							    
-						$container.children().each( function( i, val ) {
-							//$('#rollover_'+$(val).attr('id')).css("height",$('#inner_'+$(val).attr('id')).height());
-						});			
-					});					
-				});
-				request.fail(function( jqXHR, textStatus ) {
-				alert( "Request failed: " + textStatus );
-			});		
+		filterAjax();		
 	});
 	$('#kind').change(function() {
-			var request = $.ajax({
-				url: '<%= cce_classes_path %>',
-				type: "GET",
-				data: { dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val() }
-				});
-				request.done(function( msg ) {								
-					var $container = $('#masonry-container');
-					data=$.parseHTML( msg );
-					$(data).imagesLoaded(function(){
-						var elems = $container.masonry('getItemElements');
-						$container.masonry('remove', elems);
-						$container.masonry();
-						$container.append(data);
-						$container.masonry('appended', data);
-											
-						$container.pageless({
-							currentPage: 1,
-							params: { dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val()},
-							url: '/cce_classes',
-							end: endPage,
-							scrape: handleMasonry	
-						});		
-							    
-						$container.children().each( function( i, val ) {
-							//$('#rollover_'+$(val).attr('id')).css("height",$('#inner_'+$(val).attr('id')).height());
-						});			
-					});					
-				});
-				request.fail(function( jqXHR, textStatus ) {
-				alert( "Request failed: " + textStatus );
-			});		
+		filterAjax();			
 	});
 	$('#status').change(function() {
-			var request = $.ajax({
-				url: '<%= cce_classes_path %>',
-				type: "GET",
-				data: { dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val() }
-				});
-				request.done(function( msg ) {								
-					var $container = $('#masonry-container');
-					data=$.parseHTML( msg );
-					$(data).imagesLoaded(function(){
-						var elems = $container.masonry('getItemElements');
-						$container.masonry('remove', elems);
-						$container.masonry();
-						$container.append(data);
-						$container.masonry('appended', data);
-											
-						$container.pageless({
-							currentPage: 1,
-							params: { dimension: $('#dimension').val(), kind: $('#kind').val(), status: $('#status').val()},
-							url: '/cce_classes',
-							end: endPage,
-							scrape: handleMasonry	
-						});		
-							    
-						$container.children().each( function( i, val ) {
-							//$('#rollover_'+$(val).attr('id')).css("height",$('#inner_'+$(val).attr('id')).height());
-						});			
-					});					
-				});
-				request.fail(function( jqXHR, textStatus ) {
-				alert( "Request failed: " + textStatus );
-			});		
+		filterAjax();	
 	});	
 /*
 $('#status').hover(function(){
