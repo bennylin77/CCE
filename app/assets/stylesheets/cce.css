@@ -307,6 +307,7 @@ button{
 	float: left;
 	font-size: 17px;
 	font-weight: bold;
+	margin-top: 2px;	
 }
 .title_container_left_content{
 	float: left;
@@ -407,6 +408,7 @@ button{
 {
     background: #F2EEEA;
 }
+
 .select_filter span {
     font-size: 15px;
 	position: absolute;
@@ -422,6 +424,92 @@ button{
 	margin-left: 250px;	
     width: 78%;	
 }
+
+.function_title {
+	font-style: italic;
+	color: #198EB9;
+    font-size: 24px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form_table{
+	color: #198EB9;
+	display: table;
+	margin-bottom: 50px;
+}
+.form_row{
+	display: table-row;
+	height: 48px;
+}
+.form_title{
+	display: table-cell;
+	padding-top: 10px;
+	padding-right: 10px;	
+    vertical-align: middle;			
+}
+.form_sub{
+	display: table-cell;
+	padding-top: 10px;
+	padding-right: 10px;	
+    font-size: 20px;
+	border-bottom: 3px dotted #198EB9;			
+}
+.form_content{
+	display: table-cell;
+	padding-top: 10px;	
+}
+
+.form_table input[type="text"] {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px;
+	color:  #898989;    
+	background: #F2EEEA;
+	border: 3px solid #198EB9;		
+}
+.form_table input[type="number"] {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px;
+	color:  #898989;    
+	background: #F2EEEA;
+	border: 3px solid #198EB9;		
+}
+.form_table textarea {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px;
+	color:  #898989;    
+	background: #F2EEEA;
+	border: 3px solid #198EB9;		
+}
+.form_table select {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px;
+	color:  #898989;    
+	background: #F2EEEA;
+	border: 3px solid #198EB9;		
+}
+
+.form_table button {
+	
+    height: 30px;
+    width: 180px;
+    cursor: pointer;
+    border-radius: 1px;
+    font-size: 17px;
+    letter-spacing: 10px;    
+    font-family: Microsoft YaHei, 'Lato', Calibri, Arial, sans-serif;	
+	color: #F2EEEA;	    
+    background: #198EB9;
+} 
+.form_table button:hover {
+  	opacity: 0.8;
+} 
+
 /*=============================================       masonry      =========================================*/
 #masonry-container{
  
@@ -530,6 +618,13 @@ button{
 	margin: 5px auto 13px; 
 }
 /*=============================================       cce class    =========================================*/
+
+
+
+
+
+
+
 
 /*=============================================       news     =========================================*/
 .news_show{

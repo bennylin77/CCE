@@ -142,6 +142,10 @@ class CceClassesController < ApplicationController
     def cce_class_params
       params.require(:cce_class).permit(:title, :sub_title, :kind, :status, :introduction, :syllabus, :schedule, 
                                         :enrollment_user, :future, :location, :tuition, :lecturers, :start_at, 
-                                        :end_at, :class_time, :user_size_limits, :note, :school_year)
+                                        :end_at, :class_time, :user_size_limits, :note, :school_year, :requester,
+                                        :organizer, :other_organizer, :host, :host_extend, :grants, :total_tuition,
+                                        :other_funds, :total_credits, :total_hours, :in_school_lecturers_no, :out_school_lecturers_no,
+                                        :school_expenses, :academic_expenses, :center_expenses, :college_expenses, :department_expenses,
+                                        :school_venue_fee, :units_venue_fee)
     end
 end

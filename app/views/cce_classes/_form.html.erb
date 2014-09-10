@@ -11,85 +11,319 @@
     </div>
   <% end %>
 
-
-  <div class="field">
-   	課程名稱<br>
-    <%= f.text_field :title, size: 40 %>
-  </div>
-  <div class="field">
-         課程副標題<br>
-    <%= f.text_field :sub_title, size: 40  %>
-  </div>
-  <div class="field">
-         課程類別<br>
-    <%= f.select :kind, kindOptions ,{prompt: '選擇課程類別'} %>
-  </div>
-  <div class="field">
-       報名狀態<br>
-   <%= f.select :status, statusOptions ,{prompt: '選擇報名狀態', selected: GLOBAL_VAR['status_enrollment']} %>
-  </div>
-  <div class="field">
-        向度(按Ctrl可複選)<br> 
-  <%= collection_select(:cce_class, :dimension_ids, 
-              Dimension.all, 
-              :id, :name, {:selected => @cce_class.dimension_ids, :include_blank => false}, {:multiple => true}) %>    
+  <section class="form_table">
+  <div class="form_row">
+	  <div class="form_title">
+	      課程名稱*
+	  </div>
+	  <div class="form_content">
+	  <%= f.text_field :title, size: 50 %>	
+	  </div>         	
   </div>  
-  <div class="field">
-          課程介紹<br> 
-    <%= f.text_area :introduction, size: '40x10' %>
+  <div class="form_row">
+	  <div class="form_title">
+	     課程副標題*
+	  </div>
+	  <div class="form_content">
+	  <%= f.text_field :sub_title, size: 50  %>	
+	  </div>         	
+  </div>    
+  <div class="form_row">
+	  <div class="form_title">
+	     課程類別*
+	  </div>
+	  <div class="form_content">
+	  <%= f.select :kind, kindOptions ,{prompt: '選擇課程類別'} %>
+	  </div>         	
+  </div>    
+  <div class="form_row">
+	  <div class="form_title">
+	      報名狀態*
+	  </div>
+	  <div class="form_content">
+      <%= f.select :status, statusOptions ,{prompt: '選擇報名狀態', selected: GLOBAL_VAR['status_enrollment']} %>
+	  </div>         	
+  </div> 
+  <div class="form_row">
+	  <div class="form_title">
+	     向度*(按Ctrl可複選)
+	  </div>
+	  <div class="form_content">
+      <%= collection_select(:cce_class, :dimension_ids, 
+                            Dimension.all, 
+                            :id, :name, {:selected => @cce_class.dimension_ids, :include_blank => false}, {:multiple => true}) %>    
+	  </div>         	
+  </div> 
+  <div class="form_row">
+	  <div class="form_title">
+	     課程學年*
+	  </div>
+	  <div class="form_content">
+	  <%= f.number_field  :school_year, in: 100..140, step: 1, value: Time.now.year-1911 %>	  	
+	  </div>         	
+  </div>      
+  <div class="form_row">
+	  <div class="form_title">
+	      課程開始日*
+	  </div>
+	  <div class="form_content">
+      <%= f.date_select :start_at %>
+	  </div>    
+	  <div class="form_title">
+	     課程結束日*
+	  </div>
+	  <div class="form_content">
+	  <%= f.date_select :end_at %>
+	  </div>  	       	
+  </div> 
+  <div class="form_row">
+	  <div class="form_title">
+	      課程總時數*
+	  </div>
+	  <div class="form_content">
+  	  <%= f.number_field :total_hours, in: 0..400, step: 1, value: 0 %>
+	  </div>         	
+  </div>  
+  <div class="form_row">
+	  <div class="form_title">
+	     課程總學分
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :total_credits, in: 0..400, step: 1, value: 0 %>	  	
+	  </div>         	
+  </div>       
+  <div class="form_row">
+	  <div class="form_title">
+	     上課時間*
+	  </div>
+	  <div class="form_content">
+  	  <%= f.text_area :class_time, size: '30x2' %>
+	  </div>         	
+  </div>   
+  <div class="form_row">
+	  <div class="form_title">
+	     上課地點*
+	  </div>
+	  <div class="form_content">
+  	  <%= f.text_field :location, size: 50 %>
+	  </div>         	
+  </div>   
+  <div class="form_row">
+	  <div class="form_title">
+	     課程介紹*
+	  </div>
+	  <div class="form_content">
+      <%= f.text_area :introduction, size: '40x10' %>
+	  </div>         	
+  </div>  
+  <div class="form_row">
+	  <div class="form_title">
+	     課程大綱*
+	  </div>
+	  <div class="form_content">
+      <%= f.text_area :syllabus, size: '40x10' %>
+	  </div>         	
+  </div>   
+  <div class="form_row">
+	  <div class="form_title">
+	     課程時程表*
+	  </div>
+	  <div class="form_content">
+      <%= f.text_area :schedule, size: '40x10' %>
+	  </div>         	
+  </div>  
+  <div class="form_row">
+	  <div class="form_title">
+	     招生人數*
+	  </div>
+	  <div class="form_content">
+       <%= f.number_field :user_size_limits, in: 0..1000, step: 1 %>
+	  </div>         	
+  </div>      
+  <div class="form_row">
+	  <div class="form_title">
+	     招生對象*
+	  </div>
+	  <div class="form_content">
+      <%= f.text_area :enrollment_user, size: '40x3'  %>
+	  </div>         	
+  </div>    
+  <div class="form_row">
+	  <div class="form_title">
+	     結訓證書及未來發展
+	  </div>
+	  <div class="form_content">
+      <%= f.text_area :future, size: '40x3' %>
+	  </div>         	
+  </div>   
+  <div class="form_row">
+	  <div class="form_title">
+	     校內師資人數
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :in_school_lecturers_no, in: 0..1000, step: 1 %>
+	  </div>         	
   </div>
-  <div class="field">
-         課程大綱<br>
-    <%= f.text_area :syllabus, size: '40x10' %>
+  <div class="form_row">
+	  <div class="form_title">
+	     校外師資人數
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :out_school_lecturers_no, in: 0..1000, step: 1  %>
+	  </div>         	
+  </div>      
+  <div class="form_row">
+	  <div class="form_title">
+	      師資介紹
+	  </div>
+	  <div class="form_content">
+      <%= f.text_area :lecturers, size: '40x3'%>
+	  </div>         	
+  </div> 
+  <div class="form_row">
+	  <div class="form_title">
+	      開課委託單位
+	  </div>
+	  <div class="form_content">
+      <%= f.text_field :requester, size: 50 %>
+	  </div>         	
+  </div>   
+  <div class="form_row">
+	  <div class="form_title">
+	      主辦單位*(學校請填學院及系所)
+	  </div>
+	  <div class="form_content">
+      <%= f.text_field :organizer, size: 50 %>
+	  </div>         	
+  </div>   
+  <div class="form_row">
+	  <div class="form_title">
+	      主持人
+	  </div>
+	  <div class="form_content">
+      <%= f.text_field :host, size: 15 %>
+	  </div> 
+	  <div class="form_title">
+	      主持人分機
+	  </div>
+	  <div class="form_content">
+      <%= f.text_field :host_extend, size: 15 %>
+	  </div> 	           	
   </div>
-  <div class="field">
-         課程時程表<br>
-    <%= f.text_area :schedule, size: '40x10' %>
-  </div>
-  <div class="field">
-         招生對象<br>
-    <%= f.text_area :enrollment_user, size: '40x3'  %>
-  </div>
-  <div class="field">
-        結訓證書及未來發展<br>
-   <%= f.text_area :future, size: '40x3' %>
-  </div>
-  <div class="field">
-         上課地點<br>
-    <%= f.text_field :location, size: 40 %>
-  </div>
-  <div class="field">
-          費用<br>
-    <%= f.text_field :tuition, size: 40 %>
-  </div>
-  <div class="field">
-          師資<br>
-    <%= f.text_area :lecturers, size: '40x3'%>
-  </div>
-
-  <div class="field">
-          課程開始日<br>
-    <%= f.date_select :start_at %>
-  </div>
-  <div class="field">
-          課程結束日<br>
-    <%= f.date_select :end_at %>
-  </div>
-  <div class="field">
-          上課時間<br>
-    <%= f.text_area :class_time %>
-  </div>
-  <div class="field">
-          招生人數<br>
-    <%= f.number_field :user_size_limits, size: 40 %>
-  </div>
-  <div class="field">
-          其它備註<br>
-    <%= f.text_area :note, size: '40x3' %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit '確認送出' %>
-  </div>
+       
+  <div class="form_row">
+	  <div class="form_title">
+	     學費
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :tuition, in: 0..100000, step: 1 %>
+	  </div>         	
+  </div>  
+  <div class="form_row">
+	  <div class="form_title">
+	      其它備註
+	  </div>
+	  <div class="form_content">
+      <%= f.text_area :note, size: '40x3' %>
+	  </div>         	
+  </div>    
+   
+  <div class="form_row">
+	  <div class="form_sub">
+	     預計經費來源    
+	  </div>    
+	  <div class="form_sub">	         
+	  </div>    	     	
+  </div>      
+  <div class="form_row">
+	  <div class="form_title">
+	     預估總共學費
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :total_tuition, in: 0..5000000, step: 1 %>
+	  </div>   
+	  <div class="form_title">
+	     補助款
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :grants, in: 0..5000000, step: 1 %>
+	  </div> 
+	  <div class="form_title">
+	     其他經費來源
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :other_funds, in: 0..5000000, step: 1 %>
+	  </div> 	  	        	
+  </div> 
+  <div class="form_row">
+	  <div class="form_sub">
+	     預計經費支出    
+	  </div>    
+	  <div class="form_sub">	         
+	  </div>    	     	
+  </div>       
+  <div class="form_row">
+	  <div class="form_title">
+	     學校(學分班為15%)
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :school_expenses, in: 0..5000000, step: 1 %>
+	  </div>         	
+  </div>    
+  <div class="form_row">
+	  <div class="form_title">
+	     教務處
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :academic_expenses, in: 0..5000000, step: 1 %>
+	  </div>         	
+  </div>       
+  <div class="form_row">
+	  <div class="form_title">
+	      各中心
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :center_expenses, in: 0..5000000, step: 1 %>
+	  </div>         	
+  </div>     
+  <div class="form_row">
+	  <div class="form_title">
+	      各學院
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :college_expenses, in: 0..5000000, step: 1 %>
+	  </div>         	
+  </div>   
+  <div class="form_row">
+	  <div class="form_title">
+	      各系所
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :department_expenses, in: 0..5000000, step: 1 %>
+	  </div>         	
+  </div>   
+  
+  <div class="form_row">
+	  <div class="form_title">
+	     學校場地費
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :school_venue_fee, in: 0..5000000, step: 1 %>
+	  </div>         	
+  </div>    
+  <div class="form_row">
+	  <div class="form_title">
+	     各單位場地費
+	  </div>
+	  <div class="form_content">
+      <%= f.number_field :units_venue_fee, in: 0..5000000, step: 1 %>
+	  </div>         	
+  </div>   
+  <div class="form_row">
+  	<div class="form_title">
+    <%= f.button '確認送出' %>
+    </div>
+  </div>       
+  </section>	
 <% end %>
 
