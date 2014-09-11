@@ -1,71 +1,116 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Extend:</strong>
-  <%= @user.extend %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @user.age %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
-
-<p>
-  <strong>Education:</strong>
-  <%= @user.education %>
-</p>
-
-<p>
-  <strong>Id no:</strong>
-  <%= @user.id_no %>
-</p>
-
-<p>
-  <strong>Passport no:</strong>
-  <%= @user.passport_no %>
-</p>
-
-<p>
-  <strong>Nationality:</strong>
-  <%= @user.nationality %>
-</p>
-
-<p>
-  <strong>Birthday:</strong>
-  <%= @user.birthday %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @user.address %>
-</p>
-
-<p>
-  <strong>Phone no:</strong>
-  <%= @user.phone_no %>
-</p>
-
-<p>
-  <strong>Mobile no:</strong>
-  <%= @user.mobile_no %>
-</p>
-
-<p>
-  <strong>Identity:</strong>
-  <%= @user.identity %>
-</p>
+<div class="function_title">會員</div>
+<div class="function_field">
+<%= link_to '回會員列表', {controller: 'users', action: 'index'} , class: 'function_button' %>
+</div>
+<section class="show_table">
+  <div class="show_row">
+	  <div class="show_title">
+	  	姓名
+	  </div>
+	  <div class="show_content">	
+	  	<%= @user.name %>
+	  </div>         	
+  </div>
+  <div class="show_row">
+	  <div class="show_title">
+	  	Email
+	  </div>
+	  <div class="show_content">	
+	  	<%= @user.email %>
+	  </div>         	
+  </div>  
+  <div class="show_row">
+	  <div class="show_title">
+	  	會員身份
+	  </div>
+	  <div class="show_content">	
+     	<%= Hash[identityOptions].rassoc(@user.identity).first%> 
+	  </div>         	
+  </div>    
+  <div class="show_row">
+	  <div class="show_title">
+	  	年齡
+	  </div>
+	  <div class="show_content">	
+     	<%= @user.age %>
+	  </div>         	
+  </div>   
+  <div class="show_row">
+	  <div class="show_title">
+	  	性別
+	  </div>
+	  <div class="show_content">	
+     	<%if @user.gender %>男<%else%>女<%end%>
+	  </div>         	
+  </div>   
+  <div class="show_row">
+	  <div class="show_title">
+	  	生日
+	  </div>
+	  <div class="show_content">	
+     	<%= @user.birthday %> 
+	  </div>         	
+  </div>   
+  <div class="show_row">
+	  <div class="show_title">
+	  	地址
+	  </div>
+	  <div class="show_content">	
+     	<%= @user.address %>
+	  </div>         	
+  </div>   
+  <div class="show_row">
+	  <div class="show_title">
+	  	學校分機
+	  </div>
+	  <div class="show_content">	
+     	<%= @user.extend %>
+	  </div>         	
+  </div>   
+  <div class="show_row">
+	  <div class="show_title">
+	  	電話號碼
+	  </div>
+	  <div class="show_content">	
+     	<%= @user.phone_no %>
+	  </div>         	
+  </div> 
+  <div class="show_row">
+	  <div class="show_title">
+	  	手機號碼
+	  </div>
+	  <div class="show_content">	
+     	<%= @user.mobile_no %>
+	  </div>         	
+  </div> 
+  <div class="show_row">
+	  <div class="show_title">
+	  	國籍
+	  </div>
+	  <div class="show_content">	
+     	<%= @user.nationality %>
+	  </div>         	
+  </div>       
+  <div class="show_row">
+	  <div class="show_title">
+	  	身分証字號
+	  </div>
+	  <div class="show_content">	
+     	<%= @user.id_no %>
+	  </div>   
+	  <div class="show_title">
+	  	護照號碼
+	  </div>
+	  <div class="show_content">	
+     	<%= @user.passport_no %>
+	  </div> 	        	
+  </div>   
+  <div class="show_row">
+	  <div class="show_title">
+	  	最高學歷
+	  </div>
+	  <div class="show_content">	
+     	<%= @user.education %>
+	  </div>         	
+  </div>   
+</section>  

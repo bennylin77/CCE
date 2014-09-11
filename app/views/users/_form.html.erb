@@ -11,92 +11,169 @@
     </div>
   <% end %>
   <%= f.hidden_field :verified %>
-  <%if params[:action]=='new' or params[:action]=='create'%>
-  <div class="field">
-    姓名*<br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    Email*<br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    身份<br>
-    <%= f.select :identity, identityOptions, {prompt: '選擇身份'}%> 
-  </div>  
-  <%else%>
   
-  <div class="field">
-    姓名<br>
-    <%= @user.name %>
+  
+  <section class="form_table">  
+  <%if params[:action]=='new' or params[:action]=='create'%>
+  <div class="form_row">
+	  <div class="form_title">
+	   姓名*
+	  </div>
+	  <div class="form_content">
+      <%= f.text_field :name, size: 30 %>
+	  </div>         	
   </div>
-  <div class="field">
-    Email<br>
-    <%= @user.email %>
-  </div>
-  <div class="field">
-          會員身份<br>
-    <%= Hash[identityOptions].rassoc(@user.identity).first%> 
+  <div class="form_row">
+	  <div class="form_title">
+	   Email*
+	  </div>
+	  <div class="form_content">
+      <%= f.text_field :email, size: 30 %>
+	  </div>         	
   </div>  
-  <div class="field">
-	密碼*<br>
-	<%=f.password_field :pw, size: 40 %>
-  </div>
-  <div class="field">
-	密碼確認*<br>
-	<%=f.password_field :pw_confirmation, size: 40 %>
+  <div class="form_row">
+	  <div class="form_title">
+	   會員身份*
+	  </div>
+	  <div class="form_content">
+   	  <%= f.select :identity, identityOptions, {prompt: '選擇身份'}%> 
+	  </div>         	
   </div>   
-  <%if @user.identity==GLOBAL_VAR['identity_employee']%>
-  <div class="field">
-    分機<br>
-    <%= f.number_field :extend %>
+  <%else%>
+  <div class="form_row">
+	  <div class="form_title">
+	   姓名
+	  </div>
+	  <div class="form_content">
+   	  <%= @user.name %> 
+	  </div>         	
   </div>
-  <%end%>
-  <div class="field">
-    年齡<br>
-    <%= f.number_field :age %>
-  </div>
-  <div class="field">
-    性別<br>
-	<%=f.radio_button :gender, "true"%>男
-	<%=f.radio_button :gender, "false"%>女
-  </div>
-  <div class="field">
-         最高學歷<br>
-    <%= f.text_field :education %>
-  </div>
-  <div class="field">
-    生日<br>
-    <%= f.date_select :birthday %>
-  </div>
-  <div class="field">
-    地址<br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    電話號碼<br>
-    <%= f.text_field :phone_no %>
-  </div>
-  <div class="field">
-          手機號碼<br>
-    <%= f.text_field :mobile_no %>
-  </div>
-  <div class="field">
-  	  國籍<br>
-    <%= country_select("user", "nationality", {}, { selected: "Taiwan, Republic Of China "})%>
+  <div class="form_row">
+	  <div class="form_title">
+	   Email
+	  </div>
+	  <div class="form_content">
+   	  <%= @user.email %>
+	  </div>         	
   </div>  
-  <div class="field">
-          身分証字號<br>
-    <%= f.text_field :id_no %>
+  <div class="form_row">
+	  <div class="form_title">
+	   會員身份
+	  </div>
+	  <div class="form_content">
+   	  <%= Hash[identityOptions].rassoc(@user.identity).first%> 
+	  </div>         	
+  </div>  
+  <div class="form_row">
+	  <div class="form_title">
+	   密碼*
+	  </div>
+	  <div class="form_content">
+   	  <%=f.password_field :pw, size: 30 %> 
+	  </div>         	
+  </div>     
+  <div class="form_row">
+	  <div class="form_title">
+	   密碼確認*
+	  </div>
+	  <div class="form_content">
+   	  <%=f.password_field :pw_confirmation, size: 30 %>
+	  </div>         	
+  </div>    
+  <div class="form_row">
+	  <div class="form_title">
+	  年齡
+	  </div>
+	  <div class="form_content">
+   	  <%= f.number_field :age, in: 0..1000, step: 1  %>
+	  </div>         	
+  </div> 
+  <div class="form_row">
+	  <div class="form_title">
+	  性別
+	  </div>
+	  <div class="form_content">
+	  <%=f.radio_button :gender, "true"%>男
+	  <%=f.radio_button :gender, "false"%>女
+	  </div>         	
+  </div> 
+  <div class="form_row">
+	  <div class="form_title">
+	  生日
+	  </div>
+	  <div class="form_content">
+      <%= f.date_select :birthday, start_year: Time.now.year - 80, end_year: Time.now.year %>
+	  </div>         	
+  </div>        
+  <div class="form_row">
+	  <div class="form_title">
+	  地址
+	  </div>
+	  <div class="form_content">
+   	  <%= f.text_field :address, size: 30 %>
+	  </div>         	
   </div>
-  <div class="field">
-         護照號碼<br>
-    <%= f.text_field :passport_no %>
+  <%if @user.identity!=GLOBAL_VAR['identity_student']%>
+  <div class="form_row">
+	  <div class="form_title">
+	   學校分機*
+	  </div>
+	  <div class="form_content">
+   	  <%= f.number_field :extend, in: 0..100000, step: 1  %>
+	  </div>         	
+  </div>     
+  <%end%>  
+  <div class="form_row">
+	  <div class="form_title">
+	  電話號碼
+	  </div>
+	  <div class="form_content">
+   	  <%= f.text_field :phone_no, size: 30  %>
+	  </div>         	
+  </div>  
+  <div class="form_row">
+	  <div class="form_title">
+	  手機號碼
+	  </div>
+	  <div class="form_content">
+   	  <%= f.text_field :mobile_no, size: 30  %>
+	  </div>         	
+  </div>  
+  <div class="form_row">
+	  <div class="form_title">
+	  國籍
+	  </div>
+	  <div class="form_content">
+      <%= country_select("user", "nationality", {}, { selected: "Taiwan, Republic Of China "})%>
+	  </div>         	
   </div>
-
+  <div class="form_row">
+	  <div class="form_title">
+	  身分証字號
+	  </div>
+	  <div class="form_content">
+   	  <%= f.text_field :id_no, size: 30 %>
+	  </div> 
+	  <div class="form_title">
+	  護照號碼
+	  </div>
+	  <div class="form_content">
+   	  <%= f.text_field :passport_no, size: 30  %>
+	  </div>       	          	
+  </div>
+  <div class="form_row">
+	  <div class="form_title">
+	  最高學歷
+	  </div>
+	  <div class="form_content">
+   	  <%= f.text_field :education, size: 30 %>
+	  </div>         	
+  </div>  
   <%end%>
-  <br>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="form_row">
+  	<div class="form_title">
+    <%= f.button '確認送出' %>
+    </div>
+  </div>   
+  </section>	  
 <% end %>

@@ -1,6 +1,6 @@
 #encoding: UTF-8
 class CceClassesController < ApplicationController
-  before_action :set_cce_class, only: [:show, :edit, :update, :destroy, :verified, :available]
+  before_action :set_cce_class, only: [:show, :showManagement, :edit, :update, :destroy, :verified, :available]
 
   def index    
     if params[:dimension].blank? and params[:kind].blank? and params[:status].blank?
@@ -34,6 +34,10 @@ class CceClassesController < ApplicationController
     end   
   end
   
+  def showManagement
+    
+  end
+  
   def indexManagement
     @cce_classes = CceClass.all.paginate(per_page: 30, page: params[:page]).order('id DESC')    
   end
@@ -56,11 +60,9 @@ class CceClassesController < ApplicationController
 
     respond_to do |format|
       if @cce_class.save
-        format.html { redirect_to @cce_class, notice: 'Cce class was successfully created.' }
-        format.json { render :show, status: :created, location: @cce_class }
+        format.html { redirect_to controller: 'cce_classes', action: 'showManagement', id: @cce_class.id, notice: 'Cce class was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @cce_class.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -74,11 +76,9 @@ class CceClassesController < ApplicationController
     end    
     respond_to do |format|
       if @cce_class.update(cce_class_params)
-        format.html { redirect_to @cce_class, notice: 'Cce class was successfully updated.' }
-        format.json { render :show, status: :ok, location: @cce_class }
+        format.html { redirect_to  controller: 'cce_classes', action: 'showManagement', id: @cce_class.id, notice: 'Cce class was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @cce_class.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -213,6 +213,7 @@ button{
 	float: left;
 	margin-top: 0em;
 	color: #F2EEEA;	
+	width: 20px;
 }
 .bot_container li .bot_container_word{
 	float: left;
@@ -401,6 +402,9 @@ button{
    -moz-appearance: none; 
    -webkit-appearance: none;
    }
+.select_filter select:hover { 
+  	opacity: 0.8;
+}   
 .select_filter select:focus{
    outline: none;
 }
@@ -408,14 +412,12 @@ button{
 {
     background: #F2EEEA;
 }
-
 .select_filter span {
     font-size: 15px;
 	position: absolute;
 	right: 0.5px;
 	top: 3px;
 }    
-
 
 /*============================================= cce main container =========================================*/
 .cce_main_container{
@@ -431,8 +433,58 @@ button{
     font-size: 24px;
     letter-spacing: 4px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
+.function_field{
+    margin-bottom: 20px;	
+}
+.function_button {
+    margin-right: 10px;	
+    cursor: pointer;
+    padding: 7px 0px;
+    padding-left: 10px;
+    border-radius: 1px;
+    font-size: 14px;
+    letter-spacing: 10px;    
+    line-height: 10px;
+    font-family: Microsoft YaHei, 'Lato', Calibri, Arial, sans-serif;	
+	color: #F2EEEA;	    
+    background: #198EB9;
+} 
+.function_button:hover {
+  	opacity: 0.8;
+} 
+.function_sub_button {
+    margin-right: 5px;	
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 1px;
+    font-size: 12px;
+    letter-spacing: 2px;    
+    line-height: 9px;
+    font-family: Microsoft YaHei, 'Lato', Calibri, Arial, sans-serif;	
+	color: #F2EEEA;	    
+    background: #198EB9;
+} 
+.function_sub_button:hover {
+  	opacity: 0.8;
+} 
+.function_del_button {
+    margin-right: 5px;	
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 1px;
+    font-size: 12px;
+    letter-spacing: 2px;    
+    line-height: 9px;
+    font-family: Microsoft YaHei, 'Lato', Calibri, Arial, sans-serif;	
+	color: #F2EEEA;	    
+    background: #C13333;
+} 
+.function_del_button:hover {
+  	opacity: 0.8;
+} 
+
 
 .form_table{
 	color: #198EB9;
@@ -458,7 +510,8 @@ button{
 }
 .form_content{
 	display: table-cell;
-	padding-top: 10px;	
+	padding-top: 10px;
+	color:  #898989;    	
 }
 
 .form_table input[type="text"] {
@@ -470,6 +523,14 @@ button{
 	border: 3px solid #198EB9;		
 }
 .form_table input[type="number"] {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px;
+	color:  #898989;    
+	background: #F2EEEA;
+	border: 3px solid #198EB9;		
+}
+.form_table input[type="password"] {
     font-size: 14px;
     font-weight: bold;
     padding: 4px;
@@ -495,7 +556,6 @@ button{
 }
 
 .form_table button {
-	
     height: 30px;
     width: 180px;
     cursor: pointer;
@@ -510,6 +570,48 @@ button{
   	opacity: 0.8;
 } 
 
+.show_table{	
+	display: table;	
+}
+.show_row{
+	display: table-row;		
+}
+.show_title{
+	padding-top: 8px;
+	padding-right: 20px;
+	color: #198EB9;	
+	display: table-cell;	
+}
+.show_content{
+	color:  #898989;	
+	display: table-cell;		
+}
+
+.index_table{
+	display: table;	
+	color: #198EB9;	
+}
+.index_row{
+	display: table-row;	
+}
+.index_title{
+	display: table-cell;
+	padding-top: 10px;
+	padding-right: 20px;	
+    font-size: 18px;
+    font-weight: bold;		
+}
+.index_content{
+	padding-right: 20px;
+	display: table-cell;
+	color:  #898989;
+	padding-top: 15px;  			
+}
+.index_border{
+	display: table-cell;
+	padding-top: 10px; 
+	border-bottom: 1px solid #198EB9;		
+}
 /*=============================================       masonry      =========================================*/
 #masonry-container{
  
