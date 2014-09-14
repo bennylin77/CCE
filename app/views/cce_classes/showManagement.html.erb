@@ -1,6 +1,7 @@
 <div class="function_title">推廣教育課程</div>
 <div class="function_field">
 <%= link_to '回推廣教育課程列表', { controller: 'cce_classes', action: 'indexManagement' }, class: 'function_button' %>
+<%= link_to '編輯', edit_cce_class_path(@cce_class), class: 'function_button' %>
 </div>
 <section class="show_table">
   <div class="show_row">
@@ -8,7 +9,7 @@
 	  	課程名稱
 	  </div>
 	  <div class="show_content">	
-	  	<%= @cce_class.title%>
+	  	<%= showBlank( data: @cce_class.title)%>
 	  </div>         	
   </div>
   <div class="show_row">
@@ -16,7 +17,7 @@
 	  	課程副標題
 	  </div>
 	  <div class="show_content">
-	  	<%= @cce_class.sub_title%>	
+	  	<%= showBlank( data:@cce_class.sub_title)%>	
 	  </div>         	
   </div>  
   <div class="show_row">
@@ -29,7 +30,7 @@
   </div>  
   <div class="show_row">
 	  <div class="show_title">
-	  	報名狀態
+	  	課程狀態
 	  </div>
 	  <div class="show_content">
 	  	<%= Hash[statusOptions].rassoc(@cce_class.status ).first %>	
@@ -37,7 +38,7 @@
   </div>
   <div class="show_row">
 	  <div class="show_title">
-	  	向度
+	  	課程向度
 	  </div>
 	  <div class="show_content">
 	  	<%= showDimensions( cce_class: @cce_class)%>		
@@ -57,15 +58,13 @@
 	  </div>
 	  <div class="show_content">
 	  	<%= @cce_class.start_at%>	
-	  </div>         	
-  </div> 
-  <div class="show_row">
+	  </div>   
 	  <div class="show_title">
 	  	課程結束日
 	  </div>
 	  <div class="show_content">
 	  	<%= @cce_class.end_at%>	
-	  </div>         	
+	  </div>	        	
   </div> 
   <div class="show_row">
 	  <div class="show_title">
@@ -73,15 +72,13 @@
 	  </div>
 	  <div class="show_content">
 	  	<%= @cce_class.total_hours%>	
-	  </div>         	
-  </div> 
-  <div class="show_row">
+	  </div>    
 	  <div class="show_title">
 	  	課程總學分
 	  </div>
 	  <div class="show_content">
 	  	<%= @cce_class.total_credits%>	
-	  </div>         	
+	  </div>   	       	
   </div> 
   <div class="show_row">
 	  <div class="show_title">
@@ -112,7 +109,7 @@
 	  	課程大綱
 	  </div>
 	  <div class="show_content">
-	  	<%= @cce_class.syllabus%>	
+	  	<%= showBlank( data:@cce_class.syllabus)%>	
 	  </div>         	
   </div>
   <div class="show_row">
@@ -120,7 +117,7 @@
 	  	課程時程表
 	  </div>
 	  <div class="show_content">
-	  	<%= @cce_class.schedule%>	
+	  	<%= showBlank( data:@cce_class.schedule)%>	
 	  </div>         	
   </div>
   <div class="show_row">
@@ -136,7 +133,7 @@
 	  	招生對象
 	  </div>
 	  <div class="show_content">
-	  	<%= @cce_class.enrollment_user%>	
+	  	<%= showBlank( data:@cce_class.enrollment_user)%>	
 	  </div>         	
   </div>
   <div class="show_row">
@@ -144,7 +141,7 @@
 	  	結訓證書及未來發展
 	  </div>
 	  <div class="show_content">
-	  	<%= @cce_class.future%>	
+	  	<%= showBlank( data:@cce_class.future)%>	
 	  </div>         	
   </div>
   <div class="show_row">
@@ -152,23 +149,21 @@
 	  	校內師資人數
 	  </div>
 	  <div class="show_content">
-	  	<%= @cce_class.in_school_lecturers_no%>	
-	  </div>         	
-  </div>
-  <div class="show_row">
+	  	<%= @cce_class.in_school_lecturers_quantity%>	
+	  </div> 
 	  <div class="show_title">
 	  	校外師資人數
 	  </div>
 	  <div class="show_content">
-	  	<%= @cce_class.out_school_lecturers_no%>	
-	  </div>         	
+	  	<%= @cce_class.out_school_lecturers_quantity%>	
+	  </div>  	          	
   </div>
   <div class="show_row">
 	  <div class="show_title">
 	  	師資介紹
 	  </div>
 	  <div class="show_content">
-	  	<%= @cce_class.lecturers%>	
+	  	<%= showBlank( data:@cce_class.lecturers)%>	
 	  </div>         	
   </div>
   <div class="show_row">
@@ -176,7 +171,7 @@
 	  	開課委託單位
 	  </div>
 	  <div class="show_content">
-	  	<%= @cce_class.requester%>	
+	  	<%= showBlank( data:@cce_class.requester)%>	
 	  </div>         	
   </div>
   <div class="show_row">
@@ -193,16 +188,30 @@
 	  </div>
 	  <div class="show_content">
 	  	<%= @cce_class.host%>	
-	  </div>         	
-  </div>
-  <div class="show_row">
+	  </div> 
 	  <div class="show_title">
 	  	主持人分機
 	  </div>
 	  <div class="show_content">
 	  	<%= @cce_class.host_extend%>	
-	  </div>         	
+	  </div>	          	
   </div>
+  <div class="show_row">
+	  <div class="show_title">
+	  	承辦人
+	  </div>
+	  <div class="show_content">
+	  	<%= @cce_class.user.name%>	
+	  </div> 
+	  <div class="show_title">
+	  	承辦人分機
+	  </div>
+	  <div class="show_content">
+	  	<%= @cce_class.user.extend%>	
+	  </div>	          	
+  </div>  
+  
+  
   <div class="show_row">
 	  <div class="show_title">
 	  	學費
@@ -216,60 +225,62 @@
 	  	其它備註
 	  </div>
 	  <div class="show_content">
-	  	<%= @cce_class.note%>	
+	  	<%= showBlank( data:@cce_class.note)%>	
 	  </div>         	
   </div>
   <div class="show_row">
-	  <div class="show_title">
+	  <div class="show_sub">
 	  	預計經費來源    
 	  </div>
-	  <div class="show_content">	
-	  </div>         	
+	  <div class="show_sub">	
+	  </div>    
+	  <div class="show_sub">	
+	  </div>  	       	
   </div>
   <div class="show_row">
 	  <div class="show_title">
 	  	預估總共學費
 	  </div>
 	  <div class="show_content">
-	  	<%= @cce_class.total_tuition%>	
-	  </div>         	
-  </div>
-  <div class="show_row">
+	  	<%= @cce_class.total_tuition%> NT	
+	  </div>   
 	  <div class="show_title">
 	  	補助款
 	  </div>
 	  <div class="show_content">
-	  	<%= @cce_class.grants%>	
-	  </div>         	
-  </div>
-  <div class="show_row">
+	  	<%= @cce_class.grants%> NT		
+	  </div> 
 	  <div class="show_title">
 	  	其他經費來源
 	  </div>
 	  <div class="show_content">
-	  	<%= @cce_class.other_funds%>	
-	  </div>         	
+	  	<%= @cce_class.other_funds%> NT		
+	  </div>  	  	        	
   </div>
   <div class="show_row">
 	  <div class="show_title">
-	  	總計來源:
+	  	總計來源
 	  </div>
 	  <div class="show_content">
+	  	<%=@cce_class.total_tuition+@cce_class.grants.to_i+@cce_class.other_funds.to_i %> NT	
 	  </div>         	
   </div>
   <div class="show_row">
-	  <div class="show_title">
-	  	預計經費支出    
+	  <div class="show_sub">
+	  	預計經費支出     
 	  </div>
-	  <div class="show_content">
-	  </div>         	
-  </div>
+	  <div class="show_sub">	
+	  </div>    
+	  <div class="show_sub">	
+	  </div>  	       	
+  </div>  
   <div class="show_row">
 	  <div class="show_title">
 	  	學校(學分班為15%)
 	  </div>
 	  <div class="show_content">
-	  <%= @cce_class.school_expenses%>	
+	  <%= @cce_class.school_expenses%> NT
+	  (約佔整體 <%= ((@cce_class.school_expenses.to_f/(@cce_class.total_tuition+@cce_class.grants.to_i+@cce_class.other_funds.to_i))*100).round(2) %>%)  		
 	  </div>         	
   </div>
   <div class="show_row">
@@ -277,7 +288,8 @@
 	  	教務處  
 	  </div>
 	  <div class="show_content">
-	  <%= @cce_class.academic_expenses%>
+	  <%= @cce_class.academic_expenses%> NT	
+	  (約佔整體 <%= ((@cce_class.academic_expenses.to_f/(@cce_class.total_tuition+@cce_class.grants.to_i+@cce_class.other_funds.to_i))*100).round(2) %>%)  			  
 	  </div>         	
   </div>
   <div class="show_row">
@@ -285,7 +297,8 @@
 	  	各中心  
 	  </div>
 	  <div class="show_content">
-	  <%= @cce_class.center_expenses%>
+	  <%= @cce_class.center_expenses%> NT
+	  (約佔整體 <%= ((@cce_class.center_expenses.to_f/(@cce_class.total_tuition+@cce_class.grants.to_i+@cce_class.other_funds.to_i))*100).round(2) %>%)  			  	
 	  </div>         	
   </div>
   <div class="show_row">
@@ -293,7 +306,8 @@
 	  	各學院   
 	  </div>
 	  <div class="show_content">
-	  <%= @cce_class.college_expenses%>
+	  <%= @cce_class.college_expenses%> NT	
+	  (約佔整體 <%= ((@cce_class.college_expenses.to_f/(@cce_class.total_tuition+@cce_class.grants.to_i+@cce_class.other_funds.to_i))*100).round(2) %>%)  			  
 	  </div>         	
   </div>
   <div class="show_row">
@@ -301,7 +315,8 @@
 	  	各系所 
 	  </div>
 	  <div class="show_content">
-	  <%= @cce_class.department_expenses%>
+	  <%= @cce_class.department_expenses%> NT
+	  (約佔整體 <%= ((@cce_class.department_expenses.to_f/(@cce_class.total_tuition+@cce_class.grants.to_i+@cce_class.other_funds.to_i))*100).round(2) %>%)  			  	
 	  </div>         	
   </div>
   <div class="show_row">
@@ -309,7 +324,9 @@
 	  	學校場地費
 	  </div>
 	  <div class="show_content">
-	  <%= @cce_class.school_venue_fee%>
+	  <%= @cce_class.school_venue_fee%> NT	
+	  (約佔整體 <%= ((@cce_class.school_venue_fee.to_f/(@cce_class.total_tuition+@cce_class.grants.to_i+@cce_class.other_funds.to_i))*100).round(2) %>%)  			  		  
+	  (約佔場地費 <%= ((@cce_class.school_venue_fee.to_f/(@cce_class.school_venue_fee+@cce_class.units_venue_fee))*100).round(2) %>%)  			  		  
 	  </div>         	
   </div>
   <div class="show_row">
@@ -317,16 +334,23 @@
 	  	各單位場地費   
 	  </div>
 	  <div class="show_content">
-	  <%= @cce_class.units_venue_fee%>
+	  <%= @cce_class.units_venue_fee%> NT
+	  (約佔整體 <%= ((@cce_class.units_venue_fee.to_f/(@cce_class.total_tuition+@cce_class.grants.to_i+@cce_class.other_funds.to_i))*100).round(2) %>%)  			  	
+	  (約佔場地費 <%= ((@cce_class.units_venue_fee.to_f/(@cce_class.school_venue_fee+@cce_class.units_venue_fee))*100).round(2) %>%)  			  	
+	  	
 	  </div>         	
   </div>
   <div class="show_row">
 	  <div class="show_title">
-	  	 總計支出:
+	  	 總計支出
 	  </div>
 	  <div class="show_content">
+	  <%=@cce_class.school_expenses+@cce_class.academic_expenses+@cce_class.center_expenses+
+	  @cce_class.college_expenses+@cce_class.department_expenses+@cce_class.school_venue_fee+
+	  @cce_class.units_venue_fee%> NT	
 	  </div>         	
   </div>  
-       
-      
-</section>  
+</section> 
+<br>
+<br>
+  

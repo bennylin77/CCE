@@ -1,99 +1,182 @@
-<p>
-  <strong>Title:</strong>
-  <%= @cce_class.title %>
-</p>
-
-<p>
-  <strong>Sub title:</strong>
-  <%= @cce_class.sub_title %>
-</p>
-
-<p>
-  <strong>Kind:</strong>
-  <%= @cce_class.kind %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @cce_class.status %>
-</p>
-
-<p>
-  <strong>Introduction:</strong>
-  <%= simple_format @cce_class.introduction, {}, wrapper_tag: "div"%>
-</p>
-
-<p>
-  <strong>Syllabus:</strong>
-  <%= simple_format @cce_class.syllabus, {}, wrapper_tag: "div"%>
-</p>
-
-<p>
-  <strong>Schedule:</strong>
-  <%= @cce_class.schedule %>
-</p>
-
-<p>
-  <strong>Enrollment user:</strong>
-  <%= @cce_class.enrollment_user %>
-</p>
-
-<p>
-  <strong>Future:</strong>
-  <%= @cce_class.future %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @cce_class.location %>
-</p>
-
-<p>
-  <strong>Tuition:</strong>
-  <%= @cce_class.tuition %>
-</p>
-
-<p>
-  <strong>Lecturers:</strong>
-  <%= @cce_class.lecturers %>
-</p>
-
-<p>
-  <strong>Start at:</strong>
-  <%= @cce_class.start_at %>
-</p>
-
-<p>
-  <strong>End at:</strong>
-  <%= @cce_class.end_at %>
-</p>
-
-<p>
-  <strong>Class time:</strong>
-  <%= @cce_class.class_time %>
-</p>
-
-<p>
-  <strong>User size limits:</strong>
-  <%= @cce_class.user_size_limits %>
-</p>
-
-<p>
-  <strong>Member:</strong>
-  <%= @cce_class.member_id %>
-</p>
-
-<p>
-  <strong>Note:</strong>
-  <%= @cce_class.note %>
-</p>
-
-<p>
-  <strong>Verified:</strong>
-  <%= @cce_class.verified %>
-</p>
-
-<p>
-  <strong>Available:</strong>
-  <%= @cce_class.available %>
-</p>
+<div class="cce_class_show">
+	<div class="cce_class_show_logo">
+	  <div class="cce_class_show_logo_en">
+	  	COURSE
+	  </div>	
+	  <div class="cce_class_show_logo_ch">
+	  	推廣教育課程
+	  </div>		  
+	</div>	
+	<div class="cce_class_show_title_apply">
+		<div class="cce_class_show_title_container">
+		<div class="cce_class_show_title">
+		  <%= @cce_class.title %>
+		</div>
+		<div class="cce_class_show_sub_title">
+		  <%= @cce_class.sub_title %>
+		</div>	
+		</div>
+	  	<div class="cce_class_show_apply">
+	    	<a href="#">
+	    	<span class="remain-icon icon-clipboard"></span>
+	        <span>線上報名</span>	
+	        </a>
+	    </div>
+	</div>    	
+	<div class="cce_class_show_content">
+		<div class="cce_class_show_basic">
+			<div class="cce_class_show_basic_inner">
+				<div class="cce_class_show_basic_cell_title">
+				課程類別
+				</div>	
+				<div class="cce_class_show_basic_cell_content">
+				<%= Hash[kindOptions].rassoc(@cce_class.kind ).first %>		
+				</div>					
+			</div>					
+			<div class="cce_class_show_basic_inner">
+				<div class="cce_class_show_basic_cell_title">
+				課程狀態
+				</div>	
+				<div class="cce_class_show_basic_cell_content">
+			  	<%= Hash[statusOptions].rassoc(@cce_class.status ).first %>						
+				</div>						
+			</div>		
+			<div class="cce_class_show_basic_inner">
+				<div class="cce_class_show_basic_cell_title">
+				課程向度
+				</div>	
+				<div class="cce_class_show_basic_cell_content">
+			  	<%= showDimensions( cce_class: @cce_class)%>							
+				</div>						
+			</div>	
+			<div class="cce_class_show_basic_inner">
+				<div class="cce_class_show_basic_cell_title">
+				課程時間
+				</div>	
+				<div class="cce_class_show_basic_cell_content">
+				<%= @cce_class.school_year%>學年 <%= @cce_class.start_at%>~<%= @cce_class.end_at%>	
+				</div>						
+			</div>
+			<div class="cce_class_show_basic_inner">
+				<div class="cce_class_show_basic_cell_title">
+				招生人數
+				</div>	
+				<div class="cce_class_show_basic_cell_content">
+				<%= @cce_class.user_size_limits%>人
+				</div>						
+			</div>			
+			<div class="cce_class_show_basic_inner">
+				<div class="cce_class_show_basic_cell_title">
+				費用
+				</div>	
+				<div class="cce_class_show_basic_cell_content">
+				<%= @cce_class.tuition%>NT
+				</div>						
+			</div>					
+			<div class="cce_class_show_basic_inner">
+				<div class="cce_class_show_basic_cell_title">
+				報名洽詢
+				</div>	
+				<div class="cce_class_show_basic_cell_content">
+				<%= @cce_class.user.name%>	<%= @cce_class.user.email%>	
+				</div>						
+			</div>																	
+		</div>	
+		<div class="cce_class_show_main">
+			<div class="cce_class_show_main_inner">
+				<div class="cce_class_show_main_title">
+				課程介紹	
+				</div>		
+				<div class="cce_class_show_main_content">
+				<%=simple_format(@cce_class.introduction)%>
+				</div>						
+			</div>		
+			<div class="cce_class_show_main_inner">
+				<div class="cce_class_show_main_title">
+				課程大綱
+				</div>	
+				<div class="cce_class_show_main_content">
+				<%=simple_format(@cce_class.syllabus)%>
+				</div>	
+			</div>				
+			<div class="cce_class_show_main_inner">
+				<div class="cce_class_show_main_title">
+				課程時程表
+				</div>	
+				<div class="cce_class_show_main_content">
+				<%=simple_format(@cce_class.schedule)%>
+				</div>						
+			</div>		
+			<div class="cce_class_show_main_inner">
+				<div class="cce_class_show_main_title">
+				上課時間
+				</div>	
+				<div class="cce_class_show_main_content">
+				<%=simple_format(@cce_class.class_time)%>
+				</div>						
+			</div>	
+			<div class="cce_class_show_main_inner">
+				<div class="cce_class_show_main_title">
+				上課地點
+				</div>	
+				<div class="cce_class_show_main_content">
+				<%=simple_format(@cce_class.location)%>
+				</div>						
+			</div>									
+			<div class="cce_class_show_main_inner">
+				<div class="cce_class_show_main_title">
+				招生對象
+				</div>	
+				<div class="cce_class_show_main_content">
+				<%=simple_format(@cce_class.enrollment_user)%>
+				</div>						
+			</div>				
+			<div class="cce_class_show_main_inner">
+				<div class="cce_class_show_main_title">
+				結訓證書及未來發展
+				</div>	
+				<div class="cce_class_show_main_content">
+				<%=simple_format(@cce_class.future)%>
+				</div>							
+			</div>	
+			<div class="cce_class_show_main_inner">
+				<div class="cce_class_show_main_title">
+				師資介紹
+				</div>
+				<div class="cce_class_show_main_content">
+				<%=simple_format(@cce_class.lecturers)%>
+				</div>								
+			</div>	
+			<div class="cce_class_show_main_inner">
+				<div class="cce_class_show_main_title">
+				其他備註
+				</div>
+				<div class="cce_class_show_main_content">
+				<%=simple_format(@cce_class.note)%>
+				</div>								
+			</div>										
+		</div>
+		<div class="cce_class_show_others">
+			
+			<div class="cce_class_show_others_inner">
+				<div class="cce_class_show_others_title">
+					課程總時數
+				</div>	
+				<div class="cce_class_show_others_content">
+					<%= @cce_class.total_hours%>	
+				</div>					
+			</div>
+			<div class="cce_class_show_others_inner">
+				<div class="cce_class_show_others_title">
+					課程總學分
+				</div>	
+				<div class="cce_class_show_others_content">
+					<%= @cce_class.total_credits%>
+				</div>					
+			</div>									
+		</div>			
+		
+		
+			
+	</div>	
+</div>

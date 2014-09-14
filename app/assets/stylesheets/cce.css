@@ -1,7 +1,7 @@
 body {
 	font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;
 	background: #F2EEEA;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 a{
 	text-decoration: none;
@@ -187,6 +187,8 @@ button{
 }
 .mid_container li .mid_container_EN{
 	font-size: 70%;
+    font-family: Palatino Linotype;		
+    font-style: italic;		
 }
 .cce_left_menu_container .bot_container
 {
@@ -281,7 +283,10 @@ button{
 	text-align: center;						
 	font-size: 12px;
 	border-top: 3px solid #198EB9;
-	border-bottom: 3px solid #198EB9	
+	border-bottom: 3px solid #198EB9;
+    font-family: Palatino Linotype;		
+    font-style: italic;
+    			
 }
 .logo_container_title_inner_ch{
 	margin-left: 14%; 
@@ -309,6 +314,8 @@ button{
 	font-size: 17px;
 	font-weight: bold;
 	margin-top: 2px;	
+    font-family: Palatino Linotype;		
+    font-style: italic;		
 }
 .title_container_left_content{
 	float: left;
@@ -583,10 +590,18 @@ button{
 	display: table-cell;	
 }
 .show_content{
+	max-width: 400px;
 	color:  #898989;	
 	display: table-cell;		
 }
-
+.show_sub{
+	color: #198EB9;		
+	display: table-cell;
+	padding-top: 10px;
+	padding-right: 20px;	
+    font-size: 20px;
+	border-bottom: 3px dotted #198EB9;			
+}
 .index_table{
 	display: table;	
 	color: #198EB9;	
@@ -720,6 +735,167 @@ button{
 	margin: 5px auto 13px; 
 }
 /*=============================================       cce class    =========================================*/
+.cce_class_show{
+	background: #F2EEEA;
+	width: 700px;	
+}
+.cce_class_show_logo{
+	width: 200px;
+	color: #198EB9;
+	border: 5px solid #198EB9;		
+}
+.cce_class_show_logo_en{
+	width: 80%;
+	text-align: center;
+	font-size: 35px;
+	line-height: 43px;
+	margin-left: 10px;
+	letter-spacing: 7px;
+    font-family: Palatino Linotype;		
+    font-style: italic;		
+}
+.cce_class_show_logo_ch{
+	margin-left: 14%; 
+	width: 80%; 
+	line-height: 19px; 
+	letter-spacing: 12px; 
+	font-size: 13px; 
+	text-align: center;		
+}
+.cce_class_show_title_apply{
+	margin-top: 10px;	
+	height: 70px;
+}
+.cce_class_show_title_container{	
+	float:left;
+}
+.cce_class_show_apply{
+	color: #198EB9;	
+	float: right;
+	width: 100px;
+	margin-right: 15px;	
+	border: 5px solid #198EB9;	
+	height: 35px;
+	text-align: center;
+	padding-top: 18px;	
+}
+.cce_class_show_apply a{
+	color: #198EB9;	
+}
+.cce_class_show_apply a:hover{
+	opacity: 0.8;	
+}
+.cce_class_show_title{
+    font-family: Microsoft YaHei, 'Lato', Calibri, Arial, sans-serif;	
+	text-align: left;
+	font-size: 25px;
+	line-height: 35px;
+	letter-spacing: 5px;
+	color: #198EB9;	
+}
+.cce_class_show_sub_title{
+    font-family: Microsoft YaHei, 'Lato', Calibri, Arial, sans-serif;	
+	text-align: left;
+	margin-top: 0px;
+	font-size: 16px;
+	line-height: 25px;
+	letter-spacing: 5px;
+	color: #198EB9;	
+}
+.cce_class_show_content{
+	border-top: 1px solid #198EB9;		
+	border-bottom: 1px solid #198EB9;
+	padding-top: 10px;
+}
+.cce_class_show_basic{
+	width: 80%;
+	display: inline-block;
+	border: 5px solid #198EB9;	
+	margin-bottom: 15px;			
+}
+.cce_class_show_basic_inner{
+	display: table-row;	
+	width: 95%;
+	margin: 5px auto;
+}
+.cce_class_show_basic_cell_title{
+	display: table-cell;	
+	color: #198EB9;	
+	letter-spacing: 7px;
+	line-height: 28px;	
+	padding-left: 20px;	
+	width: 100px;		
+}
+.cce_class_show_basic_cell_content{
+	display: table-cell;
+	letter-spacing: 3px;	
+    font-style: italic;		
+    font-family: Arial;		
+	color: #7A7A7A;    
+	padding-left: 20px;		
+	padding-right: 20px;			
+}
+.cce_class_show_main{
+	border: 5px solid #198EB9;		
+	color: #7A7A7A;	
+	letter-spacing: 3px;
+	line-height: 25px;			
+	padding: 5px 5px;
+	margin-bottom: 15px;	
+}
+.cce_class_show_main_inner{
+	width: 98%;
+	margin: 5px auto;
+}
+.cce_class_show_main_title{
+	display: inline-block;	
+	color: #198EB9;	
+	letter-spacing: 6px;
+	line-height: 25px;	
+	width: 100px;	
+	font-size: 13px;
+	padding-left: 5px;
+	text-align: center;
+	border: 5px solid #198EB9;		
+	vertical-align: top;
+}
+.cce_class_show_main_content{
+	display: inline-block;
+	width:78%;
+	font-size: 13px;
+	letter-spacing: 3px;		
+	color: #7A7A7A;    
+	margin-top: 17px;	
+	margin-left: 10px;	
+	border-top: 1px solid #198EB9;		
+			
+}
+
+.cce_class_show_others{
+	border: 5px solid #198EB9;	
+	display: table;		
+	width: 42%;	
+	margin-bottom: 50px;			
+}
+.cce_class_show_others_inner{
+	display: table-row;	
+	width: 90%;
+	margin: 5px auto;	
+}
+.cce_class_show_others_title{
+	display: table-cell;	
+	letter-spacing: 4px;
+	font-size: 14px;
+	line-height: 28px;	
+	padding-left: 20px;		
+	color: #7A7A7A; 	
+	width: 100px; 		
+}
+.cce_class_show_others_content{
+	display: table-cell;
+	letter-spacing: 3px;		
+	color: #7A7A7A;  	
+}
 
 
 
@@ -796,18 +972,27 @@ button{
 	padding-left: 20px;		
 	padding-right: 20px;			
 }
+.news_show_basic_cell_content a{
+	color: #7A7A7A;    		
+}
+.news_show_basic_cell_content a:hover{
+	opacity: 0.8;    		
+}
 .news_show_main{
 	border: 5px solid #198EB9;		
 	color: #7A7A7A;	
 	letter-spacing: 3px;
 	line-height: 25px;			
-	padding: 15px 15px;
+	padding: 0px 15px;
+	margin-bottom: 15px;	
+}
+.news_show_DM{
+	border: 5px solid #198EB9;		
 	margin-bottom: 15px;	
 }
 .news_show_others{
 	border: 5px solid #198EB9;	
 	display: table;		
-	width: 42%;	
 	margin-bottom: 50px;			
 }
 .news_show_others_inner{
@@ -821,10 +1006,12 @@ button{
 	font-size: 14px;
 	line-height: 28px;	
 	padding-left: 20px;		
-	color: #7A7A7A; 	
+	color: #7A7A7A;
 }
 .news_show_others_content{
 	display: table-cell;
 	letter-spacing: 3px;		
-	color: #7A7A7A;  	
+	color: #7A7A7A;
+	padding-left: 20px;		
+	padding-right: 20px;	  	
 }

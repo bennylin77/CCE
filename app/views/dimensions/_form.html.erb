@@ -11,11 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-         名稱<br>
-    <%= f.text_field :name %>
+  <section class="form_table">  
+  <div class="form_row">
+	  <div class="form_title">
+	  名稱
+	  </div>
+	  <div class="form_content">
+      <%= f.text_field :name, size: 30 %>
+	  </div>         	
   </div>
-  <div class="actions">
-    <%= f.submit '送出' %>
-  </div>
+  <div class="form_row">
+  	<div class="form_title">
+    <%= f.button '確認送出' %>
+    </div>
+  </div>    
+  </section>
 <% end %>

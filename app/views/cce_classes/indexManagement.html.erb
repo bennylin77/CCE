@@ -3,9 +3,6 @@
 <%= link_to '申請推廣教育課程', new_cce_class_path, class: 'function_button' %>
 <%= link_to '課程向度列表', dimensions_path, class: 'function_button' %>	
 </div>
-
-
-
 <section class="index_table">
   <div class="index_row">
 	  <div class="index_title">
@@ -16,7 +13,10 @@
 	  </div>
 	  <div class="index_title">
 	     建立日期
-	  </div>    
+	  </div>   
+	  <div class="index_title">
+	     審核人
+	  </div>  	   
 	  <div class="index_title">
 	  </div>  	       	
   </div>  
@@ -30,7 +30,14 @@
 	  </div>
 	  <div class="index_content">
 	  <%= cce_class.created_at.strftime "%Y-%m-%d" %>
-	  </div>   	 
+	  </div>   
+	  <div class="index_content">
+	  <%unless cce_class.verified_user_id.blank?%>	
+	  <%= User.find(cce_class.verified_user_id).name %>
+	  <%else%>
+	  --
+	  <%end%>
+	  </div> 	  	 
 	  <div class="index_content">
         <%if cce_class.verified%>
         <%= link_to '取消通過', {controller: :cce_classes, action: :verified, id: cce_class.id }, class: 'function_sub_button' %>
@@ -58,6 +65,7 @@
   	<div class="index_border"></div>
   	<div class="index_border"></div>
   	<div class="index_border"></div>
+	<div class="index_border"></div>  	
 	<div class="index_border"></div>  	
   </div>
   <%end%>  

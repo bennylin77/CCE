@@ -1,20 +1,31 @@
-<%= link_to '新增向度', new_dimension_path %>
-<h1>向度列表</h1>
+<div class="function_title">向度列表</div>
+<div class="function_field">
+<%= link_to '回推廣教育課程列表', { controller: 'cce_classes', action: 'indexManagement' }, class: 'function_button' %>
+<%= link_to '新增向度', new_dimension_path, class: 'function_button'%>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>名稱</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<section class="index_table">
+  <div class="index_row">
+	  <div class="index_title">
+	     名稱
+	  </div> 
+	  <div class="index_title">
+	  </div>  	      	
+  </div>
+  <% @dimensions.each do |dimension| %>
+  <div class="index_row" >
+  	  <div class="index_content">
+      <%= dimension.name %>
+      </div>
+      <div class="index_content">
+      <%= link_to '編輯', edit_dimension_path(dimension), class: 'function_sub_button' %>
+      <%= link_to '刪除', dimension, method: :delete, class: 'function_del_button', data: { confirm: '您確定要刪除?' } %>
+      </div>
+  </div>  
+  <div class="index_row">
+  	<div class="index_border"></div>
+  	<div class="index_border"></div>  
+  </div> 
+  <% end %>     
+</section>  
 
-  <tbody>
-    <% @dimensions.each do |dimension| %>
-      <tr>
-        <td><%= dimension.name %></td>
-        <td><%= link_to '刪除', dimension, method: :delete, data: { confirm: '您確定要刪除?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>

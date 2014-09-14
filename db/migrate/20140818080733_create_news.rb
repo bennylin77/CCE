@@ -6,8 +6,9 @@ class CreateNews < ActiveRecord::Migration
       t.string :title
       t.string :link      
       t.text :content
-      t.integer :view
+      t.integer :view, default: 0
       t.attachment :cover
+      t.attachment :DM      
       t.boolean :verified, default: false
       t.integer :verified_user_id    
       t.boolean :available, default: true

@@ -47,24 +47,24 @@ ActiveRecord::Schema.define(version: 20140829080121) do
     t.integer  "host_extend"
     t.integer  "user_id"
     t.string   "location"
-    t.integer  "grants"
+    t.integer  "grants",                        default: 0
     t.integer  "total_tuition"
-    t.integer  "other_funds"
+    t.integer  "other_funds",                   default: 0
     t.integer  "user_size_limits"
     t.integer  "total_credits"
     t.integer  "total_hours"
-    t.integer  "in_school_lecturers_no"
-    t.integer  "out_school_lecturers_no"
-    t.integer  "school_expenses"
-    t.integer  "academic_expenses"
-    t.integer  "center_expenses"
-    t.integer  "college_expenses"
-    t.integer  "department_expenses"
-    t.integer  "school_venue_fee"
-    t.integer  "units_venue_fee"
-    t.boolean  "verified",                default: false
+    t.integer  "in_school_lecturers_quantity"
+    t.integer  "out_school_lecturers_quantity"
+    t.integer  "school_expenses",               default: 0
+    t.integer  "academic_expenses",             default: 0
+    t.integer  "center_expenses",               default: 0
+    t.integer  "college_expenses",              default: 0
+    t.integer  "department_expenses",           default: 0
+    t.integer  "school_venue_fee",              default: 0
+    t.integer  "units_venue_fee",               default: 0
+    t.boolean  "verified",                      default: false
     t.integer  "verified_user_id"
-    t.boolean  "available",               default: true
+    t.boolean  "available",                     default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -92,11 +92,15 @@ ActiveRecord::Schema.define(version: 20140829080121) do
     t.string   "title"
     t.string   "link"
     t.text     "content"
-    t.integer  "view"
+    t.integer  "view",               default: 0
     t.string   "cover_file_name"
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.string   "DM_file_name"
+    t.string   "DM_content_type"
+    t.integer  "DM_file_size"
+    t.datetime "DM_updated_at"
     t.boolean  "verified",           default: false
     t.integer  "verified_user_id"
     t.boolean  "available",          default: true
@@ -111,8 +115,7 @@ ActiveRecord::Schema.define(version: 20140829080121) do
     t.string   "name"
     t.string   "email"
     t.integer  "extend"
-    t.integer  "age"
-    t.boolean  "gender"
+    t.boolean  "gender",      default: true
     t.string   "education"
     t.string   "id_no"
     t.string   "passport_no"

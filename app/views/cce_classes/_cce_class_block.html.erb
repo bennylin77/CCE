@@ -2,7 +2,7 @@
 	<%=link_to cce_class_block, class: 'fancybox openAjax' do%>
 	<div class="content_cce_class_block" id="content_cce_class_<%=cce_class_block.id%>">				
 			<div class="cce_box_title">
-			<%= cce_class_block.id %> <%= cce_class_block.title %>
+			<%= cce_class_block.title %>
 			</div>
 			<div class="cce_box_tag">
 				<div class="cce_box_tag_dim">
@@ -10,6 +10,7 @@
 				</div>				
 				<div class="cce_box_tag_status"><%= Hash[statusOptions].rassoc(cce_class_block.status ).first %></div>
 				<div class="cce_box_tag_kind"><%= Hash[kindOptions].rassoc(cce_class_block.kind).first %></div>
+				<!--
 				<div class="cce_box_enroll_status">			
 					<div class="cce_box_enroll_status_inner">
 								<span class="remain-icon icon-clipboard"></span>
@@ -20,6 +21,7 @@
 								<span style="font-size: 10px">剩餘 5</span>
 					</div>
 				</div>
+				-->
 			</div>
 	</div> 	
 	<%end%>				

@@ -26,15 +26,7 @@
 	  <div class="show_content">	
      	<%= Hash[identityOptions].rassoc(@user.identity).first%> 
 	  </div>         	
-  </div>    
-  <div class="show_row">
-	  <div class="show_title">
-	  	年齡
-	  </div>
-	  <div class="show_content">	
-     	<%= @user.age %>
-	  </div>         	
-  </div>   
+  </div>     
   <div class="show_row">
 	  <div class="show_title">
 	  	性別
@@ -45,7 +37,7 @@
   </div>   
   <div class="show_row">
 	  <div class="show_title">
-	  	生日
+	  	出生年月日
 	  </div>
 	  <div class="show_content">	
      	<%= @user.birthday %> 

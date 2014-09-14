@@ -1,14 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="function_title">子課程</div>
+<div class="function_field">
+<%= link_to '回推廣教育課程列表', { controller: 'cce_classes', action: 'indexManagement' }, class: 'function_button' %>
+</div>
+<section class="show_table">
+  <div class="show_row">
+	  <div class="show_title">
+	  	相關推廣教育課程
+	  </div>
+	  <div class="show_content">	
+	  	<%= @course.cce_class.title%>
+	  </div>         	
+  </div>
+  <div class="show_row">
+	  <div class="show_title">
+	  	名稱
+	  </div>
+	  <div class="show_content">	
+	  	<%= @course.title %>
+	  </div>         	
+  </div>  
+</section>
 
-<p>
-  <strong>Cce class:</strong>
-  <%= @course.cce_class %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @course.title %>
-</p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>

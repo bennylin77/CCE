@@ -27,11 +27,9 @@ class DimensionsController < ApplicationController
   def update
     respond_to do |format|
       if @dimension.update(dimension_params)
-        format.html { redirect_to @dimension, notice: 'Dimension was successfully updated.' }
-        format.json { render :show, status: :ok, location: @dimension }
+        format.html { redirect_to dimensions_path, notice: 'Dimension was successfully created.' }
       else
         format.html { render :edit }
-        format.json { render json: @dimension.errors, status: :unprocessable_entity }
       end
     end
   end

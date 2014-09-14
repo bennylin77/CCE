@@ -32,7 +32,7 @@
 	  內容*
 	  </div>
 	  <div class="form_content">
-	  <%= f.text_area :content, size: '50x2' %>
+	  <%= f.text_area :content, size: '50x15' %>
 	  </div>         	
   </div> 
   <div class="form_row">
@@ -41,6 +41,22 @@
 	  </div>
 	  <div class="form_content">
 	  <%= f.file_field :cover, accept: "image/*"%>    
+	  </div>         	
+  </div>   
+  <div class="form_row">
+	  <div class="form_title">
+	  DM上傳
+	  </div>
+	  <div class="form_content">
+	  <%= f.file_field :DM, accept: "image/*"%>    
+	  </div>         	
+  </div>    
+  <div class="form_row">
+	  <div class="form_title">
+	  相關連結
+	  </div>
+	  <div class="form_content">
+	  <%= f.text_field :link, size: 35 %>
 	  </div>         	
   </div>   
   <div class="form_row">

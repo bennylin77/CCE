@@ -4,21 +4,21 @@ class CceClassesController < ApplicationController
 
   def index    
     if params[:dimension].blank? and params[:kind].blank? and params[:status].blank?
-      @cce_classes = CceClass.all.paginate(per_page: 30, page: params[:page]).order('id DESC')       
+      @cce_classes = CceClass.where("verified = true").paginate(per_page: 30, page: params[:page]).order('id DESC')       
     elsif !params[:dimension].blank? and params[:kind].blank? and params[:status].blank?
-      @cce_classes = CceClass.joins(:cce_class_dimensions).where("cce_class_dimensions.dimension_id = ?", params[:dimension]).paginate(per_page: 30, page: params[:page]).order('id DESC')                
+      @cce_classes = CceClass.joins(:cce_class_dimensions).where("verified = true and cce_class_dimensions.dimension_id = ?", params[:dimension]).paginate(per_page: 30, page: params[:page]).order('id DESC')                
     elsif params[:dimension].blank? and !params[:kind].blank? and params[:status].blank?   
-      @cce_classes = CceClass.where("kind = ?", params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')                
+      @cce_classes = CceClass.where("verified = true and kind = ?", params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')                
     elsif params[:dimension].blank? and params[:kind].blank? and !params[:status].blank?
-      @cce_classes = CceClass.where("status = ?", params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')        
+      @cce_classes = CceClass.where("verified = true and status = ?", params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')        
     elsif !params[:dimension].blank? and !params[:kind].blank? and params[:status].blank?
-       @cce_classes = CceClass.joins(:cce_class_dimensions).where("cce_class_dimensions.dimension_id = ? and kind = ?", params[:dimension], params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')                      
+       @cce_classes = CceClass.joins(:cce_class_dimensions).where("verified = true and cce_class_dimensions.dimension_id = ? and kind = ?", params[:dimension], params[:kind]).paginate(per_page: 30, page: params[:page]).order('id DESC')                      
     elsif params[:dimension].blank? and !params[:kind].blank? and !params[:status].blank?
-      @cce_classes = CceClass.where("kind = ? and status = ?", params[:kind], params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')              
+      @cce_classes = CceClass.where("verified = true and kind = ? and status = ?", params[:kind], params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')              
     elsif !params[:dimension].blank? and params[:kind].blank? and !params[:status].blank?    
-       @cce_classes = CceClass.joins(:cce_class_dimensions).where("cce_class_dimensions.dimension_id = ? and status = ?", params[:dimension], params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')                                          
+       @cce_classes = CceClass.joins(:cce_class_dimensions).where("verified = true and cce_class_dimensions.dimension_id = ? and status = ?", params[:dimension], params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')                                          
     elsif !params[:dimension].blank? and !params[:kind].blank? and !params[:status].blank?   
-       @cce_classes = CceClass.joins(:cce_class_dimensions).where("cce_class_dimensions.dimension_id = ? and kind = ? and status = ?", params[:dimension], params[:kind], params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')                                          
+       @cce_classes = CceClass.joins(:cce_class_dimensions).where("verified = true and cce_class_dimensions.dimension_id = ? and kind = ? and status = ?", params[:dimension], params[:kind], params[:status]).paginate(per_page: 30, page: params[:page]).order('id DESC')                                          
                    
     end    
  
@@ -56,7 +56,7 @@ class CceClassesController < ApplicationController
         @cce_class.dimensions<<Dimension.find(d)
       end
     end
-
+    @cce_class.user=User.find(session[:user_id])
 
     respond_to do |format|
       if @cce_class.save
@@ -93,7 +93,11 @@ class CceClassesController < ApplicationController
   
   def verified
     @cce_class.verified=!@cce_class.verified
-    @cce_class.verified_user_id=session[:user_id]    
+    if @cce_class.verified
+      @cce_class.verified_user_id=session[:user_id]  
+    else
+      @cce_class.verified_user_id=nil
+    end      
     @cce_class.save!
     redirect_to controller: :cce_classes, action: :indexManagement
   end
@@ -144,7 +148,7 @@ class CceClassesController < ApplicationController
                                         :enrollment_user, :future, :location, :tuition, :lecturers, :start_at, 
                                         :end_at, :class_time, :user_size_limits, :note, :school_year, :requester,
                                         :organizer, :other_organizer, :host, :host_extend, :grants, :total_tuition,
-                                        :other_funds, :total_credits, :total_hours, :in_school_lecturers_no, :out_school_lecturers_no,
+                                        :other_funds, :total_credits, :total_hours, :in_school_lecturers_quantity, :out_school_lecturers_quantity,
                                         :school_expenses, :academic_expenses, :center_expenses, :college_expenses, :department_expenses,
                                         :school_venue_fee, :units_venue_fee)
     end

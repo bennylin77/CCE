@@ -82,15 +82,7 @@
   </div>    
   <div class="form_row">
 	  <div class="form_title">
-	  年齡
-	  </div>
-	  <div class="form_content">
-   	  <%= f.number_field :age, in: 0..1000, step: 1  %>
-	  </div>         	
-  </div> 
-  <div class="form_row">
-	  <div class="form_title">
-	  性別
+	  性別*
 	  </div>
 	  <div class="form_content">
 	  <%=f.radio_button :gender, "true"%>男
@@ -99,7 +91,7 @@
   </div> 
   <div class="form_row">
 	  <div class="form_title">
-	  生日
+	  出生年月日*
 	  </div>
 	  <div class="form_content">
       <%= f.date_select :birthday, start_year: Time.now.year - 80, end_year: Time.now.year %>
@@ -107,13 +99,13 @@
   </div>        
   <div class="form_row">
 	  <div class="form_title">
-	  地址
+	  地址*
 	  </div>
 	  <div class="form_content">
    	  <%= f.text_field :address, size: 30 %>
 	  </div>         	
   </div>
-  <%if @user.identity!=GLOBAL_VAR['identity_student']%>
+  <%if @user.identity!=GLOBAL_VAR['identity_student'] and @user.identity!=GLOBAL_VAR['identity_lecturer']%>
   <div class="form_row">
 	  <div class="form_title">
 	   學校分機*
@@ -133,7 +125,7 @@
   </div>  
   <div class="form_row">
 	  <div class="form_title">
-	  手機號碼
+	  手機號碼*
 	  </div>
 	  <div class="form_content">
    	  <%= f.text_field :mobile_no, size: 30  %>
@@ -141,21 +133,26 @@
   </div>  
   <div class="form_row">
 	  <div class="form_title">
-	  國籍
+	  國籍*
 	  </div>
 	  <div class="form_content">
-      <%= country_select("user", "nationality", {}, { selected: "Taiwan, Republic Of China "})%>
+      <%= country_select("user", "nationality", {}, { selected: "Taiwan, Republic Of China"})%>
 	  </div>         	
   </div>
   <div class="form_row">
 	  <div class="form_title">
-	  身分証字號
+	  身分証字號*
 	  </div>
 	  <div class="form_content">
    	  <%= f.text_field :id_no, size: 30 %>
 	  </div> 
 	  <div class="form_title">
-	  護照號碼
+	  或
+	  </div>
+	  <div class="form_content">
+	  </div>   	  	  
+	  <div class="form_title">
+	  護照號碼*
 	  </div>
 	  <div class="form_content">
    	  <%= f.text_field :passport_no, size: 30  %>
@@ -163,7 +160,7 @@
   </div>
   <div class="form_row">
 	  <div class="form_title">
-	  最高學歷
+	  最高學歷*
 	  </div>
 	  <div class="form_content">
    	  <%= f.text_field :education, size: 30 %>

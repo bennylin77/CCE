@@ -14,7 +14,7 @@
   <section class="form_table">
   <div class="form_row">
 	  <div class="form_title">
-	      課程名稱*
+	     課程名稱*
 	  </div>
 	  <div class="form_content">
 	  <%= f.text_field :title, size: 50 %>	
@@ -22,7 +22,7 @@
   </div>  
   <div class="form_row">
 	  <div class="form_title">
-	     課程副標題*
+	     課程副標題
 	  </div>
 	  <div class="form_content">
 	  <%= f.text_field :sub_title, size: 50  %>	
@@ -38,7 +38,7 @@
   </div>    
   <div class="form_row">
 	  <div class="form_title">
-	      報名狀態*
+	    課程狀態*
 	  </div>
 	  <div class="form_content">
       <%= f.select :status, statusOptions ,{prompt: '選擇報名狀態', selected: GLOBAL_VAR['status_enrollment']} %>
@@ -46,7 +46,7 @@
   </div> 
   <div class="form_row">
 	  <div class="form_title">
-	     向度*(按Ctrl可複選)
+	     課程向度*(按Ctrl可複選)
 	  </div>
 	  <div class="form_content">
       <%= collection_select(:cce_class, :dimension_ids, 
@@ -118,7 +118,7 @@
   </div>  
   <div class="form_row">
 	  <div class="form_title">
-	     課程大綱*
+	     課程大綱
 	  </div>
 	  <div class="form_content">
       <%= f.text_area :syllabus, size: '40x10' %>
@@ -126,7 +126,7 @@
   </div>   
   <div class="form_row">
 	  <div class="form_title">
-	     課程時程表*
+	     課程時程表
 	  </div>
 	  <div class="form_content">
       <%= f.text_area :schedule, size: '40x10' %>
@@ -142,7 +142,7 @@
   </div>      
   <div class="form_row">
 	  <div class="form_title">
-	     招生對象*
+	     招生對象
 	  </div>
 	  <div class="form_content">
       <%= f.text_area :enrollment_user, size: '40x3'  %>
@@ -158,19 +158,17 @@
   </div>   
   <div class="form_row">
 	  <div class="form_title">
-	     校內師資人數
+	     校內師資人數*
 	  </div>
 	  <div class="form_content">
-      <%= f.number_field :in_school_lecturers_no, in: 0..1000, step: 1 %>
-	  </div>         	
-  </div>
-  <div class="form_row">
+      <%= f.number_field :in_school_lecturers_quantity, in: 0..1000, step: 1 %>
+	  </div>     
 	  <div class="form_title">
-	     校外師資人數
+	     校外師資人數*
 	  </div>
 	  <div class="form_content">
-      <%= f.number_field :out_school_lecturers_no, in: 0..1000, step: 1  %>
-	  </div>         	
+      <%= f.number_field :out_school_lecturers_quantity, in: 0..1000, step: 1  %>
+	  </div>	      	      	
   </div>      
   <div class="form_row">
 	  <div class="form_title">
@@ -190,7 +188,7 @@
   </div>   
   <div class="form_row">
 	  <div class="form_title">
-	      主辦單位*(學校請填學院及系所)
+	      主辦單位*(學校請填學院及系所或中心名稱)
 	  </div>
 	  <div class="form_content">
       <%= f.text_field :organizer, size: 50 %>
@@ -198,13 +196,13 @@
   </div>   
   <div class="form_row">
 	  <div class="form_title">
-	      主持人
+	      主持人*
 	  </div>
 	  <div class="form_content">
       <%= f.text_field :host, size: 15 %>
 	  </div> 
 	  <div class="form_title">
-	      主持人分機
+	      主持人學校分機*
 	  </div>
 	  <div class="form_content">
       <%= f.number_field :host_extend, in: 0..100000, step: 1 %>
@@ -213,7 +211,7 @@
        
   <div class="form_row">
 	  <div class="form_title">
-	     學費
+	     學費*
 	  </div>
 	  <div class="form_content">
       <%= f.number_field :tuition, in: 0..100000, step: 1 %> NT
@@ -237,7 +235,7 @@
   </div>      
   <div class="form_row">
 	  <div class="form_title">
-	     預估總共學費
+	     預估總共學費*
 	  </div>
 	  <div class="form_content">
       <%= f.number_field :total_tuition, in: 0..5000000, step: 1 %> NT
@@ -275,7 +273,7 @@
   </div>       
   <div class="form_row">
 	  <div class="form_title">
-	     學校(學分班為15%)
+	     學校*(學分班為15%)
 	  </div>
 	  <div class="form_content">
       <%= f.number_field :school_expenses, in: 0..5000000, step: 1 %> NT
@@ -321,7 +319,7 @@
   
   <div class="form_row">
 	  <div class="form_title">
-	     學校場地費
+	     學校場地費*
 	  </div>
 	  <div class="form_content">
       <%= f.number_field :school_venue_fee, in: 0..5000000, step: 1 %> NT
@@ -331,7 +329,7 @@
   </div>    
   <div class="form_row">
 	  <div class="form_title">
-	     各單位場地費
+	     各單位場地費*
 	  </div>
 	  <div class="form_content">
       <%= f.number_field :units_venue_fee, in: 0..5000000, step: 1 %> NT 

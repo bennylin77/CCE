@@ -10,16 +10,20 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :cce_class_id %><br>
-    <%= f.hidden_field :cce_class_id %>
+  <%= f.hidden_field :cce_class_id %>
+  <section class="form_table">
+  <div class="form_row">
+	  <div class="form_title">
+	  課程名稱*
+	  </div>
+	  <div class="form_content">
+	  <%= f.text_field :title, size: 40 %>	
+	  </div>         	
   </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="form_row">
+  	<div class="form_title">
+    <%= f.button '確認送出' %>
+    </div>
+  </div>   
+  </section>	 
 <% end %>
