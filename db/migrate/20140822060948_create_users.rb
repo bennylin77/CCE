@@ -4,8 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :email, uniqueness: true 
       t.integer :extend
-      t.integer :age
-      t.boolean :gender
+      t.boolean :gender, default: true
       t.string :education
       t.string :id_no, uniqueness: true 
       t.string :passport_no

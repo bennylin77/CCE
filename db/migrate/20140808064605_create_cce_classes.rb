@@ -26,24 +26,24 @@ class CreateCceClasses < ActiveRecord::Migration
       t.belongs_to :user, index: true               
       t.string :location
    
-      t.integer :grants
-      t.integer :total_tuition
-      t.integer :other_funds
+      t.integer :grants, default: 0  
+      t.integer :total_tuition  
+      t.integer :other_funds, default: 0  
       t.integer :user_size_limits
                   
-      t.integer :total_credits
+      t.integer :total_credits  
       t.integer :total_hours
-      t.integer :in_school_lecturers_no    
-      t.integer :out_school_lecturers_no         
+      t.integer :in_school_lecturers_quantity   
+      t.integer :out_school_lecturers_quantity        
       
-      t.integer :school_expenses
-      t.integer :academic_expenses      
-      t.integer :center_expenses  
-      t.integer :college_expenses  
-      t.integer :department_expenses  
+      t.integer :school_expenses, default: 0  
+      t.integer :academic_expenses, default: 0        
+      t.integer :center_expenses, default: 0    
+      t.integer :college_expenses, default: 0    
+      t.integer :department_expenses, default: 0    
       
-      t.integer :school_venue_fee
-      t.integer :units_venue_fee    
+      t.integer :school_venue_fee, default: 0  
+      t.integer :units_venue_fee, default: 0    
             
       t.boolean :verified, default: false
       t.integer :verified_user_id    
