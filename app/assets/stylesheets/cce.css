@@ -23,23 +23,21 @@ button{
 	height: 100%;
 	z-index: 1;
 	background: #198EB9;
-	overflow: auto;
 }
 .cce_left_menu_container .signIn_container
 {
 	margin: 4% auto;
 	width:  85%;
-	height: 128px;
+	height: 107px;
 	border: 4px solid #F2EEEA
 }
 .signIn_container_title{
   	width: 85%;
-  	margin: 5px auto;	
+  	margin: 2px auto;	
 }
 .signIn_container_title_ch{
-
 	letter-spacing: 4px;
-	font-size: 12px; 
+	font-size: 11px; 
 }
 .signIn_container_title_en{
 	font-family: Palatino Linotype;		
@@ -48,7 +46,7 @@ button{
 }
 .login, .logout{
   	width: 88%;
-  	margin: 3px auto;
+  	margin: 1px auto;
 }
 
 .login input[type=text]{
@@ -76,32 +74,32 @@ button{
   font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;
   font-size: 12px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .login input[type=submit], .logout_a{
   line-height: 8px;
-  width: 7em;
-  height: 23px;
+  width: 80px;
+  height: 18px;
   background: #F2EEEA;
   border: 1px solid #F2EEEA;
   cursor: pointer;
   border-radius: 2px;
   color: #198EB9;
   font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
-  margin-top: 13px;
+  margin-top: 6px;
 }
 .login .forget_pw{
-	padding-left: 1em;
-	margin-left: 10px;
+	padding-left: 15px;
+	margin-left: 15px;
 	font-size: 10px;
 	border-left: 1px solid rgba(255,255,255,0.6);
 }
 .logout .settings{
 	color: #F2EEEA;		
-	padding-left: 1em;
+	padding-left: 15px;
 	margin-left: 1.8em;
 	font-size: 10px;
 	border-left: 1px solid rgba(255,255,255,0.6);
@@ -141,8 +139,8 @@ button{
 }
 .hello{
 	width:100%;
-	height:50px;
-	line-height: 48px;
+	height:35px;
+	line-height: 38px;
 	letter-spacing: 5px;	
 	text-align:center;
 	margin: 8px auto;
@@ -151,9 +149,9 @@ button{
 }
 .cce_left_menu_container .mid_container
 {
-	margin: 1em auto;
+	margin: 14px auto;
     width: 85%;
-    height: 60%;
+    height: 50%;
     border-top: 3px solid #F2EEEA
 }
 
@@ -163,7 +161,7 @@ button{
 } 
 .mid_container li{
 	width: 180px;
-	margin-bottom: 20px;
+	margin-bottom: 13px;
 	height: 30px;
 } 
 .mid_container li a{
@@ -174,7 +172,7 @@ button{
 } 
 .mid_container li .mid_container_img{
 	float: left;
-	margin-top: 8px;
+	margin-top: 5px;
 }
 .mid_container li .mid_container_word{
 	float: left;
@@ -183,7 +181,7 @@ button{
 .mid_container li .mid_container_CH{
     font-family: Microsoft YaHei, 'Lato', Calibri, Arial, sans-serif;	
 	letter-spacing: 5px;
-	font-size: 13.5px;	
+	font-size: 12px;	
 }
 .mid_container li .mid_container_EN{
 	font-size: 70%;
@@ -192,9 +190,11 @@ button{
 }
 .cce_left_menu_container .bot_container
 {
-	margin: 0em auto;
-	width: 85%;
-	height: 110px;
+	position: fixed;
+	left: 13px;
+	bottom: 25px;
+	width: 195.5px;
+	height: 100px;
 	border: 4px solid #F2EEEA	
 }
 .bot_container ul{
@@ -205,7 +205,7 @@ button{
 } 
 .bot_container li{
 	width: 180px;
-	height: 25px;
+	height: 22px;
 	font-weight: bold;
 } 
 .bot_container li:hover{
@@ -224,11 +224,13 @@ button{
 }
 .bot_container li .bot_container_CH{
 	letter-spacing: 5px;
-	font-size: 12px;
+	font-size: 10px;
 }
 .bot_line{
-	margin: 0em auto;
-	width: 90%;
+	position: fixed;
+	width: 205px;
+	left: 13px;
+	bottom: 5px;
 }
 .bot_line_left{
 	border-bottom: 5px solid #F2EEEA;
@@ -250,14 +252,14 @@ button{
 	top: 0;
 	left: 250px;
 	width: 78%;
-	height: 210px;
+	height: 195px;
 	overflow: visible;
 	background: #F2EEEA;
 	z-index: 1;
 }
 .cce_top_menu_container .logo_container
 {
-	height: 120px;
+	height: 111px;
 	border-bottom: 1px solid #198EB9;	
 	padding-bottom: 10px;
 }
@@ -265,79 +267,80 @@ button{
 	float:left;
 	font-weight: bold;
 	margin-top: 13px;	
-	width:  200px;
+	width:  180px;
 	border: 3px solid #198EB9;	
 }
 .logo_container_title_inner_cce{
 	width: 60%;
 	text-align: center;
-	font-size: 42px;
-	line-height: 43px;
-	margin-left: 20px;
+	font-size: 38px;
+	line-height: 40px;
+	margin-left: 16.5px;
 	letter-spacing: 35px;
-    font-family: Palatino Linotype;		
+    font-family: Microsoft JhengHei, Palatino Linotype;		
     font-style: italic;	
 }
 .logo_container_title_inner_en{
 	width: 100%;
 	text-align: center;						
-	font-size: 12px;
+	font-size: 11px;
 	border-top: 3px solid #198EB9;
 	border-bottom: 3px solid #198EB9;
-    font-family: Palatino Linotype;		
+    font-family: Microsoft JhengHei, Palatino Linotype;		
     font-style: italic;
     			
 }
 .logo_container_title_inner_ch{
 	margin-left: 14%; 
 	width: 80%; 
-	line-height: 19px; 
+	line-height: 17px; 
 	letter-spacing: 12px; 
-	font-size: 13px; 
+	font-size: 12px; 
 	text-align: center;	
 }
 .logo_container_pic{
 	float: right;
 }
 .logo_container_pic img{
-	margin-top: 40px;
-	height: 80px;
+	margin-top: 35px;
+	height: 78px;
 }
 
 .cce_top_menu_container .title_container
 {
-	height: 40px;
+	height: 38px;
 	border-bottom: 1px solid #198EB9		
 }
 .title_container_left{
 	float: left;
-	font-size: 17px;
+	font-size: 15px;
 	font-weight: bold;
-	margin-top: 2px;	
-    font-family: Palatino Linotype;		
-    font-style: italic;		
+	margin-top: 5px;	
+    font-family: Microsoft JhengHei;	
+	
 }
 .title_container_left_content{
 	float: left;
 	letter-spacing: 5px;
 	margin-left: 10px;
-	margin-top: 8px;
+	margin-top: 5px;
 }
 .title_container_right{
 	float: right;
 }
 
 .search_box input[type="text"] {
+	color: #898989;	
 	width: 230px;
 	float:right;
 	font-family: Microsoft JhengHei, 'Lato', Calibri, Arial, sans-serif;	
 	background: #F2EEEA;
 	border: 3px solid #198EB9;	
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 3px;
     line-height: 16px;
-    margin-top: 7px;
+    margin-top: 6px;
     padding: 2px;
     -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
     transition: width 1s;
@@ -353,7 +356,7 @@ button{
 .search_box button {
 	position: absolute;
 	right: 5px;
-    margin-top:9px;
+    margin-top:7px;
 	background: none;
     cursor: pointer;
     color: #198EB9;
@@ -429,7 +432,7 @@ button{
 /*============================================= cce main container =========================================*/
 .cce_main_container{
 	clear: both;
-	margin-top: 215px;
+	margin-top: 198px;
 	margin-left: 250px;	
     width: 78%;	
 }
