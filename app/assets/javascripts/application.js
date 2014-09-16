@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require gritter
-//= require turbolinks
+//= require jquery.turbolinks
 //= require jquery-ui/autocomplete
+//= require jquery
 //= require_tree .

@@ -4,6 +4,15 @@
 			{
 			}
 		);
+		$("#openfancybox").fancybox({
+			closeBtn : false,			
+	    	openEffect	: 'elastic',
+	    	closeEffect	: 'elastic',		 						
+	        afterShow: function() {
+	           //FB.XFBML.parse();
+	           //window.history.pushState("", "",$(this).attr( "href" ));
+	        }
+	    });			
 	});
 </script>
 
@@ -28,8 +37,8 @@
 		</div>
 		<div class="CCELocation_section" id="CCELocation_2">
 			<div class="CCELocation_section_inner">
-				<div class="CCELocation_section_inner_title">校區全圖</div>	
-				<%=image_tag "NCTU_map.svg", style: 'width: 100%;'%>		
+				<div class="CCELocation_section_inner_title">校區全圖</div>
+				<%=link_to image_tag("NCTU_map.svg", style: 'width: 100%;'), asset_path("NCTU_map.svg"), id: 'openfancybox' %>				
 			</div>					
 		</div>
 		<div class="CCELocation_section" id="CCELocation_3">

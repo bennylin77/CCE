@@ -14,7 +14,7 @@ class NewsController < ApplicationController
     @news.view=@news.view+1
     @news.save!          
     if request.xhr?     
-      render layout: 'fancybox'  
+      render layout: 'fancybox'
     end     
   end
 

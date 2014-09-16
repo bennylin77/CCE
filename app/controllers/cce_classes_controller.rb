@@ -30,7 +30,7 @@ class CceClassesController < ApplicationController
   
   def show
     if request.xhr?
-      render layout: false   
+      render layout: 'fancybox'
     end   
   end
   

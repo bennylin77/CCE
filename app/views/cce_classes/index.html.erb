@@ -20,13 +20,17 @@
 		});		
 		//initial fancybox
 		$(".openAjax").fancybox({
+			closeBtn : false,
+			padding: 35,			
+    		openEffect	: 'elastic',
+    		closeEffect	: 'elastic',			
 			type: 'ajax',								
 	        afterShow: function() {
 	           //FB.XFBML.parse();
-	           //window.history.pushState("", "",$(this).attr( "href" ));
+	           window.history.pushState("", "",$(this).attr( "href" ));
 	        },
 	        afterClose: function(){
-	           //window.history.back();
+	           window.history.back();
 	        }
 		});		
 	});	
@@ -110,7 +114,6 @@
 		});			
 	}
 	
-
 	$('#dimension').change(function() {
 		filterAjax();		
 	});
