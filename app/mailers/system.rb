@@ -5,7 +5,11 @@ class System < ActionMailer::Base
   
   def sendVerification(hash={})
     @user=hash[:user]
-    mail( to: hash[:user].email, subject: "國立交通大學推廣教育中心 會員邀請函" )
+    mail( to: @user.email, subject: "國立交通大學推廣教育中心 會員邀請函" )
   end
-  
+  def sendResetPw(hash={})
+    @user=hash[:user]
+    @new_pw=hash[:new_pw]
+    mail( to: @user.email , subject:"國立交通大學推廣教育中心  密碼重設通知")
+  end 
 end

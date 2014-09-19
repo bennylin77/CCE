@@ -27,12 +27,17 @@ class CceClass < ActiveRecord::Base
   validates :school_venue_fee, presence: {message: "學校場地費 不能是空白"}      
   validates :units_venue_fee, presence: {message: "各單位場地費 不能是空白"}      
 
-
-
-
   validate  :kindIsCreditMostWithTotalCredits
- 
-
+  
+  has_attached_file :attachment,
+                    :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+                    :url => "/system/:attachment/:id/:style/:filename"       
+  validates_attachment :attachment, size: { less_than: 1024.megabytes, message: "課程附件大小超過1T" },
+                                    file_name: {matches: [/png\Z/, /jpe?g\Z/, /gif\Z/, 
+                                                          /zip\Z/, /rar\Z/, /pdf\Z/, /txt\Z/,
+                                                          /xlsx\Z/, /xls\Z/, /ppt\Z/, /pptx\Z/, /doc\Z/, /dox\Z/
+                                                          ], message: "課程附件不接受此檔案類型" }  
+  
   def kindIsCreditMostWithTotalCredits
     if total_credits.blank? and kind==GLOBAL_VAR['kind_credit'] 
       errors.add(:total_credits, "請填寫總學分")

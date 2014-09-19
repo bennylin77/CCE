@@ -2,7 +2,9 @@ module CceClassesHelper
   def statusOptions
     [['招生中', GLOBAL_VAR['status_enrollment']], 
      ['已開班', GLOBAL_VAR['status_under']], 
-     ['已結業', GLOBAL_VAR['status_finished']]]
+     ['已結業', GLOBAL_VAR['status_finished']],
+     ['停開', GLOBAL_VAR['status_suspended']]     
+     ]
   end    
   def kindOptions
     [['學分班', GLOBAL_VAR['kind_credit']], 

@@ -41,10 +41,11 @@
 	  <div class="index_content">
         <%if cce_class.verified%>
         <%= link_to '取消通過', {controller: :cce_classes, action: :verified, id: cce_class.id }, class: 'function_sub_button' %>
+        <%= link_to '新增子課程', {controller: :courses, action: :new, cce_class_id: cce_class.id} , class: 'function_sub_button' %>        
         <%else%>
         <%= link_to '通過', {controller: :cce_classes, action: :verified, id: cce_class.id },  class: 'function_sub_button'%>        
         <%end%>	  	
-        <%= link_to '新增子課程', {controller: :courses, action: :new, cce_class_id: cce_class.id} , class: 'function_sub_button' %>
+        <%= link_to '申請相同課程', {controller: :cce_classes, action: :new, id: cce_class.id}, class: 'function_sub_button' %>        
         <%= link_to '詳細', {controller: :cce_classes, action: :showManagement, id: cce_class.id}, class: 'function_sub_button' %>
         <%= link_to '編輯', edit_cce_class_path(cce_class), class: 'function_sub_button' %>
         <%= link_to '刪除', cce_class, method: :delete, class: 'function_del_button', data: { confirm: 'Are you sure?' } %>	  	

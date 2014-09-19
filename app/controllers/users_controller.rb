@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :verifyCode]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :verifyCode, :pwReset]
 
   def index
     @users = User.all.paginate(per_page: 30, page: params[:page]).order('id DESC') 
@@ -77,6 +77,15 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def pwReset
+    new_pw = SecureRandom.hex(5)
+    @user.pw= new_pw
+    @user.pw_confirmation= new_pw
+    @user.save!
+    System.sendResetPw(user: @user, new_pw: new_pw).deliver
+    redirect_to users_url, notice: '成功送出新密碼'     
   end
 
   private

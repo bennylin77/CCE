@@ -1,0 +1,176 @@
+<div class="function_field">
+<%= link_to '回此推廣教育課程', {controller: :cce_classes, action: :showManagement, id: @cce_class.id}, class: 'function_button' %>
+<%= link_to '列印此單', "", onclick: "PrintElem('#printdiv')", class: 'function_button' %>	
+</div>
+
+<script type="text/javascript">
+function PrintElem(elem)
+{
+	Popup($(elem).html());
+}
+function Popup(data)
+{
+	var mywindow = window.open('', '國立交通大學推廣教育課程開班計畫申請書', 'height=297mm, width=210mm');
+	mywindow.document.write('<html><head><title>國立交通大學推廣教育課程開班計畫申請書</title>');
+	/*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+	mywindow.document.write('</head><body >');
+	mywindow.document.write(data);
+	mywindow.document.write('</body></html>');
+	mywindow.document.close(); //prevent IE error
+	mywindow.focus(); //prevent IE error
+	mywindow.print();
+	mywindow.close();
+	return true;
+}
+</script>
+<div id="printdiv">
+<style>
+table {
+	font: 12pt; 
+    width: 100%;
+    border: 1px solid;
+}
+
+th {
+    height: 30px;
+    width: 50px;
+
+} 
+td {
+    height: 30px;
+    border-bottom: 1px solid;
+} 
+</style>
+<div style="text-align: center">國立交通大學推廣教育課程開班計畫申請書</div>
+<table>
+  <tr>
+    <th>A. 課程資訊:</th>
+  </tr> 	
+  <tr>
+    <th>課程名稱</th>
+    <td colspan="3"><%= showBlank( data: @cce_class.title)%></td>
+  </tr>
+  <tr>
+    <th>課程類別</th>
+    <td><%= Hash[kindOptions].rassoc(@cce_class.kind ).first %></td>
+    <th>課程向度</th>
+    <td><%= showDimensions( cce_class: @cce_class)%></td>
+  </tr>    
+  <tr>
+    <th>課程學年</th>
+    <td><%= @cce_class.school_year%></td>
+    <th>課程時間</th>
+    <td><%= @cce_class.start_at%>~<%= @cce_class.end_at%></td>        
+  </tr>  
+  <tr>
+    <th>課程總時數</th>
+    <td><%= @cce_class.total_hours%></td>
+    <th>課程總學分</th>
+    <td><%= @cce_class.total_credits%></td>        
+  </tr>    
+  <tr>
+    <th>課程介紹</th>
+    <td colspan="3"><%= @cce_class.introduction%></td> 
+  </tr>  
+  <tr>
+    <th>招生人數</th>
+    <td colspan="3"><%= @cce_class.user_size_limits%></td> 
+  </tr> 
+  <tr>
+    <th>學費</th>
+    <td colspan="1"><%= @cce_class.tuition%> NT</td>    
+  </tr>       
+  <tr>
+    <th>校內師資人數</th>
+    <td><%= @cce_class.in_school_lecturers_quantity%> 人</td> 
+    <th>校外師資人數</th>
+    <td><%= @cce_class.out_school_lecturers_quantity%> 人</td>    
+  </tr>
+  <tr>
+    <th>B. 負責單位:</th>
+  </tr>      
+  <tr>
+    <th>開課委託單位</th>
+    <td><%= showBlank( data:@cce_class.requester)%></td> 
+    <th>主辦單位</th>
+    <td><%= @cce_class.organizer%></td>    
+  </tr>  
+  <tr>
+    <th>主持人</th>
+    <td><%= @cce_class.host%></td> 
+    <th>主持人分機</th>
+    <td>#<%= @cce_class.host_extend%></td>    
+  </tr>             
+  <tr>
+    <th>承辦人</th>
+    <td><%= @cce_class.user.name%></td> 
+    <th>承辦人分機</th>
+    <td>#<%= @cce_class.user.extend%></td>    
+  </tr>                 
+  <tr>
+    <th>相關連結</th>
+    <td colspan="3"><%= @cce_class.link%></td>    
+  </tr>     
+  <tr>
+    <th>C. 預計經費來源:</th>
+  </tr>   
+  <tr>
+    <th>預估總共學費</th>
+    <td colspan="3"><%= @cce_class.total_tuition%> NT</td>    
+  </tr>  
+  <tr>
+    <th>補助款</th>
+    <td colspan="3"><%= @cce_class.grants%> NT</td>    
+  </tr>   
+  <tr>
+    <th>其他經費來源</th>
+    <td colspan="3"><%= @cce_class.other_funds%> NT</td>    
+  </tr>   
+  <tr>
+    <th>總計來源</th>
+    <td colspan="3"><%=@cce_class.total_tuition+@cce_class.grants.to_i+@cce_class.other_funds.to_i %> NT</td>    
+  </tr>  
+  <tr>
+    <th>D. 會簽有關單位:</th>
+  </tr>    
+  <tr>
+    <th>承辦單位</th>
+	<th>會簽及意見</th>
+	<th>會辦單位</th>
+	<th>會簽及意見</th>
+  </tr>  
+  <tr>
+    <th>1. 承辦人</th>
+	<td></td>
+	<th>6. 推廣教育委員會</th>
+	<td></td>
+  </tr>  
+  <tr>
+    <th>2. 主持人</th>
+	<td></td>
+	<th>7. 教務處</th>
+	<td></td>
+  </tr>  
+  <tr>
+    <th>3. 系所/中心</th>
+	<td></td>
+	<th>8. 人事室</th>
+	<td></td>
+  </tr>          
+  <tr>
+    <th>4. 學院</th>
+	<td></td>
+	<th>9. 主計室</th>
+	<td></td>
+  </tr> 
+  <tr>
+    <th>5. 推廣教育中心</th>
+	<td></td>
+	<th>10. 校長/授權代簽人</th>
+	<td></td>
+  </tr>    
+  <tr>
+	<td colspan="4">＊請附上經費收支表連同本表經會簽各相關單位後，正本存推教中心。 </td>
+  </tr>    
+</table>	
+</div>

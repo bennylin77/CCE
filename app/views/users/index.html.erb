@@ -47,6 +47,7 @@
 	  <%= Hash[identityOptions].rassoc(user.identity).first%>
 	  </div> 
   	  <div class="index_content">
+	  <%= link_to '發送新密碼', {controller: "users", action: "pwReset", id: user.id}, class: 'function_sub_button' %>  	  	
 	  <%= link_to '詳細', user, class: 'function_sub_button' %>
 	  <!--<%= link_to '編輯', edit_user_path(user) %>-->
 	  <%= link_to '刪除', user, method: :delete, class: 'function_del_button', data: { confirm: '您確定要刪除會員 '+user.name+' ?' } %>

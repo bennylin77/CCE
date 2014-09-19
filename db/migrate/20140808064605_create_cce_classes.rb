@@ -10,7 +10,10 @@ class CreateCceClasses < ActiveRecord::Migration
       t.text :schedule
       t.text :enrollment_user
       t.text :future
-      t.integer :tuition      
+      t.integer :tuition   
+      t.text :link 
+      t.attachment :attachment       
+              
       t.text :lecturers      
       t.text :class_time
       t.text :note 
@@ -44,6 +47,12 @@ class CreateCceClasses < ActiveRecord::Migration
       
       t.integer :school_venue_fee, default: 0  
       t.integer :units_venue_fee, default: 0    
+      
+      t.integer :personnel_fee, default: 0  
+      t.integer :sales_fee, default: 0  
+      t.integer :travel_fee, default: 0  
+      t.integer :facilities_fee, default: 0                          
+      t.integer :hourly_fee, default: 0  
             
       t.boolean :verified, default: false
       t.integer :verified_user_id    

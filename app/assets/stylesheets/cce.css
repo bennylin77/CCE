@@ -204,6 +204,7 @@ button{
 	margin-left: 18px;		
 } 
 .bot_container li{
+	float: left;
 	width: 180px;
 	height: 22px;
 	font-weight: bold;
@@ -506,6 +507,7 @@ button{
 	height: 48px;
 }
 .form_title{
+	width: 130px;
 	display: table-cell;
 	padding-top: 10px;
 	padding-right: 10px;	
@@ -587,13 +589,16 @@ button{
 	display: table-row;		
 }
 .show_title{
+	width: 150px;
 	padding-top: 8px;
-	padding-right: 20px;
+	padding-right: 25px;
 	color: #198EB9;	
 	display: table-cell;	
 }
 .show_content{
 	max-width: 400px;
+	padding-top: 8px;
+	padding-right: 25px;	
 	color:  #898989;	
 	display: table-cell;		
 }

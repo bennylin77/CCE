@@ -79,7 +79,7 @@
 				報名洽詢
 				</div>	
 				<div class="cce_class_show_basic_cell_content">
-				<%= @cce_class.user.name%>	<%= @cce_class.user.email%>	
+				<%= @cce_class.user.name%><br><%= @cce_class.user.email%><br>(03)5712121#<%= @cce_class.user.extend%>	
 				</div>						
 			</div>																	
 		</div>	
@@ -158,7 +158,26 @@
 			</div>										
 		</div>
 		<div class="cce_class_show_others">
-			
+			<div class="cce_class_show_others_inner">
+				<div class="cce_class_show_others_title">
+					相關連結
+				</div>	
+				<div class="cce_class_show_others_content">
+					<%= showBlank( data: link_to(@cce_class.link, @cce_class.link))%>	
+				</div>					
+			</div>
+			<div class="cce_class_show_others_inner">
+				<div class="cce_class_show_others_title">
+					課程附件
+				</div>	
+				<div class="cce_class_show_others_content">
+				  	<%unless @cce_class.attachment.blank?%>
+				  	<%= link_to( @cce_class.attachment_file_name,  @cce_class.attachment.url())%>	
+				  	<%else%>
+				  	--
+				  	<%end%>
+				</div>					
+			</div>						
 			<div class="cce_class_show_others_inner">
 				<div class="cce_class_show_others_title">
 					課程總時數
@@ -176,8 +195,5 @@
 				</div>					
 			</div>									
 		</div>			
-		
-		
-			
 	</div>	
 </div>

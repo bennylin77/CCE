@@ -34,6 +34,11 @@ ActiveRecord::Schema.define(version: 20140829080121) do
     t.text     "enrollment_user"
     t.text     "future"
     t.integer  "tuition"
+    t.text     "link"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
     t.text     "lecturers"
     t.text     "class_time"
     t.text     "note"
@@ -62,6 +67,11 @@ ActiveRecord::Schema.define(version: 20140829080121) do
     t.integer  "department_expenses",           default: 0
     t.integer  "school_venue_fee",              default: 0
     t.integer  "units_venue_fee",               default: 0
+    t.integer  "personnel_fee",                 default: 0
+    t.integer  "sales_fee",                     default: 0
+    t.integer  "travel_fee",                    default: 0
+    t.integer  "facilities_fee",                default: 0
+    t.integer  "hourly_fee",                    default: 0
     t.boolean  "verified",                      default: false
     t.integer  "verified_user_id"
     t.boolean  "available",                     default: true
