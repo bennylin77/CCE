@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>	
+<div class="masonry" style="-moz-column-count: 3;
+						    -webkit-column-count: 3;
+						    column-count: 3;
+						    -moz-column-gap: 1em;
+						    -webkit-column-gap: 1em;
+						    column-gap: 1em;">
+   <% @edm.news.each do |n|%>						      
+   <div class="news_box" style="display: inline-block;
+   							    margin: 0 0 1em;
+			                    width: 100%;
+  	                            background: #198EB9;">
+		<a href="<%=domain+'/news/'+n.id.to_s%>" style="text-decoration: none;">
+		<div class="content_news_block">				
+				<div style="font-family: Microsoft YaHei, 'Lato', Calibri, Arial, sans-serif;	
+							width: 89%;
+							color: #F2EEEA;	
+							font-size: 17px;
+							font-style: italic;
+							letter-spacing: 7px;
+							margin: 1em auto 5px;
+							padding-bottom: 6px;	
+							border-bottom: 3px solid #F2EEEA;">
+				<%=n.title%>		
+				</div>	
+				<%unless n.cover.blank?%>			
+				<div style="width: 89%; 
+	                        margin: 10px auto;
+	                        padding-bottom: 6px;		
+	                        border-bottom: 3px solid #F2EEEA;">			
+					<%=image_tag n.cover, style: "width: 100%"%>
+				</div>
+				<div style="width: 89%;
+	                        color: #F2EEEA;	
+							line-height: 17px;
+							font-size: 12px;
+							letter-spacing: 3px;
+							margin: 0.5em auto; 
+							padding-bottom: 12px;		
+							border-bottom: 1px solid #F2EEEA;">
+					<%=truncate( n.content, length: 55, omission: '... (詳細)')%>
+				</div>
+				<%else%>
+				<div style="width: 89%;
+	                        color: #F2EEEA;	
+							line-height: 17px;
+							font-size: 12px;
+							letter-spacing: 3px;
+							margin: 0.5em auto; 
+							padding-bottom: 12px;		
+							border-bottom: 1px solid #F2EEEA;">
+					<%= n.content%>	
+				</div>		
+				<%end%>	
+				<div style="width: 89%;
+							color: #F2EEEA;	
+							line-height: 13px;
+							font-size: 10px;
+							letter-spacing: 2px;
+							margin: 5px auto 13px;">
+					發佈時間 <%=n.created_at.strftime "%Y-%m-%d"%>
+				</div>				
+		</div> 	
+		</a>			
+	</div>
+   <%end%>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<div class="function_title">電子郵件廣告列表</div>
+<div class="function_field">
+<%= link_to '新增電子郵件廣告', new_edm_path, class: 'function_button'%>
+</div>
+
+<section class="index_table">
+  <div class="index_row">
+	  <div class="index_title">
+	    標題
+	  </div>
+	  <div class="index_title">
+	    建立日期
+	  </div>
+	  <div class="index_title">
+	    被發出的消息公告
+	  </div>	  
+	  <div class="index_title">
+	 	發出人
+	  </div>
+	  <div class="index_title">
+	  </div>	  
+  </div>   
+  
+  <% @edms.each do |edm| %> 
+  <div class="index_row" >
+  	  <div class="index_content">	
+  	  <%= edm.title %>
+	  </div>
+  	  <div class="index_content">	
+  	  <%= edm.created_at.strftime "%Y-%m-%d" %>
+	  </div>
+	  <div class="index_content">
+	  <%= simple_format(showNews edm: edm) %>
+	  </div> 	  
+	  <div class="index_content">
+	  <%= edm.user.name %>
+	  </div> 		  
+  	  <div class="index_content">	   	  	
+  	  <%= link_to '詳細', edm, class: 'function_sub_button' %>
+	  </div>
+  </div>   	  	
+  <div class="index_row">
+  	<div class="index_border"></div>
+  	<div class="index_border"></div>
+  	<div class="index_border"></div>
+   	<div class="index_border"></div> 	
+   	<div class="index_border"></div>    	
+  </div>    
+  <% end %>	  	   
+     	
+</section>  	
+<div class="apple_pagination">
+<%= will_paginate @edms %>
+</div>

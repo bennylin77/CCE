@@ -18,7 +18,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :identity
       t.string :verify_code
       t.boolean :verified, default: false
-      
+      t.boolean :edm, default: true      
       t.timestamps
     end
   end

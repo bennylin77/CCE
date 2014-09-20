@@ -139,7 +139,7 @@ class CceClassesController < ApplicationController
                                user_size_limits: 1, requester: i, class_time: i,
                                organizer: i, host: i, host_extend: i, total_tuition: i,
                                total_hours: 2, in_school_lecturers_quantity: 1, out_school_lecturers_quantity: 1,
-                               school_expenses: i, school_year: i )
+                               school_expenses: i, school_year: i, verified: true, user_id: 1 )
       @cce_class.save!
     end
     

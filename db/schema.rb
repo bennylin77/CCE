@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140829080121) do
+ActiveRecord::Schema.define(version: 20140920034453) do
 
   create_table "cce_class_dimensions", force: true do |t|
     t.integer  "cce_class_id"
@@ -96,6 +96,25 @@ ActiveRecord::Schema.define(version: 20140829080121) do
     t.datetime "updated_at"
   end
 
+  create_table "edm_news", force: true do |t|
+    t.integer  "edm_id"
+    t.integer  "news_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "edm_news", ["edm_id"], name: "index_edm_news_on_edm_id", using: :btree
+  add_index "edm_news", ["news_id"], name: "index_edm_news_on_news_id", using: :btree
+
+  create_table "edms", force: true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "edms", ["user_id"], name: "index_edms_on_user_id", using: :btree
+
   create_table "news", force: true do |t|
     t.integer  "cce_class_id"
     t.integer  "user_id"
@@ -139,6 +158,7 @@ ActiveRecord::Schema.define(version: 20140829080121) do
     t.integer  "identity"
     t.string   "verify_code"
     t.boolean  "verified",    default: false
+    t.boolean  "edm",         default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

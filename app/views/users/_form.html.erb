@@ -166,6 +166,15 @@
    	  <%= f.text_field :education, size: 30 %>
 	  </div>         	
   </div>  
+  <div class="form_row">
+	  <div class="form_title">
+	  訂閱最新課程資訊
+	  </div>
+	  <div class="form_content">
+	  <%=f.radio_button :edm, "true"%>訂閱
+	  <%=f.radio_button :edm, "false"%>取消
+	  </div>         	
+  </div>   
   <%end%>
   <div class="form_row">
   	<div class="form_title">

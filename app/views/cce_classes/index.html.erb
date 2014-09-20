@@ -31,6 +31,12 @@
 	        },
 	        afterClose: function(){
 	           window.history.back();
+	           var $container = $('#masonry-container');
+			   $container.masonry({
+			      columnWidth: 32,
+			      gutter: 15,
+			      isFitWidth: true
+			   });
 	        }
 		});		
 	});	

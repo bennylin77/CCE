@@ -2,6 +2,8 @@
 class News < ActiveRecord::Base
   belongs_to :cce_class
   belongs_to :user
+  has_many :edm_news, dependent: :destroy
+  has_many :edms, through: :edm_news  
   has_attached_file :cover,
                     :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
                     :url => "/system/:attachment/:id/:style/:filename",

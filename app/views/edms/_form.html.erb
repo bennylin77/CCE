@@ -1,0 +1,39 @@
+<%= form_for(@edm) do |f| %>
+  <% if @edm.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@edm.errors.count, "error") %> prohibited this edm from being saved:</h2>
+
+      <ul>
+      <% @edm.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <section class="form_table">  
+  <div class="form_row">
+	  <div class="form_title">
+	  郵件標題*
+	  </div>
+	  <div class="form_content">
+      <%= f.text_field :title, size: 40 %>
+      </div>         	
+  </div>
+  <div class="form_row">
+	  <div class="form_title">
+	  要被發出的消息公告
+	  </div>
+	  <div class="form_content">
+      <%= collection_select(:edm, :news_ids, 
+                            News.all, 
+                            :id, :title, {:selected => @edm.news_ids, :include_blank => false}, {:multiple => true}) %>    
+	  </div>         	
+  </div>   
+  <div class="form_row">
+  	<div class="form_title">
+    <%= f.button '確認寄出' %>
+    </div>
+  </div>          
+  </section>
+<% end %>

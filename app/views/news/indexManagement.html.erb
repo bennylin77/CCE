@@ -1,6 +1,7 @@
 <div class="function_title">最新消息列表</div>
 <div class="function_field">
-<%= link_to '申請刊登最新消息', new_news_path, class: 'function_button'%>	
+<%= link_to '申請刊登最新消息', new_news_path, class: 'function_button'%>
+<%= link_to '電子郵件廣告列表', edms_path, class: 'function_button' %>	
 </div>
 <section class="index_table">
   <div class="index_row">
@@ -52,5 +53,6 @@
   <% end %>	  	   
      	
 </section>  	
-
+<div class="apple_pagination">
 <%= will_paginate @news %>
+</div>
