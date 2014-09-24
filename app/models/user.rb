@@ -10,9 +10,8 @@ class User < ActiveRecord::Base
   validates :identity, presence: {message: "會員身份 不能是空白"}
   validates :pw, presence: {message: "密碼 不能是空白"}, confirmation: {message: "密碼 輸入不一致"}, on: :update
   validates :pw_confirmation, presence: {message: "密碼確認 不能是空白"}, on: :update
-  validates :gender, presence: {message: "性別 不能是空白"}, on: :update
   validates :birthday, presence: {message: "出生年月日 不能是空白"}, on: :update  
-  validates :address, presence: {message: "地址 不能是空白"}, on: :update  
+  #validates :address, presence: {message: "地址 不能是空白"}, on: :update  
   validates :education, presence: {message: "最高學歷 不能是空白"}, on: :update  
   validates :mobile_no, presence: {message: "手機號碼 不能是空白"}, on: :update  
 
@@ -51,7 +50,7 @@ class User < ActiveRecord::Base
     user=self.find_by_email(email)
     unless user.blank?
       expectedPassword=encryptedPassword(password, user.salt)
-      if user.hashed_pw!=expectedPassword
+      if user.hashed_pw!=expectedPassword or expectedPassword.blank?
         user=nil
       end
     end
@@ -64,8 +63,12 @@ private
   end
   
   def self.encryptedPassword(password, salt)
-    string_to_hash=password+"CCE_test"+salt
-    Digest::SHA1.hexdigest(string_to_hash)
+    unless salt.blank?
+      string_to_hash=password+"CCE_test"+salt
+      Digest::SHA1.hexdigest(string_to_hash)
+    else
+      nil
+    end  
   end
   
 end

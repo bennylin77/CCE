@@ -46,7 +46,7 @@
   </div> 
   <div class="form_row">
 	  <div class="form_title">
-	     課程向度*(按Ctrl可複選)
+	          課程分類*(按Ctrl可複選)
 	  </div>
 	  <div class="form_content">
       <%= collection_select(:cce_class, :dimension_ids, 
@@ -224,6 +224,15 @@
 	  </div>
 	  <div class="form_content">
       <%= f.text_field :link, size: 50%>
+	  </div>         	
+  </div>    
+
+  <div class="form_row">
+	  <div class="form_title">
+	    線上報名連結
+	  </div>
+	  <div class="form_content">
+      <%= f.text_field :registration_link, size: 50%>
 	  </div>         	
   </div>    
 

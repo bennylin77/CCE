@@ -30,7 +30,8 @@ class NewsController < ApplicationController
     @news.user=User.find(session[:user_id])
     respond_to do |format|
       if @news.save
-        format.html { redirect_to @news, notice: 'News was successfully created.' }
+        flash[:title]='消息公告'
+        format.html { redirect_to @news, notice: '成功申請刊登最新消息' }
       else
         format.html { render :new }
       end
@@ -40,7 +41,8 @@ class NewsController < ApplicationController
   def update
     respond_to do |format|
       if @news.update(news_params)
-        format.html { redirect_to @news, notice: 'News was successfully updated.' }
+        flash[:title]='消息公告'
+        format.html { redirect_to @news, notice: '編輯成功' }
       else
         format.html { render :edit }
       end
@@ -50,7 +52,8 @@ class NewsController < ApplicationController
   def destroy
     @news.destroy
     respond_to do |format|
-      format.html { redirect_to news_index_url, notice: 'News was successfully destroyed.' }
+      flash[:title]='消息公告'
+      format.html { redirect_to news_index_url, notice: '刪除成功' }
     end
   end
   
@@ -81,6 +84,8 @@ class NewsController < ApplicationController
       @news.verified_user_id=nil
     end      
     @news.save!
+    flash[:title]='消息公告'
+    flash[:notice]='成功更改審核狀態'
     redirect_to controller: :news, action: :indexManagement
   end
     

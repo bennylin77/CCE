@@ -5,7 +5,9 @@
 			}
 		);
 		$("#openfancybox").fancybox({
-			closeBtn : false,			
+			tpl: {
+			  closeBtn: "<div title='Close' class='cce_class_show_close'>x</div>"
+			},		
 	    	openEffect	: 'elastic',
 	    	closeEffect	: 'elastic',		 						
 	        afterShow: function() {

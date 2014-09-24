@@ -1,5 +1,4 @@
 <div class="cce_class_show">
-	<a class="cce_class_show_close" href="#" onClick="parent.jQuery.fancybox.close();">x</a>
 	<div class="cce_class_show_logo">
 	  <div class="cce_class_show_logo_en">
 	  	COURSE
@@ -10,19 +9,21 @@
 	</div>	
 	<div class="cce_class_show_title_apply">
 		<div class="cce_class_show_title_container">
-		<div class="cce_class_show_title">
-		  <%= @cce_class.title %>
+			<div class="cce_class_show_title">
+			  <%= @cce_class.title %>
+			</div>
+			<div class="cce_class_show_sub_title">
+			  <%= @cce_class.sub_title %>
+			</div>	
 		</div>
-		<div class="cce_class_show_sub_title">
-		  <%= @cce_class.sub_title %>
-		</div>	
-		</div>
+		<%unless @cce_class.registration_link.blank?%>
 	  	<div class="cce_class_show_apply">
-	    	<a href="#">
+	    	<%=link_to @cce_class.registration_link do%>
 	    	<span class="remain-icon icon-clipboard"></span>
 	        <span>線上報名</span>	
-	        </a>
+	        <%end%>
 	    </div>
+	    <%end%>
 	</div>    	
 	<div class="cce_class_show_content">
 		<div class="cce_class_show_basic">
@@ -44,7 +45,7 @@
 			</div>		
 			<div class="cce_class_show_basic_inner">
 				<div class="cce_class_show_basic_cell_title">
-				課程向度
+				課程分類
 				</div>	
 				<div class="cce_class_show_basic_cell_content">
 			  	<%= showDimensions( cce_class: @cce_class)%>							

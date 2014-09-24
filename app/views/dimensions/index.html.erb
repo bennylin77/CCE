@@ -1,7 +1,7 @@
-<div class="function_title">向度列表</div>
+<div class="function_title">課程分類列表</div>
 <div class="function_field">
 <%= link_to '回推廣教育課程列表', { controller: 'cce_classes', action: 'indexManagement' }, class: 'function_button' %>
-<%= link_to '新增向度', new_dimension_path, class: 'function_button'%>
+<%= link_to '新增課程分類', new_dimension_path, class: 'function_button'%>
 </div>
 
 <section class="index_table">
@@ -19,7 +19,7 @@
       </div>
       <div class="index_content">
       <%= link_to '編輯', edit_dimension_path(dimension), class: 'function_sub_button' %>
-      <%= link_to '刪除', dimension, method: :delete, class: 'function_del_button', data: { confirm: '您確定要刪除?' } %>
+      <%= link_to '刪除', dimension, method: :delete, class: 'function_del_button', data:  { confirm: '您確定要刪除 '+dimension.name+' ?' }%>
       </div>
   </div>  
   <div class="index_row">

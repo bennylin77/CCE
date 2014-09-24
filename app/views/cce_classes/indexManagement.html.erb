@@ -1,7 +1,7 @@
 <div class="function_title">推廣教育課程列表</div>
 <div class="function_field">
 <%= link_to '申請推廣教育課程', new_cce_class_path, class: 'function_button' %>
-<%= link_to '課程向度列表', dimensions_path, class: 'function_button' %>	
+<%= link_to '課程分類列表', dimensions_path, class: 'function_button' %>	
 </div>
 <section class="index_table">
   <div class="index_row">
@@ -45,10 +45,10 @@
         <%else%>
         <%= link_to '通過', {controller: :cce_classes, action: :verified, id: cce_class.id },  class: 'function_sub_button'%>        
         <%end%>	  	
-        <%= link_to '申請相同課程', {controller: :cce_classes, action: :new, id: cce_class.id}, class: 'function_sub_button' %>        
+        <%= link_to '續開相同課程', {controller: :cce_classes, action: :new, id: cce_class.id}, class: 'function_sub_button' %>        
         <%= link_to '詳細', {controller: :cce_classes, action: :showManagement, id: cce_class.id}, class: 'function_sub_button' %>
         <%= link_to '編輯', edit_cce_class_path(cce_class), class: 'function_sub_button' %>
-        <%= link_to '刪除', cce_class, method: :delete, class: 'function_del_button', data: { confirm: 'Are you sure?' } %>	  	
+        <%= link_to '刪除', cce_class, method: :delete, class: 'function_del_button', data: { confirm: '您確定要刪除 '+cce_class.title+' ?' } %>	  	
 	  </div>   		            	
   </div>  
   <% cce_class.courses.each do |course| %>
@@ -58,7 +58,7 @@
        <div class="index_content">        
        	<%= link_to '詳細', course, class: 'function_sub_button' %>
         <%= link_to '編輯', edit_course_path(course), class: 'function_sub_button' %>
-        <%= link_to '刪除', course, method: :delete, class: 'function_del_button', data: { confirm: 'Are you sure?' } %>
+        <%= link_to '刪除', course, method: :delete, class: 'function_del_button', data: { confirm: '您確定要刪除 '+course.title+' ?' } %>
         </div>  
   </div>     
   <%end%>

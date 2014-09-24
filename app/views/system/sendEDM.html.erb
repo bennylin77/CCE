@@ -4,16 +4,17 @@
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 </head>
 <body>	
-<div class="masonry" style="-moz-column-count: 3;
-						    -webkit-column-count: 3;
-						    column-count: 3;
+<div style="font-size: 12px; margin-bottom: 10px;">可登入後,到 "<%=link_to '會員設定', domain%>" 取消訂閱最新課程資訊</div>	
+<div class="masonry" style="-moz-column-count: 4;
+						    -webkit-column-count: 4;
+						    column-count: 4;
 						    -moz-column-gap: 1em;
 						    -webkit-column-gap: 1em;
 						    column-gap: 1em;">
    <% @edm.news.each do |n|%>						      
    <div class="news_box" style="display: inline-block;
    							    margin: 0 0 1em;
-			                    width: 100%;
+			                    width: 300px;
   	                            background: #198EB9;">
 		<a href="<%=domain+'/news/'+n.id.to_s%>" style="text-decoration: none;">
 		<div class="content_news_block">				

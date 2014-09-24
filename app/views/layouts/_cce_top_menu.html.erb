@@ -91,19 +91,19 @@
 		<div class="filter_container_right">
 			<div class="select_container" style="border: none">	
 				<div class="select_filter">
-				<%= select_tag  "dimension", options_from_collection_for_select(Dimension.all, 'id', 'name'), prompt: "全部向度", class: 'dimension_select_filter'%>		
+				<%= select_tag  "dimension", options_from_collection_for_select(Dimension.all, 'id', 'name'), prompt: "全部課程分類", class: 'dimension_select_filter'%>		
 				<span class="filter-arrow-icon icon-filter"></span>
 				</div>
 			</div>				
 			<div class="select_container">	
 				<div class="select_filter">
-				<%= select_tag  "kind", options_for_select(kindOptions), prompt: "全部種類", class: 'kind_select_filter'%>		
+				<%= select_tag  "kind", options_for_select(kindOptions), prompt: "全部課程類別", class: 'kind_select_filter'%>		
 				<span class="filter-arrow-icon icon-filter"></span>
 				</div>
 			</div>	
 			<div class="select_container">	
 				<div class="select_filter">
-				<%= select_tag  "status", options_for_select(statusOptions), prompt: "全部狀態", class: 'status_select_filter'%>
+				<%= select_tag  "status", options_for_select(statusOptions), prompt: "全部課程狀態", class: 'status_select_filter'%>
 				<span class="filter-arrow-icon icon-filter"></span>
 				</div>
 			</div>	

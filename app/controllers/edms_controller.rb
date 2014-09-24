@@ -24,7 +24,8 @@ class EdmsController < ApplicationController
     respond_to do |format|
       if @edm.save
         System.sendEDM(edm: @edm).deliver
-        format.html { redirect_to @edm, notice: 'Edm was successfully created.' }
+        flash[:title]='電子郵件廣告'
+        format.html { redirect_to @edm, notice: '成功寄出電子郵件廣告' }
       else
         format.html { render :new }
       end

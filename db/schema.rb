@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140920034453) do
     t.text     "future"
     t.integer  "tuition"
     t.text     "link"
+    t.text     "registration_link"
     t.string   "attachment_file_name"
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"

@@ -1,33 +1,27 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
-  # GET /courses
-  # GET /courses.json
   def index
     @courses = Course.all
   end
 
-  # GET /courses/1
-  # GET /courses/1.json
   def show
   end
 
-  # GET /courses/new
   def new
     @course = Course.new
     @course.cce_class_id = params[:cce_class_id]
   end
 
-  # GET /courses/1/edit
   def edit
   end
 
-  # POST /courses
-  # POST /courses.json
   def create
     @course = Course.new(course_params)
 
     if @course.save
+      flash[:title]='子課程' 
+      flash[:notice]='成功建立子課程'
       redirect_to controller: :cce_classes, action: :indexManagement
     else
       render :new
@@ -39,7 +33,9 @@ class CoursesController < ApplicationController
   def update
     respond_to do |format|
       if @course.update(course_params)
-        format.html { redirect_to controller: :cce_classes, action: :indexManagement }
+        flash[:title]='子課程'
+        flash[:notice]='編輯成功'
+        format.html { redirect_to controller: :cce_classes, action: :indexManagement}
       else
         format.html { render :edit }
       end
@@ -51,7 +47,9 @@ class CoursesController < ApplicationController
   def destroy
     @course.destroy
     respond_to do |format|
-      format.html { redirect_to controller: :cce_classes, action: :indexManagement, notice: 'Course was successfully destroyed.' }
+      flash[:title]='子課程'
+      flash[:notice]='成功刪除'      
+      format.html { redirect_to controller: :cce_classes, action: :indexManagement}
       format.json { head :no_content }
     end
   end

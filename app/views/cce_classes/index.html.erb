@@ -20,7 +20,9 @@
 		});		
 		//initial fancybox
 		$(".openAjax").fancybox({
-			closeBtn : false,
+			tpl: {
+			  closeBtn: "<div title='Close' class='cce_class_show_close'>x</div>"
+			},		
 			padding: 35,			
     		openEffect	: 'elastic',
     		closeEffect	: 'elastic',			

@@ -78,7 +78,9 @@ class CceClassesController < ApplicationController
 
     respond_to do |format|
       if @cce_class.save
-        format.html { redirect_to controller: 'cce_classes', action: 'showManagement', id: @cce_class.id, notice: 'Cce class was successfully created.' }
+        flash[:title]='推廣教育課程管理'
+        flash[:notice]='已申請推廣教育課程, 請等待審查'
+        format.html { redirect_to controller: 'cce_classes', action: 'showManagement', id: @cce_class.id }
       else
         format.html { render :new }
       end
@@ -94,7 +96,9 @@ class CceClassesController < ApplicationController
     end    
     respond_to do |format|
       if @cce_class.update(cce_class_params)
-        format.html { redirect_to  controller: 'cce_classes', action: 'showManagement', id: @cce_class.id, notice: 'Cce class was successfully updated.' }
+        flash[:title]='推廣教育課程管理'
+        flash[:notice]='編輯成功'        
+        format.html { redirect_to  controller: 'cce_classes', action: 'showManagement', id: @cce_class.id}
       else
         format.html { render :edit }
       end
@@ -104,8 +108,8 @@ class CceClassesController < ApplicationController
   def destroy
     @cce_class.destroy
     respond_to do |format|
-      format.html { redirect_to cce_classes_url, notice: 'Cce class was successfully destroyed.' }
-      format.json { head :no_content }
+      flash[:title]='推廣教育課程管理'
+      format.html { redirect_to cce_classes_url, notice: '刪除成功' }
     end
   end
   
@@ -117,6 +121,8 @@ class CceClassesController < ApplicationController
       @cce_class.verified_user_id=nil
     end      
     @cce_class.save!
+    flash[:title]='推廣教育課程管理'
+    flash[:notice]='成功更改審核狀態'
     redirect_to controller: :cce_classes, action: :indexManagement
   end
   
@@ -184,6 +190,6 @@ class CceClassesController < ApplicationController
                                         :other_funds, :total_credits, :total_hours, :in_school_lecturers_quantity, :out_school_lecturers_quantity,
                                         :school_expenses, :academic_expenses, :center_expenses, :college_expenses, :department_expenses,
                                         :school_venue_fee, :units_venue_fee, :personnel_fee, :sales_fee, :travel_fee, :facilities_fee, 
-                                        :hourly_fee, :link, :attachment)
+                                        :hourly_fee, :link, :attachment, :registration_link)
     end
 end

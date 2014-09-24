@@ -12,6 +12,7 @@ class CreateCceClasses < ActiveRecord::Migration
       t.text :future
       t.integer :tuition   
       t.text :link 
+      t.text :registration_link      
       t.attachment :attachment       
               
       t.text :lecturers      

@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     @user.verify_code=SecureRandom.hex(5)
     @user.save!
     System.sendVerification(user: @user).deliver
+    flash[:title]='會員管理'
     redirect_to root_url, notice: '成功送出會員邀請函'
   rescue ActiveRecord::RecordInvalid
     @user.valid?
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
       @user.verified = true
       render action: 'edit'   
     else
+      flash[:title]='會員管理'
       redirect_to root_url, notice: '會員已認證或認證失敗'
     end  
   end
@@ -39,11 +41,11 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        flash[:title]='會員管理'
+        format.html { redirect_to @user, notice: '編輯成功' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -58,7 +60,7 @@ class UsersController < ApplicationController
          #session[:original_uri]=nil
          redirect_to root_url
        else
-         flash[:title]="登入"         
+         flash[:title]="會員管理"         
          flash[:notice]="錯誤的Email或密碼"
          redirect_to root_url
        end
@@ -74,8 +76,8 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
+      flash[:title]='會員管理'    
+      format.html { redirect_to users_url, notice: '刪除成功'  }
     end
   end
   
@@ -85,16 +87,16 @@ class UsersController < ApplicationController
     @user.pw_confirmation= new_pw
     @user.save!
     System.sendResetPw(user: @user, new_pw: new_pw).deliver
+    flash[:title]='會員管理'  
     redirect_to users_url, notice: '成功送出新密碼'     
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  
     def set_user
       @user = User.find(params[:id])
     end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
+    
     def user_params
       params.require(:user).permit(:name, :email, :extend, :age, :gender, :education, :id_no, :passport_no, :nationality, 
                                    :birthday, :address, :phone_no, :mobile_no, :identity,:pw , :pw_confirmation, :verified, :edm)

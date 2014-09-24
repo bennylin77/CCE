@@ -1,19 +1,15 @@
 class MainController < ApplicationController
   
-  def CCEEnactment
-    
+  def CCEEnactment   
   end 
   
-  def CCEMembers
-    
+  def CCEMembers   
   end 
   
-  def CCENow
-    
-  end 
+  def CCENow   
+  end  
   
   def CCELocation
-    
   end       
 
 end

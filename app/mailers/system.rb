@@ -14,9 +14,9 @@ class System < ActionMailer::Base
   end 
   def sendEDM(hash={})
     @edm=hash[:edm]
-    User.where("edm = true").each do |u|
-      mail( to: u.email , subject: @edm.title)    
-    end
+    @recipients = User.where("edm = true")
+    emails = @recipients.collect(&:email).join(",")
+    mail( bcc: emails , subject: @edm.title)    
   end   
   
 end

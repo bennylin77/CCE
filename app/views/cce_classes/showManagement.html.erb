@@ -37,7 +37,7 @@
   </div>
   <div class="show_row">
 	  <div class="show_title">
-	  	課程向度
+	  	課程分類
 	  </div>
 	  <div class="show_content">
 	  	<%= showDimensions( cce_class: @cce_class)%>		
@@ -221,6 +221,14 @@
 		<%= showBlank( data: link_to(@cce_class.link, @cce_class.link))%>	
 	  </div>         	
   </div>  
+  <div class="show_row">
+	  <div class="show_title">
+	  	線上報名連結
+	  </div>
+	  <div class="show_content">
+		<%= showBlank( data: link_to(@cce_class.registration_link, @cce_class.registration_link))%>	
+	  </div>         	
+  </div>    
   <div class="show_row">
 	  <div class="show_title">
 	  	課程附件

@@ -17,7 +17,8 @@ class DimensionsController < ApplicationController
 
     respond_to do |format|
       if @dimension.save
-        format.html { redirect_to dimensions_path, notice: 'Dimension was successfully created.' }
+        flash[:title]='課程分類'
+        format.html { redirect_to dimensions_path, notice: '成功建立課程分類' }
       else
         format.html { render :new }
       end
@@ -27,7 +28,8 @@ class DimensionsController < ApplicationController
   def update
     respond_to do |format|
       if @dimension.update(dimension_params)
-        format.html { redirect_to dimensions_path, notice: 'Dimension was successfully created.' }
+        flash[:title]='課程分類'
+        format.html { redirect_to dimensions_path, notice: '編輯成功' }
       else
         format.html { render :edit }
       end
@@ -37,7 +39,8 @@ class DimensionsController < ApplicationController
   def destroy
     @dimension.destroy
     respond_to do |format|
-      format.html { redirect_to dimensions_url, notice: 'Dimension was successfully destroyed.' }
+      flash[:title]='課程分類'
+      format.html { redirect_to dimensions_url, notice: '刪除成功' }
       format.json { head :no_content }
     end
   end

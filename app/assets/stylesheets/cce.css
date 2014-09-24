@@ -425,7 +425,7 @@ button{
 }
 
 .select_filter{
-	width: 90px;
+	width: 140px;
 	position: relative;
 	overflow: hidden;
 }
@@ -434,7 +434,7 @@ button{
    cursor:pointer;
    color: #198EB9;	
    background: transparent;
-   width: 110px;
+   width: 160px;
    text-align:-moz-center;
    text-align:-webkit-center;   
    font-size: 13px;
@@ -453,7 +453,9 @@ button{
 }
 .select_filter option
 {
-    background: #F2EEEA;
+   text-align:-moz-center;
+   text-align:-webkit-center;   	
+   background: #F2EEEA;
 }
 .select_filter span {
     font-size: 15px;
@@ -939,23 +941,17 @@ button{
 }
 .cce_class_show_close{
     font-family: Arial;		
-	font-size: 35px;
+	font-size: 40px;
 	line-height: 60px;		
 	color: #198EB9;	
 	position: absolute;
+	top: -10px; 
 	right: 10px;
-	top: -20px;
+    cursor: pointer;	
 }
 .cce_class_show_close:hover{
 	opacity: 0.8;    	
 }
-
-
-
-
-
-
-
 
 /*=============================================       news     =========================================*/
 .news_show{
